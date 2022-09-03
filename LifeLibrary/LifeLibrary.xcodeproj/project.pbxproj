@@ -15,7 +15,7 @@
 		2345B5A028C30C3C00F47EEE /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B59F28C30C3C00F47EEE /* APIError.swift */; };
 		2345B5A228C30D1C00F47EEE /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B5A128C30D1C00F47EEE /* APIService.swift */; };
 		2345B5A428C30D2E00F47EEE /* APISession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B5A328C30D2E00F47EEE /* APISession.swift */; };
-		2345B5A628C30D4400F47EEE /* urlResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B5A528C30D4400F47EEE /* urlResource.swift */; };
+		2345B5A628C30D4400F47EEE /* UrlResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B5A528C30D4400F47EEE /* UrlResource.swift */; };
 		2345B5A928C30E5000F47EEE /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B5A828C30E5000F47EEE /* LoadingView.swift */; };
 		2345B5AD28C30FA900F47EEE /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B5AC28C30FA900F47EEE /* NavigationBar.swift */; };
 		2345B5AF28C3103600F47EEE /* QuestionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B5AE28C3103600F47EEE /* QuestionVC.swift */; };
@@ -50,7 +50,7 @@
 		2345B59F28C30C3C00F47EEE /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIError.swift; path = LifeLibrary/Global/Network/APIError.swift; sourceTree = SOURCE_ROOT; };
 		2345B5A128C30D1C00F47EEE /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIService.swift; path = LifeLibrary/Global/Network/APIService.swift; sourceTree = SOURCE_ROOT; };
 		2345B5A328C30D2E00F47EEE /* APISession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APISession.swift; path = LifeLibrary/Global/Network/APISession.swift; sourceTree = SOURCE_ROOT; };
-		2345B5A528C30D4400F47EEE /* urlResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = urlResource.swift; path = LifeLibrary/Global/Network/urlResource.swift; sourceTree = SOURCE_ROOT; };
+		2345B5A528C30D4400F47EEE /* UrlResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UrlResource.swift; path = LifeLibrary/Global/Network/UrlResource.swift; sourceTree = SOURCE_ROOT; };
 		2345B5A828C30E5000F47EEE /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		2345B5AC28C30FA900F47EEE /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		2345B5AE28C3103600F47EEE /* QuestionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionVC.swift; sourceTree = "<group>"; };
@@ -107,7 +107,7 @@
 				2345B59F28C30C3C00F47EEE /* APIError.swift */,
 				2345B5A128C30D1C00F47EEE /* APIService.swift */,
 				2345B5A328C30D2E00F47EEE /* APISession.swift */,
-				2345B5A528C30D4400F47EEE /* urlResource.swift */,
+				2345B5A528C30D4400F47EEE /* UrlResource.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -424,7 +424,7 @@
 				CE3816F928C2C95400DC781F /* AppDelegate.swift in Sources */,
 				2345B59E28C30BE200F47EEE /* QuestionVM.swift in Sources */,
 				238E60A828C2F9A20055CD43 /* Loadable.swift in Sources */,
-				2345B5A628C30D4400F47EEE /* urlResource.swift in Sources */,
+				2345B5A628C30D4400F47EEE /* UrlResource.swift in Sources */,
 				2345B5A428C30D2E00F47EEE /* APISession.swift in Sources */,
 				2345B5A928C30E5000F47EEE /* LoadingView.swift in Sources */,
 			);
