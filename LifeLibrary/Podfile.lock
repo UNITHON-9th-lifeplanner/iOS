@@ -1,9 +1,14 @@
 PODS:
+  - Differentiator (5.0.0)
   - DropDown (2.3.13)
   - FSCalendar (2.8.4)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
+  - RxDataSources (5.0.0):
+    - Differentiator (~> 5.0)
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
   - RxGesture (4.0.4):
     - RxCocoa (~> 6.0)
     - RxSwift (~> 6.0)
@@ -19,6 +24,7 @@ DEPENDENCIES:
   - DropDown
   - FSCalendar
   - RxCocoa (= 6.5.0)
+  - RxDataSources
   - RxGesture
   - RxSwift (= 6.5.0)
   - SnapKit
@@ -28,9 +34,11 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Differentiator
     - DropDown
     - FSCalendar
     - RxCocoa
+    - RxDataSources
     - RxGesture
     - RxRelay
     - RxSwift
@@ -40,9 +48,11 @@ SPEC REPOS:
     - "UITextView+Placeholder"
 
 SPEC CHECKSUMS:
+  Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
   RxGesture: f3efb47ed2d26a8082f7b660d4a59970e275a7f8
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
@@ -51,6 +61,7 @@ SPEC CHECKSUMS:
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
   "UITextView+Placeholder": d7b0c400921f66523f3a85d74f774512e14f6502
 
+PODFILE CHECKSUM: 2badfd5885e4f336971c02335eda5e8d857d3d79
 PODFILE CHECKSUM: 45c64dbab00c008058b203b4f0de38223f691820
 
 COCOAPODS: 1.11.3
