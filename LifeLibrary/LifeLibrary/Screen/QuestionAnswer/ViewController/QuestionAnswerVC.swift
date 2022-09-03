@@ -16,6 +16,10 @@ import FSCalendar
 class QuestionAnswerVC: BaseViewController {
     private let naviBar = NavigationBar()
     
+    private let baseScrollView = UIScrollView()
+    
+    private let contentView = UIView()
+    
     private let calendarTitle = UILabel()
         .then {
             $0.font = .title2
@@ -73,6 +77,8 @@ class QuestionAnswerVC: BaseViewController {
         }
     
     private var answerDates: [String]?
+    private var questionID: Int?
+    private var answerID: Int?
     
     private let viewModel = QuestionAnswerVM()
     private let bag = DisposeBag()
@@ -84,6 +90,7 @@ class QuestionAnswerVC: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.getAnswerDates(date: .now)
+        viewModel.getDayQnA(date: .now)
     }
     
     override func configureView() {
@@ -106,6 +113,8 @@ class QuestionAnswerVC: BaseViewController {
         super.bindOutput()
         bindDaySelect()
         bindCalendar()
+        bindKeyboardScroll()
+        bindKeyboardHide()
     }
     
 }
@@ -127,12 +136,14 @@ extension QuestionAnswerVC {
     }
     
     private func configureContentView() {
-        view.addSubviews([calendarTitle,
-                          prevMonthBtn,
-                          nextMonthBtn,
-                          calendar,
-                          questionAnswerView,
-                          showAnswerListBtn])
+        view.addSubview(baseScrollView)
+        baseScrollView.addSubview(contentView)
+        contentView.addSubviews([calendarTitle,
+                                 prevMonthBtn,
+                                 nextMonthBtn,
+                                 calendar,
+                                 questionAnswerView,
+                                 showAnswerListBtn])
         
         configureCalendarTitle(date: .now)
         calendar.delegate = self
@@ -144,14 +155,32 @@ extension QuestionAnswerVC {
             $0.layer.shadowOpacity = 0
         }
     }
+    
+    private func setEditBtnImage() {
+        questionAnswerView.questionView.editBtn.setImage(UIImage(named: "edit"),
+                                                         for: .normal)
+        questionAnswerView.questionView.editBtn.setImage(UIImage(named: "edit_Selected"),
+                                                         for: .highlighted)
+    }
 }
 
 // MARK: - Layout
 
 extension QuestionAnswerVC {
     private func configureLayout() {
-        calendarTitle.snp.makeConstraints {
+        baseScrollView.snp.makeConstraints {
             $0.top.equalTo(naviBar.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(view.keyboardLayoutGuide.snp.top)
+        }
+        
+        contentView.snp.makeConstraints {
+            $0.top.bottom.width.centerX.equalToSuperview()
+            $0.height.equalToSuperview().priority(.low)
+        }
+        
+        calendarTitle.snp.makeConstraints {
+            $0.top.equalToSuperview()
             $0.centerX.equalToSuperview()
         }
         
@@ -178,12 +207,13 @@ extension QuestionAnswerVC {
             $0.top.equalTo(calendar.snp.bottom).offset(28)
             $0.leading.equalToSuperview().offset(20)
             $0.trailing.equalToSuperview().offset(-20)
-            $0.bottom.equalTo(view.keyboardLayoutGuide.snp.top).offset(-72)
+            $0.height.equalTo(228)
         }
         
         showAnswerListBtn.snp.makeConstraints {
             $0.top.equalTo(questionAnswerView.snp.bottom).offset(13)
             $0.trailing.equalToSuperview().offset(-20)
+            $0.bottom.equalToSuperview().offset(-20)
         }
     }
 }
@@ -205,10 +235,40 @@ extension QuestionAnswerVC {
         prevMonthBtn.rx.tap
             .asDriver()
             .drive(onNext: { [weak self] _ in
-                guard let self = self  else { return }
+                guard let self = self else { return }
                 self.viewModel.input.moveMonth.accept(-1)
                 self.calendar.select(self.viewModel.input.selectedDay.value)
                 self.calendarPrepareForReuse()
+            })
+            .disposed(by: bag)
+        
+        showAnswerListBtn.rx.tap
+            .asDriver()
+            .drive(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                let othersAnswersVC = OthersAnswersVC()
+                othersAnswersVC.questionID = self.questionID
+                self.navigationController?.pushViewController(othersAnswersVC)
+            })
+            .disposed(by: bag)
+        
+        questionAnswerView.questionView.editBtn.rx.tap
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                switch self.questionAnswerView.questionView.editBtn.imageView?.image {
+                case UIImage(named: "edit_Selected"):
+                    self.questionAnswerView.answerTextView.isEditable = true
+                    self.questionAnswerView.answerTextView.becomeFirstResponder()
+                    self.questionAnswerView.questionView.editBtn.setImage(UIImage(named: "confirm"),
+                                                                          for: .normal)
+                    self.questionAnswerView.questionView.editBtn.setImage(UIImage(named: "confirm_Selected"),
+                                                                          for: .highlighted)
+                case UIImage(named: "delete_Selected"):
+                    self.viewModel.deleteAnswer(answerID: self.answerID!)
+                    self.calendar.reloadData()
+                default:
+                    print("??")
+                }
             })
             .disposed(by: bag)
     }
@@ -236,6 +296,43 @@ extension QuestionAnswerVC {
                 cell.addDayShadow()
             })
             .disposed(by: bag)
+        
+        viewModel.output.dayResponse
+            .subscribe(onNext: { [weak self] data in
+                guard let self = self,
+                      let date = data.answeredAt.toDate()
+                else { return }
+                
+                self.questionID = data.questionID
+                self.answerID = data.answerID
+                var btnType: QuestionBtnType = .none
+                var placeholder = ""
+                
+                if data.answer == nil {
+                    placeholder = self.viewModel.isToday(date)
+                    ? "오늘의 질문에 대한 답변을\n자유롭게 작성해주세요."
+                    : "작성된 답변이 없습니다.\n아쉽네요.."
+                    btnType = self.viewModel.isToday(date) ? .edit : .none
+                } else {
+                    btnType = self.viewModel.isToday(date) ? .edit : .delete
+                }
+                
+                self.questionAnswerView.configureQuestionAnswerView(question: data.question,
+                                                                    btnType: btnType,
+                                                                    placeholder: placeholder,
+                                                                    answer: data.answer)
+            })
+            .disposed(by: bag)
+        
+        viewModel.output.noneQuestion
+            .subscribe(onNext: { [weak self] error in
+                guard let self = self else { return }
+                self.questionAnswerView.configureQuestionAnswerView(question: error,
+                                                                    btnType: .none,
+                                                                    placeholder: "",
+                                                                    answer: nil)
+            })
+            .disposed(by: bag)
     }
     
     private func bindCalendar() {
@@ -248,6 +345,31 @@ extension QuestionAnswerVC {
             })
             .disposed(by: bag)
     }
+    
+    private func bindKeyboardScroll() {
+        keyboardWillShow
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                self.baseScrollView.scrollToBottom(animated: true)
+            })
+            .disposed(by: bag)
+    }
+    
+    private func bindKeyboardHide() {
+        keyboardWillHide
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self, let questionID = self.questionID else { return }
+                self.setEditBtnImage()
+                self.questionAnswerView.answerTextView.isEditable = false
+                if self.answerID == nil {
+                    self.viewModel.postAnswer(questionID: questionID, answer: self.questionAnswerView.answerTextView.text)
+                    self.view.reloadInputViews()
+                } else {
+                    self.viewModel.putAnswer(answerID: self.answerID!, answer: self.questionAnswerView.answerTextView.text)
+                }
+            })
+            .disposed(by: bag)
+    }
 }
 
 // MARK: - FSCalendarDelegate
@@ -255,6 +377,7 @@ extension QuestionAnswerVC {
 extension QuestionAnswerVC: FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         viewModel.input.selectedDay.accept(date)
+        viewModel.getDayQnA(date: date)
     }
     
     func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {

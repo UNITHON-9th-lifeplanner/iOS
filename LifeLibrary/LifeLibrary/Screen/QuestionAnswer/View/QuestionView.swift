@@ -18,7 +18,7 @@ class QuestionView: BaseView {
             $0.setLineBreakMode()
         }
     
-    private let editBtn = UIButton()
+    let editBtn = UIButton()
     
     override func configureView() {
         super.configureView()

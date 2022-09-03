@@ -31,6 +31,7 @@
 		2345B5C828C3477300F47EEE /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2345B5C528C3477300F47EEE /* Pretendard-Bold.otf */; };
 		2345B5C928C3477300F47EEE /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2345B5C628C3477300F47EEE /* Pretendard-Light.otf */; };
 		2345B5CB28C348EE00F47EEE /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B5CA28C348EE00F47EEE /* UIFont+.swift */; };
+		2350709A28C3FB4300105275 /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2350709928C3FB4300105275 /* HomeNavigationController.swift */; };
 		236CE20D5257BA89D2CD728B /* Pods_LifeLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF07E83A6F4CB97481671722 /* Pods_LifeLibrary.framework */; };
 		238E60A428C2F97E0055CD43 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238E60A328C2F97E0055CD43 /* Input.swift */; };
 		238E60A628C2F98D0055CD43 /* Output.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238E60A528C2F98D0055CD43 /* Output.swift */; };
@@ -95,6 +96,7 @@
 		2345B5C528C3477300F47EEE /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		2345B5C628C3477300F47EEE /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
 		2345B5CA28C348EE00F47EEE /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
+		2350709928C3FB4300105275 /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
 		238E60A328C2F97E0055CD43 /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
 		238E60A528C2F98D0055CD43 /* Output.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Output.swift; sourceTree = "<group>"; };
 		238E60A728C2F9A20055CD43 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
@@ -426,6 +428,7 @@
 		CECAE66328C3988000681BAB /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				2350709928C3FB4300105275 /* HomeNavigationController.swift */,
 				CECAE66428C398AA00681BAB /* HomeViewController.swift */,
 				CECAE66528C398AA00681BAB /* HomeViewController.xib */,
 				CECAE66828C3ABE100681BAB /* HomeViewModel.swift */,
@@ -641,6 +644,7 @@
 				238E60AE28C2FA140055CD43 /* UITextView+.swift in Sources */,
 				238E60A428C2F97E0055CD43 /* Input.swift in Sources */,
 				238E60AA28C2F9E40055CD43 /* UILabel+.swift in Sources */,
+				2350709A28C3FB4300105275 /* HomeNavigationController.swift in Sources */,
 				2345B59128C30A7500F47EEE /* BaseViewModel.swift in Sources */,
 				2345B5CB28C348EE00F47EEE /* UIFont+.swift in Sources */,
 				238E60B428C3091F0055CD43 /* UIViewController+.swift in Sources */,

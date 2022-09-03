@@ -143,7 +143,7 @@ extension SettingViewController {
         UserDefaults.standard.set(0, forKey: "age")
         UserInfo.shared = UserInfo()
         
-        let vc = navigationBar.findViewController()
-        vc?.dismiss(animated: true)
+        
+        view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
 }

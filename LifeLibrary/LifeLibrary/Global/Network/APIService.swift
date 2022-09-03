@@ -17,4 +17,6 @@ protocol APIService {
     func postRequestWithImage<T: Decodable>(with urlResource: UrlResource<T>, param: Parameters, image: UIImage, method: HTTPMethod) -> Observable<Result<T, APIError>>
     
     func putRequest<T: Decodable>(with urlResource: UrlResource<T>, param: Parameters?) -> Observable<Result<T, APIError>>
+    
+    func deleteRequest<T: Decodable>(with urlResource: UrlResource<T>) -> Observable<Result<T, APIError>>
 }
