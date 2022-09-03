@@ -1,4 +1,5 @@
 PODS:
+  - FSCalendar (2.8.4)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
@@ -11,17 +12,21 @@ PODS:
   - SnapKit (5.6.0)
   - SwiftLint (0.48.0)
   - Then (3.0.0)
+  - "UITextView+Placeholder (1.4.0)"
 
 DEPENDENCIES:
-  - RxCocoa
+  - FSCalendar
+  - RxCocoa (= 6.5.0)
   - RxGesture
-  - RxSwift
+  - RxSwift (= 6.5.0)
   - SnapKit
   - SwiftLint
   - Then
+  - "UITextView+Placeholder"
 
 SPEC REPOS:
   trunk:
+    - FSCalendar
     - RxCocoa
     - RxGesture
     - RxRelay
@@ -29,8 +34,10 @@ SPEC REPOS:
     - SnapKit
     - SwiftLint
     - Then
+    - "UITextView+Placeholder"
 
 SPEC CHECKSUMS:
+  FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxGesture: f3efb47ed2d26a8082f7b660d4a59970e275a7f8
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
@@ -38,7 +45,8 @@ SPEC CHECKSUMS:
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftLint: 284cea64b6187c5d6bd83e9a548a64104d546447
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
+  "UITextView+Placeholder": d7b0c400921f66523f3a85d74f774512e14f6502
 
-PODFILE CHECKSUM: 9a714824e40550a9b218621c4867cf9e1d038175
+PODFILE CHECKSUM: 6f172bf3dae1be5d9c2787040595207fa179508a
 
 COCOAPODS: 1.11.3

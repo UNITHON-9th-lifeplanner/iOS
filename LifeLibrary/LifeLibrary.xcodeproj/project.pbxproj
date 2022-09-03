@@ -7,18 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2305E92A28C369CA00534120 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2305E92928C369CA00534120 /* QuestionView.swift */; };
+		2305E92C28C36ACF00534120 /* QuestionBtnType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2305E92B28C36ACF00534120 /* QuestionBtnType.swift */; };
+		2305E92E28C36D9700534120 /* QuestionAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2305E92D28C36D9700534120 /* QuestionAnswerView.swift */; };
 		2345B58F28C30A5C00F47EEE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B58E28C30A5C00F47EEE /* BaseViewController.swift */; };
 		2345B59128C30A7500F47EEE /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B59028C30A7500F47EEE /* BaseViewModel.swift */; };
 		2345B59328C30ABF00F47EEE /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B59228C30ABF00F47EEE /* BaseNavigationController.swift */; };
 		2345B59628C30AED00F47EEE /* NaviType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B59528C30AED00F47EEE /* NaviType.swift */; };
-		2345B59E28C30BE200F47EEE /* QuestionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B59D28C30BE200F47EEE /* QuestionVM.swift */; };
+		2345B59E28C30BE200F47EEE /* QuestionAnswerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B59D28C30BE200F47EEE /* QuestionAnswerVM.swift */; };
 		2345B5A028C30C3C00F47EEE /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B59F28C30C3C00F47EEE /* APIError.swift */; };
 		2345B5A228C30D1C00F47EEE /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B5A128C30D1C00F47EEE /* APIService.swift */; };
 		2345B5A428C30D2E00F47EEE /* APISession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B5A328C30D2E00F47EEE /* APISession.swift */; };
 		2345B5A628C30D4400F47EEE /* UrlResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B5A528C30D4400F47EEE /* UrlResource.swift */; };
 		2345B5A928C30E5000F47EEE /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B5A828C30E5000F47EEE /* LoadingView.swift */; };
 		2345B5AD28C30FA900F47EEE /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B5AC28C30FA900F47EEE /* NavigationBar.swift */; };
-		2345B5AF28C3103600F47EEE /* QuestionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B5AE28C3103600F47EEE /* QuestionVC.swift */; };
+		2345B5AF28C3103600F47EEE /* QuestionAnswerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B5AE28C3103600F47EEE /* QuestionAnswerVC.swift */; };
 		2345B5C728C3477300F47EEE /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2345B5C428C3477300F47EEE /* Pretendard-Regular.otf */; };
 		2345B5C828C3477300F47EEE /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2345B5C528C3477300F47EEE /* Pretendard-Bold.otf */; };
 		2345B5C928C3477300F47EEE /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2345B5C628C3477300F47EEE /* Pretendard-Light.otf */; };
@@ -34,6 +37,9 @@
 		238E60B428C3091F0055CD43 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238E60B328C3091F0055CD43 /* UIViewController+.swift */; };
 		238E60B628C3095A0055CD43 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238E60B528C3095A0055CD43 /* UIColor+.swift */; };
 		238E60B828C309A10055CD43 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238E60B728C309A10055CD43 /* BaseView.swift */; };
+		23A0484828C3784800ABC599 /* QuestionResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A0484728C3784800ABC599 /* QuestionResponseModel.swift */; };
+		23A0484C28C392DB00ABC599 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A0484B28C392DB00ABC599 /* String+.swift */; };
+		23A0484E28C393A700ABC599 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A0484D28C393A700ABC599 /* Date+.swift */; };
 		CE3816F928C2C95400DC781F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3816F828C2C95400DC781F /* AppDelegate.swift */; };
 		CE38170228C2C95700DC781F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE38170128C2C95700DC781F /* Assets.xcassets */; };
 		CE38170528C2C95700DC781F /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE38170328C2C95700DC781F /* Splash.storyboard */; };
@@ -51,18 +57,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2305E92928C369CA00534120 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
+		2305E92B28C36ACF00534120 /* QuestionBtnType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionBtnType.swift; sourceTree = "<group>"; };
+		2305E92D28C36D9700534120 /* QuestionAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAnswerView.swift; sourceTree = "<group>"; };
 		2345B58E28C30A5C00F47EEE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = LifeLibrary/Global/Base/BaseViewController.swift; sourceTree = SOURCE_ROOT; };
 		2345B59028C30A7500F47EEE /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseViewModel.swift; path = LifeLibrary/Global/Base/BaseViewModel.swift; sourceTree = SOURCE_ROOT; };
 		2345B59228C30ABF00F47EEE /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseNavigationController.swift; path = LifeLibrary/Global/Base/BaseNavigationController.swift; sourceTree = SOURCE_ROOT; };
 		2345B59528C30AED00F47EEE /* NaviType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaviType.swift; sourceTree = "<group>"; };
-		2345B59D28C30BE200F47EEE /* QuestionVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionVM.swift; sourceTree = "<group>"; };
+		2345B59D28C30BE200F47EEE /* QuestionAnswerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAnswerVM.swift; sourceTree = "<group>"; };
 		2345B59F28C30C3C00F47EEE /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIError.swift; path = LifeLibrary/Global/Network/APIError.swift; sourceTree = SOURCE_ROOT; };
 		2345B5A128C30D1C00F47EEE /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIService.swift; path = LifeLibrary/Global/Network/APIService.swift; sourceTree = SOURCE_ROOT; };
 		2345B5A328C30D2E00F47EEE /* APISession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APISession.swift; path = LifeLibrary/Global/Network/APISession.swift; sourceTree = SOURCE_ROOT; };
 		2345B5A528C30D4400F47EEE /* UrlResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UrlResource.swift; path = LifeLibrary/Global/Network/UrlResource.swift; sourceTree = SOURCE_ROOT; };
 		2345B5A828C30E5000F47EEE /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		2345B5AC28C30FA900F47EEE /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
-		2345B5AE28C3103600F47EEE /* QuestionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionVC.swift; sourceTree = "<group>"; };
+		2345B5AE28C3103600F47EEE /* QuestionAnswerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAnswerVC.swift; sourceTree = "<group>"; };
 		2345B5C428C3477300F47EEE /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
 		2345B5C528C3477300F47EEE /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
 		2345B5C628C3477300F47EEE /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
@@ -77,6 +86,9 @@
 		238E60B328C3091F0055CD43 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		238E60B528C3095A0055CD43 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		238E60B728C309A10055CD43 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseView.swift; path = LifeLibrary/Global/Base/BaseView.swift; sourceTree = SOURCE_ROOT; };
+		23A0484728C3784800ABC599 /* QuestionResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionResponseModel.swift; sourceTree = "<group>"; };
+		23A0484B28C392DB00ABC599 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		23A0484D28C393A700ABC599 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		9C641F0D60398498A4398D7A /* Pods-LifeLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LifeLibrary.release.xcconfig"; path = "Target Support Files/Pods-LifeLibrary/Pods-LifeLibrary.release.xcconfig"; sourceTree = "<group>"; };
 		CE3816F528C2C95400DC781F /* LifeLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE3816F828C2C95400DC781F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,10 +123,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2305E92828C369B200534120 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2305E92928C369CA00534120 /* QuestionView.swift */,
+				2305E92D28C36D9700534120 /* QuestionAnswerView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		2345B59428C30AE200F47EEE /* Enum */ = {
 			isa = PBXGroup;
 			children = (
 				2345B59528C30AED00F47EEE /* NaviType.swift */,
+				2305E92B28C36ACF00534120 /* QuestionBtnType.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -144,23 +166,24 @@
 		2345B5B628C31E3100F47EEE /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				CECAE66228C34F9D00681BAB /* LifePlanner */,
 				CE38174D28C333A900DC781F /* OnBoarding */,
 				CE38174228C3235A00DC781F /* Splash */,
 				CE38173F28C3234800DC781F /* User */,
 				2345B5B828C31E4100F47EEE /* Common */,
-				2345B5B728C31E3500F47EEE /* Question */,
+				2345B5B728C31E3500F47EEE /* QuestionAnswer */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
 		};
-		2345B5B728C31E3500F47EEE /* Question */ = {
+		2345B5B728C31E3500F47EEE /* QuestionAnswer */ = {
 			isa = PBXGroup;
 			children = (
+				23A0484628C3783800ABC599 /* Model */,
+				2305E92828C369B200534120 /* View */,
 				2345B5BC28C31E6900F47EEE /* ViewModel */,
 				2345B5BA28C31E5D00F47EEE /* ViewController */,
 			);
-			path = Question;
+			path = QuestionAnswer;
 			sourceTree = "<group>";
 		};
 		2345B5B828C31E4100F47EEE /* Common */ = {
@@ -175,7 +198,7 @@
 		2345B5BA28C31E5D00F47EEE /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				2345B5AE28C3103600F47EEE /* QuestionVC.swift */,
+				2345B5AE28C3103600F47EEE /* QuestionAnswerVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -183,7 +206,7 @@
 		2345B5BC28C31E6900F47EEE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				2345B59D28C30BE200F47EEE /* QuestionVM.swift */,
+				2345B59D28C30BE200F47EEE /* QuestionAnswerVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -233,6 +256,8 @@
 				238E60B328C3091F0055CD43 /* UIViewController+.swift */,
 				238E60B528C3095A0055CD43 /* UIColor+.swift */,
 				2345B5CA28C348EE00F47EEE /* UIFont+.swift */,
+				23A0484B28C392DB00ABC599 /* String+.swift */,
+				23A0484D28C393A700ABC599 /* Date+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -245,6 +270,14 @@
 				238E60A728C2F9A20055CD43 /* Loadable.swift */,
 			);
 			path = Foundation;
+			sourceTree = "<group>";
+		};
+		23A0484628C3783800ABC599 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				23A0484728C3784800ABC599 /* QuestionResponseModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		498BA536F6293FCCA3FA4AF4 /* Pods */ = {
@@ -327,13 +360,6 @@
 				CE38175528C33CCA00DC781F /* UserViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		CECAE66228C34F9D00681BAB /* LifePlanner */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = LifePlanner;
 			sourceTree = "<group>";
 		};
 		D22530AF4BA5E8980FADDF27 /* Frameworks */ = {
@@ -491,21 +517,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2305E92A28C369CA00534120 /* QuestionView.swift in Sources */,
 				238E60A628C2F98D0055CD43 /* Output.swift in Sources */,
 				CE38175628C33CCA00DC781F /* UserViewModel.swift in Sources */,
 				238E60B828C309A10055CD43 /* BaseView.swift in Sources */,
 				238E60B628C3095A0055CD43 /* UIColor+.swift in Sources */,
 				2345B58F28C30A5C00F47EEE /* BaseViewController.swift in Sources */,
+				23A0484C28C392DB00ABC599 /* String+.swift in Sources */,
 				2345B5A228C30D1C00F47EEE /* APIService.swift in Sources */,
 				2345B59628C30AED00F47EEE /* NaviType.swift in Sources */,
 				238E60AC28C2F9FE0055CD43 /* UITextField+.swift in Sources */,
 				CE38174428C3238300DC781F /* SplashViewController.swift in Sources */,
+				2305E92E28C36D9700534120 /* QuestionAnswerView.swift in Sources */,
 				2345B5A028C30C3C00F47EEE /* APIError.swift in Sources */,
 				238E60B228C308E00055CD43 /* UIView+.swift in Sources */,
+				2305E92C28C36ACF00534120 /* QuestionBtnType.swift in Sources */,
 				2345B5AD28C30FA900F47EEE /* NavigationBar.swift in Sources */,
 				2345B59328C30ABF00F47EEE /* BaseNavigationController.swift in Sources */,
-				2345B5AF28C3103600F47EEE /* QuestionVC.swift in Sources */,
 				CE38174728C32A0600DC781F /* OnboardingViewController.swift in Sources */,
+				CE38174728C32A0600DC781F /* LoginViewController.swift in Sources */,
+				2345B5AF28C3103600F47EEE /* QuestionAnswerVC.swift in Sources */,
 				238E60AE28C2FA140055CD43 /* UITextView+.swift in Sources */,
 				238E60A428C2F97E0055CD43 /* Input.swift in Sources */,
 				238E60AA28C2F9E40055CD43 /* UILabel+.swift in Sources */,
@@ -513,9 +544,11 @@
 				2345B5CB28C348EE00F47EEE /* UIFont+.swift in Sources */,
 				238E60B428C3091F0055CD43 /* UIViewController+.swift in Sources */,
 				CE3816F928C2C95400DC781F /* AppDelegate.swift in Sources */,
-				2345B59E28C30BE200F47EEE /* QuestionVM.swift in Sources */,
+				23A0484E28C393A700ABC599 /* Date+.swift in Sources */,
+				2345B59E28C30BE200F47EEE /* QuestionAnswerVM.swift in Sources */,
 				238E60A828C2F9A20055CD43 /* Loadable.swift in Sources */,
 				CE38175328C3381900DC781F /* OnboardingNavigationVC.swift in Sources */,
+				23A0484828C3784800ABC599 /* QuestionResponseModel.swift in Sources */,
 				2345B5A628C30D4400F47EEE /* UrlResource.swift in Sources */,
 				2345B5A428C30D2E00F47EEE /* APISession.swift in Sources */,
 				CE38174B28C330FD00DC781F /* SignUpViewController.swift in Sources */,
@@ -668,7 +701,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = Splash;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -698,7 +731,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = Splash;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

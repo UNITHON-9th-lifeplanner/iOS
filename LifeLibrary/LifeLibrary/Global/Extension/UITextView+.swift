@@ -16,6 +16,6 @@ extension UITextView {
     
     /// setPadding - textView 기본 padding값 설정
     func setPadding() {
-        self.textContainerInset = UIEdgeInsets(top: 12, left: 8, bottom: 12, right: 8)
+        self.textContainerInset = UIEdgeInsets(top: 18, left: 10, bottom: 18, right: 10)
     }
 }
