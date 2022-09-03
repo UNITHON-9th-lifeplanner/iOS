@@ -9,6 +9,7 @@ target 'LifeLibrary' do
   pod 'Then'
   pod 'RxGesture'
   pod 'FSCalendar'
+  pod 'UITextView+Placeholder'
 end
 
 inhibit_all_warnings! # cocoapods의 swiftlint 경고 메시지 해제

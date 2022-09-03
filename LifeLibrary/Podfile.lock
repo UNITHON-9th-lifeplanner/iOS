@@ -12,6 +12,7 @@ PODS:
   - SnapKit (5.6.0)
   - SwiftLint (0.48.0)
   - Then (3.0.0)
+  - "UITextView+Placeholder (1.4.0)"
 
 DEPENDENCIES:
   - FSCalendar
@@ -21,6 +22,7 @@ DEPENDENCIES:
   - SnapKit
   - SwiftLint
   - Then
+  - "UITextView+Placeholder"
 
 SPEC REPOS:
   trunk:
@@ -32,6 +34,7 @@ SPEC REPOS:
     - SnapKit
     - SwiftLint
     - Then
+    - "UITextView+Placeholder"
 
 SPEC CHECKSUMS:
   FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
@@ -42,7 +45,8 @@ SPEC CHECKSUMS:
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftLint: 284cea64b6187c5d6bd83e9a548a64104d546447
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
+  "UITextView+Placeholder": d7b0c400921f66523f3a85d74f774512e14f6502
 
-PODFILE CHECKSUM: affb35cf52bacfcf70f05a9f0a7a8b9a5fcd71fe
+PODFILE CHECKSUM: 6f172bf3dae1be5d9c2787040595207fa179508a
 
 COCOAPODS: 1.11.3
