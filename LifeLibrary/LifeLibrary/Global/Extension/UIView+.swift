@@ -14,10 +14,17 @@ extension UIView {
     }
     
     /// UIView 상단에만 round를 주는 함수
-    func roundCorners(radius: CGFloat) {
+    func roundTopCorners(radius: CGFloat) {
         layer.cornerRadius = radius
         layer.maskedCorners = [.layerMaxXMinYCorner,
                                .layerMinXMinYCorner]
+    }
+    
+    /// UIView 하단에만 round를 주는 함수
+    func roundBottomCorners(radius: CGFloat) {
+        layer.cornerRadius = radius
+        layer.maskedCorners = [.layerMaxXMaxYCorner,
+                               .layerMinXMaxYCorner]
     }
     
     /// view를 담당하는 viewController를 찾는 함수
@@ -39,14 +46,14 @@ extension UIView {
         NSStringFromClass(self.classForCoder).components(separatedBy: ".").last!
     }
     
-    /// view에 shadow를 추가하는 함수
+    /// calendar cell에 shadow를 추가하는 함수
     func addDayShadow(opacity: Float = 0.8) {
         layer.shadowColor = UIColor.orange100.cgColor
         layer.shadowOpacity = opacity
         layer.shadowOffset = .zero
         layer.shadowRadius = 3
     }
-    
+    /// card에 shadow를 추가하는 함수
     func addCardShadow(opacity: Float = 0.8) {
         layer.shadowColor = UIColor.orange30.cgColor
         layer.shadowOpacity = opacity
