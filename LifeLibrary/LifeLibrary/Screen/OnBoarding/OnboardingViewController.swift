@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class OnboardingViewController: BaseViewController {
     private var account_id: String = ""

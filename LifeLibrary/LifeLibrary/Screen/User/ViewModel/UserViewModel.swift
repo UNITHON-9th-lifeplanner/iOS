@@ -15,6 +15,7 @@ final class UserViewModel: BaseViewModel {
     var bag = DisposeBag()
     var input = Input()
     var output = Output()
+    var keywords: [String] = []
     
     // MARK: - Input
     

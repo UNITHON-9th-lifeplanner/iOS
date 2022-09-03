@@ -1,4 +1,5 @@
 PODS:
+  - DropDown (2.3.13)
   - FSCalendar (2.8.4)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
@@ -15,6 +16,7 @@ PODS:
   - "UITextView+Placeholder (1.4.0)"
 
 DEPENDENCIES:
+  - DropDown
   - FSCalendar
   - RxCocoa (= 6.5.0)
   - RxGesture
@@ -26,6 +28,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - DropDown
     - FSCalendar
     - RxCocoa
     - RxGesture
@@ -37,6 +40,7 @@ SPEC REPOS:
     - "UITextView+Placeholder"
 
 SPEC CHECKSUMS:
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxGesture: f3efb47ed2d26a8082f7b660d4a59970e275a7f8
@@ -47,6 +51,6 @@ SPEC CHECKSUMS:
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
   "UITextView+Placeholder": d7b0c400921f66523f3a85d74f774512e14f6502
 
-PODFILE CHECKSUM: 6f172bf3dae1be5d9c2787040595207fa179508a
+PODFILE CHECKSUM: 45c64dbab00c008058b203b4f0de38223f691820
 
 COCOAPODS: 1.11.3
