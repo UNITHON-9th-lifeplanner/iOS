@@ -33,6 +33,8 @@
 		2345B5CB28C348EE00F47EEE /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B5CA28C348EE00F47EEE /* UIFont+.swift */; };
 		2350709A28C3FB4300105275 /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2350709928C3FB4300105275 /* HomeNavigationController.swift */; };
 		2350709D28C3FF7100105275 /* ChallengeInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2350709C28C3FF7100105275 /* ChallengeInputVC.swift */; };
+		2350709F28C4158700105275 /* KeywordCVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2350709E28C4158700105275 /* KeywordCVC.swift */; };
+		235070A128C4199800105275 /* InputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 235070A028C4199800105275 /* InputVC.swift */; };
 		236CE20D5257BA89D2CD728B /* Pods_LifeLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF07E83A6F4CB97481671722 /* Pods_LifeLibrary.framework */; };
 		238E60A428C2F97E0055CD43 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238E60A328C2F97E0055CD43 /* Input.swift */; };
 		238E60A628C2F98D0055CD43 /* Output.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238E60A528C2F98D0055CD43 /* Output.swift */; };
@@ -99,6 +101,8 @@
 		2345B5CA28C348EE00F47EEE /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		2350709928C3FB4300105275 /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
 		2350709C28C3FF7100105275 /* ChallengeInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeInputVC.swift; sourceTree = "<group>"; };
+		2350709E28C4158700105275 /* KeywordCVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordCVC.swift; sourceTree = "<group>"; };
+		235070A028C4199800105275 /* InputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputVC.swift; sourceTree = "<group>"; };
 		238E60A328C2F97E0055CD43 /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
 		238E60A528C2F98D0055CD43 /* Output.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Output.swift; sourceTree = "<group>"; };
 		238E60A728C2F9A20055CD43 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
@@ -301,6 +305,8 @@
 			isa = PBXGroup;
 			children = (
 				2350709C28C3FF7100105275 /* ChallengeInputVC.swift */,
+				2350709E28C4158700105275 /* KeywordCVC.swift */,
+				235070A028C4199800105275 /* InputVC.swift */,
 			);
 			path = ChallengeInput;
 			sourceTree = "<group>";
@@ -657,9 +663,11 @@
 				238E60A428C2F97E0055CD43 /* Input.swift in Sources */,
 				238E60AA28C2F9E40055CD43 /* UILabel+.swift in Sources */,
 				2350709A28C3FB4300105275 /* HomeNavigationController.swift in Sources */,
+				235070A128C4199800105275 /* InputVC.swift in Sources */,
 				2345B59128C30A7500F47EEE /* BaseViewModel.swift in Sources */,
 				2345B5CB28C348EE00F47EEE /* UIFont+.swift in Sources */,
 				238E60B428C3091F0055CD43 /* UIViewController+.swift in Sources */,
+				2350709F28C4158700105275 /* KeywordCVC.swift in Sources */,
 				CE3816F928C2C95400DC781F /* AppDelegate.swift in Sources */,
 				23A0484E28C393A700ABC599 /* Date+.swift in Sources */,
 				2345B59E28C30BE200F47EEE /* QuestionAnswerVM.swift in Sources */,

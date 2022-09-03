@@ -13,8 +13,6 @@ import SnapKit
 import Then
 
 class ChallengeInputVC: BaseViewController {
-    private let naviBar = NavigationBar()
-    
     private let questionLabel = UILabel()
         .then {
             $0.text = "10대의 ‘나’를 되돌아본다면?"
@@ -55,10 +53,11 @@ class ChallengeInputVC: BaseViewController {
     
     private let keywordCV = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
         .then {
-            let layout = UICollectionViewFlowLayout()
+            let layout = CollectionViewLeftAlignFlowLayout()
             layout.scrollDirection = .vertical
             layout.minimumLineSpacing = 12
             layout.minimumInteritemSpacing = 8
+            layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
             
             $0.collectionViewLayout = layout
         }
@@ -92,6 +91,8 @@ class ChallengeInputVC: BaseViewController {
             $0.layer.cornerRadius = 36 / 2
             $0.tintColor = .white
         }
+    
+    var keywords = ["젊음", "사랑", "후회"]
     
     private var isKeyword = false
     
@@ -138,10 +139,6 @@ extension ChallengeInputVC {
 
 extension ChallengeInputVC {
     private func configureContentView() {
-        naviBar.naviType = .present
-        naviBar.configureNaviBar(targetVC: self, title: nil)
-        naviBar.configureBackBtn(targetVC: self)
-        
         view.addSubviews([questionLabel,
                           textCntLabel,
                           answerTextView,
@@ -153,6 +150,10 @@ extension ChallengeInputVC {
         keywordInputView.addSubviews([poundBtn,
                                       keywordInputTextField,
                                       keywordInputBtn])
+        
+        keywordCV.register(KeywordCVC.self, forCellWithReuseIdentifier: KeywordCVC.className)
+        keywordCV.dataSource = self
+        keywordCV.delegate = self
     }
 }
 
@@ -161,7 +162,7 @@ extension ChallengeInputVC {
 extension ChallengeInputVC {
     private func configureLayout() {
         questionLabel.snp.makeConstraints {
-            $0.top.equalTo(naviBar.snp.bottom).offset(36)
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(36)
             $0.leading.equalToSuperview().offset(20)
         }
         
@@ -196,7 +197,9 @@ extension ChallengeInputVC {
         }
         
         keywordCV.snp.makeConstraints {
-            $0.top.leading.trailing.width.centerX.equalToSuperview()
+            $0.top.centerX.equalToSuperview()
+            $0.leading.equalToSuperview().offset(20)
+            $0.trailing.equalToSuperview().offset(-20)
             $0.height.equalTo(162)
         }
         
@@ -236,4 +239,38 @@ extension ChallengeInputVC {
 
 extension ChallengeInputVC {
     
+}
+
+extension ChallengeInputVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        keywords.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: KeywordCVC.className, for: indexPath) as? KeywordCVC else { fatalError() }
+        cell.configureCell(keyword: keywords[indexPath.row])
+        
+        return cell
+    }
+}
+
+class CollectionViewLeftAlignFlowLayout: UICollectionViewFlowLayout {
+    let cellSpacing: CGFloat = 8
+ 
+    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+        self.minimumLineSpacing = 10.0
+        let attributes = super.layoutAttributesForElements(in: rect)
+ 
+        var leftMargin = sectionInset.left
+        var maxY: CGFloat = -1.0
+        attributes?.forEach { layoutAttribute in
+            if layoutAttribute.frame.origin.y >= maxY {
+                leftMargin = sectionInset.left
+            }
+            layoutAttribute.frame.origin.x = leftMargin
+            leftMargin += layoutAttribute.frame.width + cellSpacing
+            maxY = max(layoutAttribute.frame.maxY, maxY)
+        }
+        return attributes
+    }
 }

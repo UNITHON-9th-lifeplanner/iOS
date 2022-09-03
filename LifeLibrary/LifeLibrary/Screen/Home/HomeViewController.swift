@@ -137,6 +137,9 @@ extension HomeViewController {
     }
     
     @IBAction func onTouchEditButton(_ sender: Any) {
+        let inputVC = InputVC()
+        inputVC.modalPresentationStyle = .fullScreen
+        self.present(inputVC, animated: true)
     }
     
     @IBAction func onTouchQuestionButton(_ sender: Any) {

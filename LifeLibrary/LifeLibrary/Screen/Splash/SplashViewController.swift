@@ -52,7 +52,7 @@ extension SplashViewController {
     }
     
     func presentOnboardingView() {
-        let vc = OnboardingNavigationVC()
+        let vc = HomeNavigationController()
         guard let ad = UIApplication.shared.delegate as? AppDelegate else { return }
         ad.window?.rootViewController = vc
     }
