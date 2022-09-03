@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import RxSwift
 import RxCocoa
 import RxGesture
-import RxSwift
+import RxDataSources
 import SnapKit
 import Then
 
@@ -19,7 +20,6 @@ class OthersAnswersVC: BaseViewController {
     
     private let questionLabel = UILabel()
         .then {
-            $0.text = "ASDFASDFASDFASDFASDFASDFASDFSA"
             $0.font = .title1
             $0.textColor = .label
             $0.setLineBreakMode()
@@ -28,12 +28,20 @@ class OthersAnswersVC: BaseViewController {
     private let answersTV = UITableView()
         .then {
             $0.separatorStyle = .none
+            $0.allowsSelection = false
         }
     
     private let naviBar = NavigationBar()
+    private let viewModel = OthersAnswersVM()
+    private let bag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.getProceedingChallengeList(questionID: 1)
     }
     
     override func configureView() {
@@ -54,6 +62,8 @@ class OthersAnswersVC: BaseViewController {
     
     override func bindOutput() {
         super.bindOutput()
+        bindQuestion()
+        bindTableView()
     }
     
 }
@@ -81,7 +91,9 @@ extension OthersAnswersVC {
     }
     
     private func configureAnswersTV() {
-        
+        answersTV.register(OthersAnswersTVC.self,
+                           forCellReuseIdentifier: OthersAnswersTVC.className)
+        answersTV.delegate = self
     }
 }
 
@@ -107,10 +119,8 @@ extension OthersAnswersVC {
         }
         
         answersTV.snp.makeConstraints {
-            $0.top.equalTo(questionLabel.snp.bottom).offset(32)
-            $0.leading.equalToSuperview().offset(20)
-            $0.trailing.equalToSuperview().offset(-20)
-            $0.bottom.equalToSuperview()
+            $0.top.equalTo(questionLabel.snp.bottom).offset(30)
+            $0.leading.trailing.bottom.equalToSuperview()
         }
     }
 }
@@ -124,5 +134,52 @@ extension OthersAnswersVC {
 // MARK: - Output
 
 extension OthersAnswersVC {
+    func bindTableView() {
+        viewModel.output.dataSource
+            .bind(to: answersTV.rx.items(dataSource: tableViewDataSource()))
+            .disposed(by: bag)
+        
+        viewModel.output.answerList
+            .withUnretained(self)
+            .subscribe(onNext: { owner, _ in
+                owner.answersTV.reloadData()
+            })
+            .disposed(by: bag)
+    }
     
+    func bindQuestion() {
+        viewModel.output.question
+            .withUnretained(self)
+            .subscribe(onNext: { owner, question in
+                owner.questionLabel.text = question
+            })
+            .disposed(by: bag)
+    }
+}
+
+// MARK: - DataSource
+extension OthersAnswersVC {
+    func tableViewDataSource() -> RxTableViewSectionedReloadDataSource<OthersAnswersDataSource> {
+        RxTableViewSectionedReloadDataSource<OthersAnswersDataSource>(
+            configureCell: { _, tableView, indexPath, item in
+                guard let cell = tableView.dequeueReusableCell(
+                    withIdentifier: OthersAnswersTVC.className,
+                    for: indexPath
+                ) as? OthersAnswersTVC else {
+                    fatalError()
+                }
+                // 등록
+                cell.configureCell(with: item)
+                
+                return cell
+            })
+    }
+}
+
+// MARK: - UITableViewDelegate
+
+extension OthersAnswersVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        UITableView.automaticDimension
+    }
 }

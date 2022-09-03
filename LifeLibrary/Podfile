@@ -8,6 +8,7 @@ target 'LifeLibrary' do
   pod 'SnapKit'
   pod 'Then'
   pod 'RxGesture'
+  pod 'RxDataSources'
   pod 'FSCalendar'
   pod 'UITextView+Placeholder'
 end
