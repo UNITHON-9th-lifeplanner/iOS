@@ -88,6 +88,7 @@ class QuestionAnswerVC: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.getAnswerDates(date: .now)
+        viewModel.getDayQnA(date: .now)
     }
     
     override func configureView() {
@@ -255,6 +256,41 @@ extension QuestionAnswerVC {
                 cell.addDayShadow()
             })
             .disposed(by: bag)
+        
+        viewModel.output.dayResponse
+            .subscribe(onNext: { [weak self] data in
+                guard let self = self,
+                      let date = data.answeredAt.toDate()
+                else { return }
+                
+                var btnType: QuestionBtnType = .none
+                var placeholder = ""
+                
+                if data.answer == nil {
+                    placeholder = self.viewModel.isToday(date)
+                    ? "오늘의 질문에 대한 답변을\n자유롭게 작성해주세요."
+                    : "작성된 답변이 없습니다.\n아쉽네요.."
+                    btnType = self.viewModel.isToday(date) ? .edit : .none
+                } else {
+                    btnType = self.viewModel.isToday(date) ? .edit : .delete
+                }
+                
+                self.questionAnswerView.configureQuestionAnswerView(question: data.question,
+                                                                    btnType: btnType,
+                                                                    placeholder: placeholder,
+                                                                    answer: data.answer)
+            })
+            .disposed(by: bag)
+        
+        viewModel.output.noneQuestion
+            .subscribe(onNext: { [weak self] error in
+                guard let self = self else { return }
+                self.questionAnswerView.configureQuestionAnswerView(question: error,
+                                                                    btnType: .none,
+                                                                    placeholder: "",
+                                                                    answer: nil)
+            })
+            .disposed(by: bag)
     }
     
     private func bindCalendar() {
@@ -283,6 +319,7 @@ extension QuestionAnswerVC {
 extension QuestionAnswerVC: FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         viewModel.input.selectedDay.accept(date)
+        viewModel.getDayQnA(date: date)
     }
     
     func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {

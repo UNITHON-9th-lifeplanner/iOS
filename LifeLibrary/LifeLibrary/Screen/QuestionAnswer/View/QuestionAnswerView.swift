@@ -48,10 +48,12 @@ extension QuestionAnswerView {
     
     func configureQuestionAnswerView(question: String,
                                      btnType: QuestionBtnType,
-                                     placeholder: String) {
+                                     placeholder: String,
+                                     answer: String?) {
         questionView.configureQuestionView(question: question,
                                            btnType: btnType)
         answerTextView.placeholder = placeholder
+        answerTextView.text = answer
     }
 }
 

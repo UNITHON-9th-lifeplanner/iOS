@@ -8,16 +8,11 @@
 import Foundation
 
 struct QuestionResponseModel: Codable {
-    let questions: [Question]
-}
-
-// MARK: - Question
-struct Question: Codable {
     let questionID: Int
     let question: String
     let answerID: Int?
     let answer: String?
-    let answeredAt: String?
+    let answeredAt: String
     
     enum CodingKeys: String, CodingKey {
         case questionID = "question_id"
