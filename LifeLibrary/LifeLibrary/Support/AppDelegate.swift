@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // set rootViewController
         window = UIWindow()
-        window?.rootViewController = QuestionVC()
+        window?.rootViewController = QuestionAnswerVC()
         window?.makeKeyAndVisible()
         
         return true

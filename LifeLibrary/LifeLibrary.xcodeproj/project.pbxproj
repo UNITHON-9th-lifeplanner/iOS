@@ -11,14 +11,14 @@
 		2345B59128C30A7500F47EEE /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B59028C30A7500F47EEE /* BaseViewModel.swift */; };
 		2345B59328C30ABF00F47EEE /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B59228C30ABF00F47EEE /* BaseNavigationController.swift */; };
 		2345B59628C30AED00F47EEE /* NaviType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B59528C30AED00F47EEE /* NaviType.swift */; };
-		2345B59E28C30BE200F47EEE /* QuestionVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B59D28C30BE200F47EEE /* QuestionVM.swift */; };
+		2345B59E28C30BE200F47EEE /* QuestionAnswerVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B59D28C30BE200F47EEE /* QuestionAnswerVM.swift */; };
 		2345B5A028C30C3C00F47EEE /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B59F28C30C3C00F47EEE /* APIError.swift */; };
 		2345B5A228C30D1C00F47EEE /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B5A128C30D1C00F47EEE /* APIService.swift */; };
 		2345B5A428C30D2E00F47EEE /* APISession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B5A328C30D2E00F47EEE /* APISession.swift */; };
 		2345B5A628C30D4400F47EEE /* UrlResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B5A528C30D4400F47EEE /* UrlResource.swift */; };
 		2345B5A928C30E5000F47EEE /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B5A828C30E5000F47EEE /* LoadingView.swift */; };
 		2345B5AD28C30FA900F47EEE /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B5AC28C30FA900F47EEE /* NavigationBar.swift */; };
-		2345B5AF28C3103600F47EEE /* QuestionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B5AE28C3103600F47EEE /* QuestionVC.swift */; };
+		2345B5AF28C3103600F47EEE /* QuestionAnswerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B5AE28C3103600F47EEE /* QuestionAnswerVC.swift */; };
 		236CE20D5257BA89D2CD728B /* Pods_LifeLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF07E83A6F4CB97481671722 /* Pods_LifeLibrary.framework */; };
 		238E60A428C2F97E0055CD43 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238E60A328C2F97E0055CD43 /* Input.swift */; };
 		238E60A628C2F98D0055CD43 /* Output.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238E60A528C2F98D0055CD43 /* Output.swift */; };
@@ -43,14 +43,14 @@
 		2345B59028C30A7500F47EEE /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseViewModel.swift; path = LifeLibrary/Global/Base/BaseViewModel.swift; sourceTree = SOURCE_ROOT; };
 		2345B59228C30ABF00F47EEE /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseNavigationController.swift; path = LifeLibrary/Global/Base/BaseNavigationController.swift; sourceTree = SOURCE_ROOT; };
 		2345B59528C30AED00F47EEE /* NaviType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaviType.swift; sourceTree = "<group>"; };
-		2345B59D28C30BE200F47EEE /* QuestionVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionVM.swift; sourceTree = "<group>"; };
+		2345B59D28C30BE200F47EEE /* QuestionAnswerVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAnswerVM.swift; sourceTree = "<group>"; };
 		2345B59F28C30C3C00F47EEE /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIError.swift; path = LifeLibrary/Global/Network/APIError.swift; sourceTree = SOURCE_ROOT; };
 		2345B5A128C30D1C00F47EEE /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIService.swift; path = LifeLibrary/Global/Network/APIService.swift; sourceTree = SOURCE_ROOT; };
 		2345B5A328C30D2E00F47EEE /* APISession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APISession.swift; path = LifeLibrary/Global/Network/APISession.swift; sourceTree = SOURCE_ROOT; };
 		2345B5A528C30D4400F47EEE /* UrlResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UrlResource.swift; path = LifeLibrary/Global/Network/UrlResource.swift; sourceTree = SOURCE_ROOT; };
 		2345B5A828C30E5000F47EEE /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		2345B5AC28C30FA900F47EEE /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
-		2345B5AE28C3103600F47EEE /* QuestionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionVC.swift; sourceTree = "<group>"; };
+		2345B5AE28C3103600F47EEE /* QuestionAnswerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAnswerVC.swift; sourceTree = "<group>"; };
 		238E60A328C2F97E0055CD43 /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
 		238E60A528C2F98D0055CD43 /* Output.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Output.swift; sourceTree = "<group>"; };
 		238E60A728C2F9A20055CD43 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
@@ -121,18 +121,18 @@
 			isa = PBXGroup;
 			children = (
 				2345B5B828C31E4100F47EEE /* Common */,
-				2345B5B728C31E3500F47EEE /* Question */,
+				2345B5B728C31E3500F47EEE /* QuestionAnswer */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
 		};
-		2345B5B728C31E3500F47EEE /* Question */ = {
+		2345B5B728C31E3500F47EEE /* QuestionAnswer */ = {
 			isa = PBXGroup;
 			children = (
 				2345B5BC28C31E6900F47EEE /* ViewModel */,
 				2345B5BA28C31E5D00F47EEE /* ViewController */,
 			);
-			path = Question;
+			path = QuestionAnswer;
 			sourceTree = "<group>";
 		};
 		2345B5B828C31E4100F47EEE /* Common */ = {
@@ -147,7 +147,7 @@
 		2345B5BA28C31E5D00F47EEE /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				2345B5AE28C3103600F47EEE /* QuestionVC.swift */,
+				2345B5AE28C3103600F47EEE /* QuestionAnswerVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -155,7 +155,7 @@
 		2345B5BC28C31E6900F47EEE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				2345B59D28C30BE200F47EEE /* QuestionVM.swift */,
+				2345B59D28C30BE200F47EEE /* QuestionAnswerVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -405,14 +405,14 @@
 				238E60B228C308E00055CD43 /* UIView+.swift in Sources */,
 				2345B5AD28C30FA900F47EEE /* NavigationBar.swift in Sources */,
 				2345B59328C30ABF00F47EEE /* BaseNavigationController.swift in Sources */,
-				2345B5AF28C3103600F47EEE /* QuestionVC.swift in Sources */,
+				2345B5AF28C3103600F47EEE /* QuestionAnswerVC.swift in Sources */,
 				238E60AE28C2FA140055CD43 /* UITextView+.swift in Sources */,
 				238E60A428C2F97E0055CD43 /* Input.swift in Sources */,
 				238E60AA28C2F9E40055CD43 /* UILabel+.swift in Sources */,
 				2345B59128C30A7500F47EEE /* BaseViewModel.swift in Sources */,
 				238E60B428C3091F0055CD43 /* UIViewController+.swift in Sources */,
 				CE3816F928C2C95400DC781F /* AppDelegate.swift in Sources */,
-				2345B59E28C30BE200F47EEE /* QuestionVM.swift in Sources */,
+				2345B59E28C30BE200F47EEE /* QuestionAnswerVM.swift in Sources */,
 				238E60A828C2F9A20055CD43 /* Loadable.swift in Sources */,
 				2345B5A628C30D4400F47EEE /* UrlResource.swift in Sources */,
 				2345B5A428C30D2E00F47EEE /* APISession.swift in Sources */,

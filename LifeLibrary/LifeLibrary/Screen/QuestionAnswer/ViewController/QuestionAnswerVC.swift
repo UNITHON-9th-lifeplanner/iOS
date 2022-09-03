@@ -1,5 +1,5 @@
 //
-//  QuestionVC.swift
+//  QuestionAnswerVC.swift
 //  LifeLibrary
 //
 //  Created by 황윤경 on 2022/09/03.
@@ -13,7 +13,7 @@ import SnapKit
 import Then
 import FSCalendar
 
-class QuestionVC: BaseViewController {
+class QuestionAnswerVC: BaseViewController {
     private let naviBar = NavigationBar()
     
     private let calendarTitle = UILabel()
@@ -36,7 +36,7 @@ class QuestionVC: BaseViewController {
             $0.scope = .month
         }
     
-    private let viewModel = QuestionVM()
+    private let viewModel = QuestionAnswerVM()
     private let bag = DisposeBag()
     
     override func viewDidLoad() {
@@ -67,10 +67,11 @@ class QuestionVC: BaseViewController {
 
 // MARK: - Configure
 
-extension QuestionVC {
+extension QuestionAnswerVC {
     private func configureNaviBar() {
         naviBar.naviType = .push
         naviBar.configureNaviBar(targetVC: self, title: nil)
+        naviBar.configureBackBtn(targetVC: self)
     }
     
     private func configureCalendarTitle(date: Date) {
@@ -91,7 +92,7 @@ extension QuestionVC {
 
 // MARK: - Layout
 
-extension QuestionVC {
+extension QuestionAnswerVC {
     private func configureLayout() {
         calendarTitle.snp.makeConstraints {
             $0.top.equalTo(naviBar.snp.bottom)
@@ -121,7 +122,7 @@ extension QuestionVC {
 
 // MARK: - Input
 
-extension QuestionVC {
+extension QuestionAnswerVC {
     private func bindBtn() {
         nextMonthBtn.rx.tap
             .asDriver()
@@ -145,6 +146,15 @@ extension QuestionVC {
 
 // MARK: - Output
 
-extension QuestionVC {
-    
+extension QuestionAnswerVC {
+    private func bindDaySelect() {
+        viewModel.input.selectedDay
+            .asDriver()
+            .drive(onNext: { [weak self] day in
+                guard let self = self else { return }
+                // TODO: - 일자별 선택 디자인 변경
+                // TODO: - 일자별 질문 및 답변 연결
+            })
+            .disposed(by: bag)
+    }
 }

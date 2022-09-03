@@ -1,5 +1,5 @@
 //
-//  QuestionVM.swift
+//  QuestionAnswerVM.swift
 //  LifeLibrary
 //
 //  Created by 황윤경 on 2022/09/03.
@@ -9,7 +9,7 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-final class QuestionVM: BaseViewModel {
+final class QuestionAnswerVM: BaseViewModel {
     var apiSession: APIService = APISession()
     let apiError = PublishSubject<APIError>()
     var bag = DisposeBag()
@@ -41,7 +41,7 @@ final class QuestionVM: BaseViewModel {
 
 // MARK: - Helpers
 
-extension QuestionVM {
+extension QuestionAnswerVM {
     func firstDayOfMonth(date: Date) -> Date? {
         return Calendar.current.date(
             from: Calendar.current.dateComponents(
@@ -52,7 +52,7 @@ extension QuestionVM {
 
 // MARK: - Input
 
-extension QuestionVM: Input {
+extension QuestionAnswerVM: Input {
     func bindInput() {
         input.moveMonth
             .subscribe(onNext: { [weak self] value in
@@ -70,6 +70,6 @@ extension QuestionVM: Input {
 
 // MARK: - Output
 
-extension QuestionVM: Output {
+extension QuestionAnswerVM: Output {
     func bindOutput() {}
 }
