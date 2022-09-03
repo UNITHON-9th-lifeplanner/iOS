@@ -129,6 +129,31 @@ extension UserViewModel {
             )
             .disposed(by: bag)
     }
+    
+    func putUserInfo(password: String, name: String, birthday: String) {
+        let path = "users"
+        let resource = UrlResource<Bool>(path: path)
+        let param: [String: Any] = [
+            "password": password,
+            "name": name,
+            "birthday": birthday
+        ]
+        
+        apiSession.putRequest(with: resource, param: param)
+            .subscribe(
+                onNext: { result in
+                    switch result {
+                    case .failure(let error):
+                        print(error)
+                    case .success(let check):
+                        print(check)
+                    }
+                }, onError: { error in
+                    print(error)
+                }
+            )
+            .disposed(by: bag)
+    }
 }
 
 // MARK: - Input
@@ -141,4 +166,10 @@ extension UserViewModel: Input {
 
 extension UserViewModel: Output {
     func bindOutput() {}
+}
+
+extension UserViewModel {
+    func dateTransForm(_ date: Date?) -> String? {
+        return date?.string(withFormat: "yyyy-MM-dd")
+    }
 }

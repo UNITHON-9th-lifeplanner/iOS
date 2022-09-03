@@ -42,6 +42,7 @@ final class HomeViewModel: BaseViewModel {
 extension HomeViewModel {
     func getMyPlan(age_Group: String, completion: ((String) -> Void)? = nil) {
         let path = "life-goals/popular?ageGroup=\(age_Group)"
+        print("값 확인 \(path)")
         let resource = UrlResource<LifePlanner>(path: path)
         
         apiSession.getRequest(with: resource)
