@@ -32,6 +32,7 @@
 		2345B5C928C3477300F47EEE /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2345B5C628C3477300F47EEE /* Pretendard-Light.otf */; };
 		2345B5CB28C348EE00F47EEE /* UIFont+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B5CA28C348EE00F47EEE /* UIFont+.swift */; };
 		2350709A28C3FB4300105275 /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2350709928C3FB4300105275 /* HomeNavigationController.swift */; };
+		2350709D28C3FF7100105275 /* ChallengeInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2350709C28C3FF7100105275 /* ChallengeInputVC.swift */; };
 		236CE20D5257BA89D2CD728B /* Pods_LifeLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF07E83A6F4CB97481671722 /* Pods_LifeLibrary.framework */; };
 		238E60A428C2F97E0055CD43 /* Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238E60A328C2F97E0055CD43 /* Input.swift */; };
 		238E60A628C2F98D0055CD43 /* Output.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238E60A528C2F98D0055CD43 /* Output.swift */; };
@@ -97,6 +98,7 @@
 		2345B5C628C3477300F47EEE /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
 		2345B5CA28C348EE00F47EEE /* UIFont+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+.swift"; sourceTree = "<group>"; };
 		2350709928C3FB4300105275 /* HomeNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
+		2350709C28C3FF7100105275 /* ChallengeInputVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeInputVC.swift; sourceTree = "<group>"; };
 		238E60A328C2F97E0055CD43 /* Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Input.swift; sourceTree = "<group>"; };
 		238E60A528C2F98D0055CD43 /* Output.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Output.swift; sourceTree = "<group>"; };
 		238E60A728C2F9A20055CD43 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 		2345B5B628C31E3100F47EEE /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				2350709B28C3FF5B00105275 /* ChallengeInput */,
 				CECAE67528C3DF7F00681BAB /* Setting */,
 				CECAE66A28C3BDD700681BAB /* Keyword */,
 				CECAE66328C3988000681BAB /* Home */,
@@ -292,6 +295,14 @@
 				2345B5C428C3477300F47EEE /* Pretendard-Regular.otf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		2350709B28C3FF5B00105275 /* ChallengeInput */ = {
+			isa = PBXGroup;
+			children = (
+				2350709C28C3FF7100105275 /* ChallengeInputVC.swift */,
+			);
+			path = ChallengeInput;
 			sourceTree = "<group>";
 		};
 		238E609F28C2F8EC0055CD43 /* Global */ = {
@@ -630,6 +641,7 @@
 				2330E4DD28C3A5B500981D25 /* OthersAnswersVM.swift in Sources */,
 				238E60AC28C2F9FE0055CD43 /* UITextField+.swift in Sources */,
 				CE38174428C3238300DC781F /* SplashViewController.swift in Sources */,
+				2350709D28C3FF7100105275 /* ChallengeInputVC.swift in Sources */,
 				2330E4D828C3A43800981D25 /* OthersAnswersDataSource.swift in Sources */,
 				2305E92E28C36D9700534120 /* QuestionAnswerView.swift in Sources */,
 				2345B5A028C30C3C00F47EEE /* APIError.swift in Sources */,
