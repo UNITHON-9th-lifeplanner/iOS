@@ -14,10 +14,10 @@ PODS:
   - Then (3.0.0)
 
 DEPENDENCIES:
-  - RxCocoa
   - FSCalendar
+  - RxCocoa (= 6.5.0)
   - RxGesture
-  - RxSwift
+  - RxSwift (= 6.5.0)
   - SnapKit
   - SwiftLint
   - Then
@@ -43,6 +43,6 @@ SPEC CHECKSUMS:
   SwiftLint: 284cea64b6187c5d6bd83e9a548a64104d546447
   Then: 844265ae87834bbe1147d91d5d41a404da2ec27d
 
-PODFILE CHECKSUM: 9a714824e40550a9b218621c4867cf9e1d038175
+PODFILE CHECKSUM: affb35cf52bacfcf70f05a9f0a7a8b9a5fcd71fe
 
 COCOAPODS: 1.11.3
