@@ -129,7 +129,8 @@ extension HomeViewController {
     @IBAction func onTouchSettingButton(_ sender: Any) {
         let vc = SettingViewController()
         vc.modalPresentationStyle = .overFullScreen
-        self.present(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc)
+//        self.present(vc, animated: true, completion: nil)
     }
     
     @IBAction func onTouchEditButton(_ sender: Any) {
@@ -213,7 +214,11 @@ extension HomeViewController {
         let vc = KeywordViewController()
         
         vc.keywords = viewModel.keywords
-        vc.selectAge = selectAge
+        if selectAge?.contains("대") != true {
+            vc.selectAge = selectAge
+        } else {
+            vc.selectAge = (selectAge ?? "") + "대"
+        }
         
         self.present(vc, animated: true)
     }

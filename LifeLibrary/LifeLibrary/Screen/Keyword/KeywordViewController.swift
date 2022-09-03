@@ -22,7 +22,6 @@ class KeywordViewController: BaseViewController {
         didSet {
             keywordTitle.textColor = UIColor.black
             keywordTitle.font = UIFont.title3
-            keywordTitle.text = (selectAge ?? "") + " 전체 인기 키워드"
         }
     }
     
@@ -168,16 +167,27 @@ class KeywordViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        chacngeKeyword()
-        let result = selectAge?.components(separatedBy: "대")
-        viewModel.getPopularKeyword(age_Group: result?[0] ?? "", completion: { [weak self] keywords in
-            self?.popularKeywords = keywords
-        })
+        changeKeyword()
+        
+        if selectAge?.contains("대") == true {
+            keywordTitle.text = (selectAge ?? "") + " 전체 인기 키워드"
+            let result = selectAge?.components(separatedBy: "대")
+            viewModel.getPopularKeyword(age_Group: result?[0] ?? "", completion: { [weak self] keywords in
+                self?.popularKeywords = keywords
+                self?.changePopularKeyword()
+            })
+        } else {
+            keywordTitle.text = (selectAge ?? "") + "대 전체 인기 키워드"
+            viewModel.getPopularKeyword(age_Group: selectAge ?? "", completion: { [weak self] keywords in
+                self?.popularKeywords = keywords
+                self?.changePopularKeyword()
+            })
+        }
     }
 }
 
 extension KeywordViewController {
-    func chacngeKeyword() {
+    func changeKeyword() {
         keyword1.text = "# " + (keywords?[0] ?? "" )
         keyword2.text = "# " + (keywords?[1] ?? "" )
         keyword3.text = "# " + (keywords?[2] ?? "" )
@@ -186,14 +196,14 @@ extension KeywordViewController {
     }
     
     func changePopularKeyword() {
-        popularKeyword1.text = "1   # " + (popularKeywords?.currentPopularKeywords[0] ?? "" )
-        if popularKeywords?.currentPopularKeywords.count ?? 0 < 2 { return }
-        popularKeyword2.text = "2   # " + (popularKeywords?.currentPopularKeywords[1] ?? "" )
-        if popularKeywords?.currentPopularKeywords.count ?? 0 < 3 { return }
-        popularKeyword3.text = "3   # " + (popularKeywords?.currentPopularKeywords[2] ?? "" )
-        if popularKeywords?.currentPopularKeywords.count ?? 0 < 4 { return }
-        popularKeyword4.text = "4   # " + (popularKeywords?.currentPopularKeywords[3] ?? "" )
-        if popularKeywords?.currentPopularKeywords.count ?? 0 < 5 { return }
-        popularKeyword5.text = "5   # " + (popularKeywords?.currentPopularKeywords[4] ?? "" )
+        popularKeyword1.text = "1   # " + (popularKeywords?.currentPopularlist[0] ?? "" )
+        if popularKeywords?.currentPopularlist.count ?? 0 < 2 { return }
+        popularKeyword2.text = "2   # " + (popularKeywords?.currentPopularlist[1] ?? "" )
+        if popularKeywords?.currentPopularlist.count ?? 0 < 3 { return }
+        popularKeyword3.text = "3   # " + (popularKeywords?.currentPopularlist[2] ?? "" )
+        if popularKeywords?.currentPopularlist.count ?? 0 < 4 { return }
+        popularKeyword4.text = "4   # " + (popularKeywords?.currentPopularlist[3] ?? "" )
+        if popularKeywords?.currentPopularlist.count ?? 0 < 5 { return }
+        popularKeyword5.text = "5   # " + (popularKeywords?.currentPopularlist[4] ?? "" )
     }
 }

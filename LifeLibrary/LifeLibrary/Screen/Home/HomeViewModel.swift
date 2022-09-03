@@ -101,13 +101,13 @@ extension HomeViewModel: Output {
 }
 
 class PopularKeyword: Codable {
-    var pastPopularKeywords: [String]
-    var currentPopularKeywords: [String]
-    var futurePopularKeywords: [String]
+    var pastPopularlist: [String]
+    var currentPopularlist: [String]
+    var futurePopularlist: [String]
     
     enum CodingKeys: String, CodingKey {
-        case pastPopularKeywords = "past_popular_keywords"
-        case currentPopularKeywords = "current_popular_keywords"
-        case futurePopularKeywords = "future_popular_keywords"
+        case pastPopularlist = "past_popular_list"
+        case currentPopularlist = "current_popular_list"
+        case futurePopularlist = "future_popular_list"
     }
 }

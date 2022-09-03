@@ -143,7 +143,6 @@ extension SettingViewController {
         UserDefaults.standard.set(0, forKey: "age")
         UserInfo.shared = UserInfo()
         
-        
         view.window?.rootViewController?.dismiss(animated: true, completion: nil)
     }
 }
