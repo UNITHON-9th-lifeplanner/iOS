@@ -17,6 +17,10 @@ class QuestionAnswerVC: BaseViewController {
     private let naviBar = NavigationBar()
     
     private let calendarTitle = UILabel()
+        .then {
+            $0.font = .title2
+            $0.textColor = .label
+        }
     
     private let nextMonthBtn = UIButton()
         .then {
@@ -34,6 +38,20 @@ class QuestionAnswerVC: BaseViewController {
             $0.headerHeight = 0
             $0.weekdayHeight = 32
             $0.scope = .month
+            
+            $0.appearance.weekdayFont = .body3
+            $0.appearance.weekdayTextColor = .label
+            
+            $0.appearance.titleFont = .body2
+            $0.appearance.titleDefaultColor = .label
+            
+            $0.appearance.titleTodayColor = .white
+            $0.appearance.todayColor = .main
+            
+            $0.appearance.selectionColor = .white
+            $0.appearance.titleSelectionColor = .main
+            
+            $0.appearance.borderSelectionColor = .main
         }
     
     private let viewModel = QuestionAnswerVM()
@@ -61,6 +79,7 @@ class QuestionAnswerVC: BaseViewController {
     
     override func bindOutput() {
         super.bindOutput()
+        bindDaySelect()
     }
     
 }
@@ -87,6 +106,13 @@ extension QuestionAnswerVC {
                           nextMonthBtn,
                           calendar])
         configureCalendarTitle(date: .now)
+        calendar.delegate = self
+    }
+    
+    private func calendarPrepareForReuse() {
+        calendar.collectionView.visibleCells.forEach {
+            $0.layer.shadowOpacity = 0
+        }
     }
 }
 
@@ -130,15 +156,17 @@ extension QuestionAnswerVC {
                 guard let self = self else { return }
                 self.viewModel.input.moveMonth.accept(1)
                 self.calendar.select(self.viewModel.input.selectedDay.value)
+                self.calendarPrepareForReuse()
             })
             .disposed(by: bag)
         
         prevMonthBtn.rx.tap
             .asDriver()
             .drive(onNext: { [weak self] _ in
-                guard let self = self else { return }
+                guard let self = self  else { return }
                 self.viewModel.input.moveMonth.accept(-1)
                 self.calendar.select(self.viewModel.input.selectedDay.value)
+                self.calendarPrepareForReuse()
             })
             .disposed(by: bag)
     }
@@ -151,10 +179,33 @@ extension QuestionAnswerVC {
         viewModel.input.selectedDay
             .asDriver()
             .drive(onNext: { [weak self] day in
-                guard let self = self else { return }
-                // TODO: - 일자별 선택 디자인 변경
-                // TODO: - 일자별 질문 및 답변 연결
+                guard let self = self,
+                      let cell = self.calendar.cell(for: day, at: .current)
+                else { return }
+                // 선택 일자 색 구별
+                self.calendar.appearance.selectionColor
+                = self.viewModel.isToday(day)
+                ? .main : .white
+                
+                self.calendar.appearance.titleSelectionColor
+                = self.viewModel.isToday(day)
+                ? .white : .main
+                
+                cell.addDayShadow()
             })
             .disposed(by: bag)
+    }
+}
+
+// MARK: - FSCalendarDelegate
+
+extension QuestionAnswerVC: FSCalendarDelegate {
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        viewModel.input.selectedDay.accept(date)
+    }
+    
+    func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        guard let cell = calendar.cell(for: date, at: .current) else { return }
+        cell.layer.shadowOpacity = 0
     }
 }

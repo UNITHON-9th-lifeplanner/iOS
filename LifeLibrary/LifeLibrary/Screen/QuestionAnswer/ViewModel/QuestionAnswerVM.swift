@@ -48,6 +48,12 @@ extension QuestionAnswerVM {
                 [.year, .month],
                 from: Calendar.current.startOfDay(for: date)))
     }
+    
+    func isToday(_ date: Date) -> Bool {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter.string(from: date) == dateFormatter.string(from: Date.now)
+    }
 }
 
 // MARK: - Input
