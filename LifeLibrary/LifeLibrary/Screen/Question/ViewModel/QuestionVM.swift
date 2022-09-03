@@ -18,7 +18,10 @@ final class QuestionVM: BaseViewModel {
     
     // MARK: - Input
     
-    struct Input {}
+    struct Input {
+        var selectedDay = BehaviorRelay<Date>(value: Date.now)
+        var moveMonth = PublishRelay<Int>()
+    }
     
     // MARK: - Output
     
@@ -38,12 +41,31 @@ final class QuestionVM: BaseViewModel {
 
 // MARK: - Helpers
 
-extension QuestionVM {}
+extension QuestionVM {
+    func firstDayOfMonth(date: Date) -> Date? {
+        return Calendar.current.date(
+            from: Calendar.current.dateComponents(
+                [.year, .month],
+                from: Calendar.current.startOfDay(for: date)))
+    }
+}
 
 // MARK: - Input
 
 extension QuestionVM: Input {
-    func bindInput() {}
+    func bindInput() {
+        input.moveMonth
+            .subscribe(onNext: { [weak self] value in
+                guard let self = self,
+                      let selectedDate = Calendar.current.date(byAdding: .month,
+                                                               value: value,
+                                                               to: self.input.selectedDay.value),
+                      let firstDayOfMonth = self.firstDayOfMonth(date: selectedDate)
+                else { return }
+                self.input.selectedDay.accept(firstDayOfMonth)
+            })
+            .disposed(by: bag)
+    }
 }
 
 // MARK: - Output
