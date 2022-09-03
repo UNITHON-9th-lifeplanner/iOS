@@ -36,22 +36,21 @@
 		CE38170E28C2CACB00DC781F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE38170D28C2CACB00DC781F /* Alamofire */; };
 		CE38171128C2CADF00DC781F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = CE38171028C2CADF00DC781F /* SwiftyJSON */; };
 		CE38171428C2CB2C00DC781F /* SwifterSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE38171328C2CB2C00DC781F /* SwifterSwift */; };
-		CE38172728C2D69100DC781F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38172628C2D69100DC781F /* UserModel.swift */; };
 		CE38173128C2E59A00DC781F /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = CE38173028C2E59A00DC781F /* RxCocoa */; };
 		CE38173328C2E59A00DC781F /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = CE38173228C2E59A00DC781F /* RxRelay */; };
 		CE38173528C2E59A00DC781F /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE38173428C2E59A00DC781F /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2345B58E28C30A5C00F47EEE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = LifeLibrary/Global/Extension/BaseViewController.swift; sourceTree = SOURCE_ROOT; };
-		2345B59028C30A7500F47EEE /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseViewModel.swift; path = LifeLibrary/Global/Extension/BaseViewModel.swift; sourceTree = SOURCE_ROOT; };
-		2345B59228C30ABF00F47EEE /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseNavigationController.swift; path = LifeLibrary/Global/Extension/BaseNavigationController.swift; sourceTree = SOURCE_ROOT; };
+		2345B58E28C30A5C00F47EEE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = LifeLibrary/Global/Base/BaseViewController.swift; sourceTree = SOURCE_ROOT; };
+		2345B59028C30A7500F47EEE /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseViewModel.swift; path = LifeLibrary/Global/Base/BaseViewModel.swift; sourceTree = SOURCE_ROOT; };
+		2345B59228C30ABF00F47EEE /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseNavigationController.swift; path = LifeLibrary/Global/Base/BaseNavigationController.swift; sourceTree = SOURCE_ROOT; };
 		2345B59528C30AED00F47EEE /* NaviType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaviType.swift; sourceTree = "<group>"; };
 		2345B59D28C30BE200F47EEE /* QuestionVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionVM.swift; sourceTree = "<group>"; };
-		2345B59F28C30C3C00F47EEE /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIError.swift; path = LifeLibrary/LifePlan/QnA/ViewModel/APIError.swift; sourceTree = SOURCE_ROOT; };
-		2345B5A128C30D1C00F47EEE /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIService.swift; path = LifeLibrary/LifePlan/QnA/ViewModel/APIService.swift; sourceTree = SOURCE_ROOT; };
-		2345B5A328C30D2E00F47EEE /* APISession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APISession.swift; path = LifeLibrary/LifePlan/QnA/ViewModel/APISession.swift; sourceTree = SOURCE_ROOT; };
-		2345B5A528C30D4400F47EEE /* urlResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = urlResource.swift; path = LifeLibrary/LifePlan/QnA/ViewModel/urlResource.swift; sourceTree = SOURCE_ROOT; };
+		2345B59F28C30C3C00F47EEE /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIError.swift; path = LifeLibrary/Global/Network/APIError.swift; sourceTree = SOURCE_ROOT; };
+		2345B5A128C30D1C00F47EEE /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIService.swift; path = LifeLibrary/Global/Network/APIService.swift; sourceTree = SOURCE_ROOT; };
+		2345B5A328C30D2E00F47EEE /* APISession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APISession.swift; path = LifeLibrary/Global/Network/APISession.swift; sourceTree = SOURCE_ROOT; };
+		2345B5A528C30D4400F47EEE /* urlResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = urlResource.swift; path = LifeLibrary/Global/Network/urlResource.swift; sourceTree = SOURCE_ROOT; };
 		2345B5A828C30E5000F47EEE /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		2345B5AC28C30FA900F47EEE /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		2345B5AE28C3103600F47EEE /* QuestionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionVC.swift; sourceTree = "<group>"; };
@@ -64,15 +63,14 @@
 		238E60B128C308E00055CD43 /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		238E60B328C3091F0055CD43 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		238E60B528C3095A0055CD43 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
-		238E60B728C309A10055CD43 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseView.swift; path = LifeLibrary/Global/Extension/BaseView.swift; sourceTree = SOURCE_ROOT; };
+		238E60B728C309A10055CD43 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseView.swift; path = LifeLibrary/Global/Base/BaseView.swift; sourceTree = SOURCE_ROOT; };
 		9C641F0D60398498A4398D7A /* Pods-LifeLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LifeLibrary.release.xcconfig"; path = "Target Support Files/Pods-LifeLibrary/Pods-LifeLibrary.release.xcconfig"; sourceTree = "<group>"; };
 		CE3816F528C2C95400DC781F /* LifeLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE3816F828C2C95400DC781F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE38170128C2C95700DC781F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE38170428C2C95700DC781F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE38170628C2C95700DC781F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE38171628C2CBD600DC781F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
-		CE38172628C2D69100DC781F /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		CE38171628C2CBD600DC781F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = .swiftlint.yml; path = ../.swiftlint.yml; sourceTree = "<group>"; };
 		EF07E83A6F4CB97481671722 /* Pods_LifeLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LifeLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC96BD24E2453D752A5CCE2 /* Pods-LifeLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LifeLibrary.debug.xcconfig"; path = "Target Support Files/Pods-LifeLibrary/Pods-LifeLibrary.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,22 +101,56 @@
 			path = Enum;
 			sourceTree = "<group>";
 		};
-		2345B59728C30B3900F47EEE /* ViewModel */ = {
+		2345B5B328C31DFA00F47EEE /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				2345B59D28C30BE200F47EEE /* QuestionVM.swift */,
+				2345B59F28C30C3C00F47EEE /* APIError.swift */,
+				2345B5A128C30D1C00F47EEE /* APIService.swift */,
+				2345B5A328C30D2E00F47EEE /* APISession.swift */,
+				2345B5A528C30D4400F47EEE /* urlResource.swift */,
 			);
-			path = ViewModel;
+			path = Network;
 			sourceTree = "<group>";
 		};
-		2345B59828C30B4400F47EEE /* View */ = {
+		2345B5B428C31E0600F47EEE /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				238E60B728C309A10055CD43 /* BaseView.swift */,
+				2345B58E28C30A5C00F47EEE /* BaseViewController.swift */,
+				2345B59028C30A7500F47EEE /* BaseViewModel.swift */,
+				2345B59228C30ABF00F47EEE /* BaseNavigationController.swift */,
 			);
-			path = View;
+			path = Base;
 			sourceTree = "<group>";
 		};
-		2345B59928C30B4E00F47EEE /* ViewController */ = {
+		2345B5B628C31E3100F47EEE /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				2345B5B828C31E4100F47EEE /* Common */,
+				2345B5B728C31E3500F47EEE /* Question */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		2345B5B728C31E3500F47EEE /* Question */ = {
+			isa = PBXGroup;
+			children = (
+				2345B5BC28C31E6900F47EEE /* ViewModel */,
+				2345B5BA28C31E5D00F47EEE /* ViewController */,
+			);
+			path = Question;
+			sourceTree = "<group>";
+		};
+		2345B5B828C31E4100F47EEE /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				2345B5AC28C30FA900F47EEE /* NavigationBar.swift */,
+				2345B5A828C30E5000F47EEE /* LoadingView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		2345B5BA28C31E5D00F47EEE /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				2345B5AE28C3103600F47EEE /* QuestionVC.swift */,
@@ -126,48 +158,34 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		2345B59A28C30B5400F47EEE /* Model */ = {
+		2345B5BC28C31E6900F47EEE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				2345B59C28C30B5D00F47EEE /* Response */,
-				2345B59B28C30B5800F47EEE /* Request */,
+				2345B59D28C30BE200F47EEE /* QuestionVM.swift */,
 			);
-			path = Model;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		2345B59B28C30B5800F47EEE /* Request */ = {
+		2345B5BD28C31EF700F47EEE /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				CE3816F828C2C95400DC781F /* AppDelegate.swift */,
+				CE38170128C2C95700DC781F /* Assets.xcassets */,
+				CE38170328C2C95700DC781F /* LaunchScreen.storyboard */,
+				CE38170628C2C95700DC781F /* Info.plist */,
+				CE38171628C2CBD600DC781F /* .swiftlint.yml */,
 			);
-			path = Request;
-			sourceTree = "<group>";
-		};
-		2345B59C28C30B5D00F47EEE /* Response */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Response;
-			sourceTree = "<group>";
-		};
-		238E609E28C2F8610055CD43 /* Screen */ = {
-			isa = PBXGroup;
-			children = (
-				CE38171728C2D0D100DC781F /* Common */,
-				CE38172928C2D70E00DC781F /* LifePlan */,
-				CE38172828C2D6E900DC781F /* QnA */,
-			);
-			path = Screen;
+			path = Support;
 			sourceTree = "<group>";
 		};
 		238E609F28C2F8EC0055CD43 /* Global */ = {
 			isa = PBXGroup;
 			children = (
 				238E60A128C2F8F60055CD43 /* Foundation */,
-				CE38171828C2D0D800DC781F /* Base */,
-				CE38171928C2D0DC00DC781F /* Network */,
+				2345B5B428C31E0600F47EEE /* Base */,
+				2345B5B328C31DFA00F47EEE /* Network */,
 				238E60A028C2F8F10055CD43 /* Extension */,
 				2345B59428C30AE200F47EEE /* Enum */,
-				238E60A228C2F9640055CD43 /* Font */,
 			);
 			path = Global;
 			sourceTree = "<group>";
@@ -193,13 +211,6 @@
 				238E60A728C2F9A20055CD43 /* Loadable.swift */,
 			);
 			path = Foundation;
-			sourceTree = "<group>";
-		};
-		238E60A228C2F9640055CD43 /* Font */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Font;
 			sourceTree = "<group>";
 		};
 		498BA536F6293FCCA3FA4AF4 /* Pods */ = {
@@ -233,101 +244,10 @@
 			isa = PBXGroup;
 			children = (
 				238E609F28C2F8EC0055CD43 /* Global */,
-				CE38171A28C2D0E100DC781F /* User */,
-				238E609E28C2F8610055CD43 /* Screen */,
-				CE3816F828C2C95400DC781F /* AppDelegate.swift */,
-				CE38170128C2C95700DC781F /* Assets.xcassets */,
-				CE38170328C2C95700DC781F /* LaunchScreen.storyboard */,
-				CE38170628C2C95700DC781F /* Info.plist */,
-				CE38171628C2CBD600DC781F /* .swiftlint.yml */,
+				2345B5B628C31E3100F47EEE /* Screen */,
+				2345B5BD28C31EF700F47EEE /* Support */,
 			);
 			path = LifeLibrary;
-			sourceTree = "<group>";
-		};
-		CE38171728C2D0D100DC781F /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				2345B5AC28C30FA900F47EEE /* NavigationBar.swift */,
-				2345B5A828C30E5000F47EEE /* LoadingView.swift */,
-				CE38171B28C2D3F000DC781F /* Toast */,
-			);
-			name = Common;
-			path = ../Common;
-			sourceTree = "<group>";
-		};
-		CE38171828C2D0D800DC781F /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				238E60B728C309A10055CD43 /* BaseView.swift */,
-				2345B58E28C30A5C00F47EEE /* BaseViewController.swift */,
-				2345B59028C30A7500F47EEE /* BaseViewModel.swift */,
-				2345B59228C30ABF00F47EEE /* BaseNavigationController.swift */,
-			);
-			name = Base;
-			path = ../Base;
-			sourceTree = "<group>";
-		};
-		CE38171928C2D0DC00DC781F /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				2345B59F28C30C3C00F47EEE /* APIError.swift */,
-				2345B5A128C30D1C00F47EEE /* APIService.swift */,
-				2345B5A328C30D2E00F47EEE /* APISession.swift */,
-				2345B5A528C30D4400F47EEE /* urlResource.swift */,
-			);
-			name = Network;
-			path = ../Network;
-			sourceTree = "<group>";
-		};
-		CE38171A28C2D0E100DC781F /* User */ = {
-			isa = PBXGroup;
-			children = (
-				CE38172528C2D68400DC781F /* SignUp */,
-				CE38172428C2D67B00DC781F /* Login */,
-				CE38172628C2D69100DC781F /* UserModel.swift */,
-			);
-			path = User;
-			sourceTree = "<group>";
-		};
-		CE38171B28C2D3F000DC781F /* Toast */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Toast;
-			sourceTree = "<group>";
-		};
-		CE38172428C2D67B00DC781F /* Login */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
-		CE38172528C2D68400DC781F /* SignUp */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SignUp;
-			sourceTree = "<group>";
-		};
-		CE38172828C2D6E900DC781F /* QnA */ = {
-			isa = PBXGroup;
-			children = (
-				2345B59728C30B3900F47EEE /* ViewModel */,
-				2345B59828C30B4400F47EEE /* View */,
-				2345B59928C30B4E00F47EEE /* ViewController */,
-				2345B59A28C30B5400F47EEE /* Model */,
-			);
-			name = QnA;
-			path = ../LifePlan/QnA;
-			sourceTree = "<group>";
-		};
-		CE38172928C2D70E00DC781F /* LifePlan */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = LifePlan;
-			path = ../LifePlan;
 			sourceTree = "<group>";
 		};
 		D22530AF4BA5E8980FADDF27 /* Frameworks */ = {
@@ -486,7 +406,6 @@
 			files = (
 				238E60A628C2F98D0055CD43 /* Output.swift in Sources */,
 				238E60B828C309A10055CD43 /* BaseView.swift in Sources */,
-				CE38172728C2D69100DC781F /* UserModel.swift in Sources */,
 				238E60B628C3095A0055CD43 /* UIColor+.swift in Sources */,
 				2345B58F28C30A5C00F47EEE /* BaseViewController.swift in Sources */,
 				2345B5A228C30D1C00F47EEE /* APIService.swift in Sources */,
@@ -649,7 +568,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LifeLibrary/Info.plist;
+				INFOPLIST_FILE = LifeLibrary/Support/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "인생서재";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -679,7 +598,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = LifeLibrary/Info.plist;
+				INFOPLIST_FILE = LifeLibrary/Support/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "인생서재";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
