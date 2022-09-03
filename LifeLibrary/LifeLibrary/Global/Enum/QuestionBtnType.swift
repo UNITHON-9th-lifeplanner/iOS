@@ -8,6 +8,7 @@
 import UIKit
 
 enum QuestionBtnType {
+    case none
     case done
     case edit
     case delete
@@ -16,6 +17,8 @@ enum QuestionBtnType {
 extension QuestionBtnType {
     var btnImage: UIImage {
         switch self {
+        case .none:
+            return UIImage()
         case .done:
             return UIImage(named: "confirm") ?? UIImage()
         case .edit:
@@ -27,6 +30,8 @@ extension QuestionBtnType {
     
     var btnSelectedImage: UIImage {
         switch self {
+        case .none:
+            return UIImage()
         case .done:
             return UIImage(named: "confirm_Selected") ?? UIImage()
         case .edit:

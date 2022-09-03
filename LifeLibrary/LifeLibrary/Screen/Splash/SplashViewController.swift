@@ -53,14 +53,12 @@ extension SplashViewController {
     
     func presentOnboardingView() {
         let vc = OnboardingNavigationVC()
-        
-        vc.modalPresentationStyle = .overFullScreen
-        
-        self.present(vc, animated: false, completion: nil)
+        guard let ad = UIApplication.shared.delegate as? AppDelegate else { return }
+        ad.window?.rootViewController = vc
     }
     
     func presentHomeView() {
-        let vc = HomeViewController()
+        let vc = HomeNavigationController()
         
         vc.modalPresentationStyle = .overFullScreen
         

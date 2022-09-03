@@ -185,7 +185,7 @@ extension SignUpViewController {
 /// Func
 extension SignUpViewController {
     func presentHomeView() {
-        let vc = HomeViewController()
+        let vc = HomeNavigationController()
         
         vc.modalPresentationStyle = .overFullScreen
         

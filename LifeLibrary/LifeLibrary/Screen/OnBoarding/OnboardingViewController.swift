@@ -120,7 +120,7 @@ extension OnboardingViewController {
     }
     
     func presentHomeView() {
-        let vc = HomeViewController()
+        let vc = HomeNavigationController()
         
         vc.modalPresentationStyle = .overFullScreen
         

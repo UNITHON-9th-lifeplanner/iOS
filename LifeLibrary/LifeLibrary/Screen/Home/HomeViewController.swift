@@ -133,7 +133,10 @@ extension HomeViewController {
     }
     
     @IBAction func onTouchEditButton(_ sender: Any) {
+        let questionAnswerVC = QuestionAnswerVC()
+        self.navigationController?.pushViewController(questionAnswerVC)
     }
+    
     @IBAction func onTouchQuestionButton(_ sender: Any) {
     }
 }

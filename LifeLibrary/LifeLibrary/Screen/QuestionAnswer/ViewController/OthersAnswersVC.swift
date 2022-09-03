@@ -35,13 +35,15 @@ class OthersAnswersVC: BaseViewController {
     private let viewModel = OthersAnswersVM()
     private let bag = DisposeBag()
     
+    var questionID: Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel.getProceedingChallengeList(questionID: 1)
+        viewModel.getProceedingChallengeList(questionID: questionID ?? 1)
     }
     
     override func configureView() {

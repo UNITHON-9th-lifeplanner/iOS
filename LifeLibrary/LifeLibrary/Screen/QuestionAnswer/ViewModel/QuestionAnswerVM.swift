@@ -26,7 +26,9 @@ final class QuestionAnswerVM: BaseViewModel {
     // MARK: - Output
     
     struct Output {
+        var dayResponse = PublishRelay<QuestionResponseModel>()
         var answerDates = BehaviorRelay<[String]>(value: [])
+        var noneQuestion = PublishRelay<String>()
     }
     
     // MARK: - Init
@@ -85,6 +87,27 @@ extension QuestionAnswerVM: Output {
 // MARK: - Networking
 
 extension QuestionAnswerVM {
+    func getDayQnA(date: Date) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        let path = "questions?date=\(dateFormatter.string(from: date))"
+        let resource = UrlResource<QuestionResponseModel>(path: path)
+        
+        apiSession.getRequest(with: resource)
+            .withUnretained(self)
+            .subscribe(onNext: { owner, result in
+                switch result {
+                case .failure(let error):
+                    owner.apiError.onNext(error)
+                    owner.output.noneQuestion.accept("질문이 존재하지 않습니다.")
+                case .success(let data):
+                    owner.output.dayResponse.accept(data)
+                }
+            })
+            .disposed(by: bag)
+    }
+    
     func getAnswerDates(date: Date) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -100,6 +123,58 @@ extension QuestionAnswerVM {
                     owner.apiError.onNext(error)
                 case .success(let data):
                     owner.output.answerDates.accept(data)
+                }
+            })
+            .disposed(by: bag)
+    }
+    
+    func postAnswer(questionID: Int, answer: String) {
+        let path = "questions/\(questionID)/answers"
+        let resource = UrlResource<Bool>(path: path)
+        
+        apiSession.postRequest(with: resource, param: ["content": answer])
+            .withUnretained(self)
+            .subscribe(onNext: { owner, result in
+                switch result {
+                case .failure(let error):
+                    owner.apiError.onNext(error)
+                case .success(let data):
+                    dump(data)
+                }
+            })
+            .disposed(by: bag)
+    }
+    
+    func putAnswer(answerID: Int, answer: String) {
+        let path = "questions/answers/\(answerID)"
+        let resource = UrlResource<Bool>(path: path)
+        
+        apiSession.putRequest(with: resource, param: ["content": answer])
+            .withUnretained(self)
+            .subscribe(onNext: { owner, result in
+                switch result {
+                case .failure(let error):
+                    owner.apiError.onNext(error)
+                case .success(let data):
+                    dump(data)
+                }
+            })
+            .disposed(by: bag)
+    }
+    
+    func deleteAnswer(answerID: Int) {
+        let path = "questions/answers/\(answerID)"
+        let resource = UrlResource<Bool>(path: path)
+        
+        apiSession.deleteRequest(with: resource)
+            .withUnretained(self)
+            .subscribe(onNext: { owner, result in
+                dump(result)
+                switch result {
+                case .failure(let error):
+                    owner.apiError.onNext(error)
+                case .success(let data):
+                    dump(data)
                 }
             })
             .disposed(by: bag)
