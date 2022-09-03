@@ -24,12 +24,14 @@ class QuestionAnswerVC: BaseViewController {
     
     private let nextMonthBtn = UIButton()
         .then {
-            $0.setImage(UIImage(systemName: "chevron.right"), for: .normal)
+            $0.setImage(UIImage(named: "nextMonthBtn"), for: .normal)
+            $0.setImage(UIImage(named: "nextMonthBtn_Selected"), for: .highlighted)
         }
     
     private let prevMonthBtn = UIButton()
         .then {
-            $0.setImage(UIImage(systemName: "chevron.left"), for: .normal)
+            $0.setImage(UIImage(named: "prevMonthBtn"), for: .normal)
+            $0.setImage(UIImage(named: "prevMonthBtn_Selected"), for: .highlighted)
         }
     
     private let calendar = FSCalendar()

@@ -17,11 +17,22 @@ extension QuestionBtnType {
     var btnImage: UIImage {
         switch self {
         case .done:
-            return UIImage(named: "") ?? UIImage()
+            return UIImage(named: "confirm") ?? UIImage()
         case .edit:
-            return UIImage(named: "") ?? UIImage()
+            return UIImage(named: "edit") ?? UIImage()
         case .delete:
-            return UIImage(named: "") ?? UIImage()
+            return UIImage(named: "delete") ?? UIImage()
+        }
+    }
+    
+    var btnSelectedImage: UIImage {
+        switch self {
+        case .done:
+            return UIImage(named: "confirm_Selected") ?? UIImage()
+        case .edit:
+            return UIImage(named: "edit_Selected") ?? UIImage()
+        case .delete:
+            return UIImage(named: "delete_Selected") ?? UIImage()
         }
     }
 }

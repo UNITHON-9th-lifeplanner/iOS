@@ -44,6 +44,7 @@ extension QuestionView {
     func configureQuestionView(question: String, btnType: QuestionBtnType) {
         questionLabel.text = question
         editBtn.setImage(btnType.btnImage, for: .normal)
+        editBtn.setImage(btnType.btnSelectedImage, for: .highlighted)
     }
 }
 
