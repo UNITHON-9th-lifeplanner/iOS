@@ -32,10 +32,15 @@
 		238E60B828C309A10055CD43 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238E60B728C309A10055CD43 /* BaseView.swift */; };
 		CE3816F928C2C95400DC781F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3816F828C2C95400DC781F /* AppDelegate.swift */; };
 		CE38170228C2C95700DC781F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE38170128C2C95700DC781F /* Assets.xcassets */; };
-		CE38170528C2C95700DC781F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE38170328C2C95700DC781F /* LaunchScreen.storyboard */; };
+		CE38170528C2C95700DC781F /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE38170328C2C95700DC781F /* Splash.storyboard */; };
 		CE38170E28C2CACB00DC781F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE38170D28C2CACB00DC781F /* Alamofire */; };
 		CE38171128C2CADF00DC781F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = CE38171028C2CADF00DC781F /* SwiftyJSON */; };
 		CE38171428C2CB2C00DC781F /* SwifterSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE38171328C2CB2C00DC781F /* SwifterSwift */; };
+		CE38174428C3238300DC781F /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38174328C3238300DC781F /* SplashViewController.swift */; };
+		CE38174728C32A0600DC781F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38174528C32A0600DC781F /* LoginViewController.swift */; };
+		CE38174828C32A0600DC781F /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE38174628C32A0600DC781F /* LoginViewController.xib */; };
+		CE38174B28C330FD00DC781F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38174928C330FD00DC781F /* SignUpViewController.swift */; };
+		CE38174C28C330FD00DC781F /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE38174A28C330FD00DC781F /* SignUpViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,9 +70,14 @@
 		CE3816F528C2C95400DC781F /* LifeLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE3816F828C2C95400DC781F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE38170128C2C95700DC781F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CE38170428C2C95700DC781F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CE38170428C2C95700DC781F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Splash.storyboard; sourceTree = "<group>"; };
 		CE38170628C2C95700DC781F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE38171628C2CBD600DC781F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = .swiftlint.yml; path = ../.swiftlint.yml; sourceTree = "<group>"; };
+		CE38174328C3238300DC781F /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		CE38174528C32A0600DC781F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		CE38174628C32A0600DC781F /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		CE38174928C330FD00DC781F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		CE38174A28C330FD00DC781F /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		EF07E83A6F4CB97481671722 /* Pods_LifeLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LifeLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC96BD24E2453D752A5CCE2 /* Pods-LifeLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LifeLibrary.debug.xcconfig"; path = "Target Support Files/Pods-LifeLibrary/Pods-LifeLibrary.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -120,6 +130,8 @@
 		2345B5B628C31E3100F47EEE /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				CE38174228C3235A00DC781F /* Splash */,
+				CE38173F28C3234800DC781F /* User */,
 				2345B5B828C31E4100F47EEE /* Common */,
 				2345B5B728C31E3500F47EEE /* Question */,
 			);
@@ -165,7 +177,7 @@
 			children = (
 				CE3816F828C2C95400DC781F /* AppDelegate.swift */,
 				CE38170128C2C95700DC781F /* Assets.xcassets */,
-				CE38170328C2C95700DC781F /* LaunchScreen.storyboard */,
+				CE38170328C2C95700DC781F /* Splash.storyboard */,
 				CE38170628C2C95700DC781F /* Info.plist */,
 				CE38171628C2CBD600DC781F /* .swiftlint.yml */,
 			);
@@ -242,6 +254,41 @@
 				2345B5BD28C31EF700F47EEE /* Support */,
 			);
 			path = LifeLibrary;
+			sourceTree = "<group>";
+		};
+		CE38173F28C3234800DC781F /* User */ = {
+			isa = PBXGroup;
+			children = (
+				CE38174128C3235500DC781F /* SignUp */,
+				CE38174028C3235000DC781F /* Login */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		CE38174028C3235000DC781F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				CE38174528C32A0600DC781F /* LoginViewController.swift */,
+				CE38174628C32A0600DC781F /* LoginViewController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		CE38174128C3235500DC781F /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				CE38174928C330FD00DC781F /* SignUpViewController.swift */,
+				CE38174A28C330FD00DC781F /* SignUpViewController.xib */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		CE38174228C3235A00DC781F /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				CE38174328C3238300DC781F /* SplashViewController.swift */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 		D22530AF4BA5E8980FADDF27 /* Frameworks */ = {
@@ -323,8 +370,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE38170528C2C95700DC781F /* LaunchScreen.storyboard in Resources */,
+				CE38170528C2C95700DC781F /* Splash.storyboard in Resources */,
 				CE38170228C2C95700DC781F /* Assets.xcassets in Resources */,
+				CE38174C28C330FD00DC781F /* SignUpViewController.xib in Resources */,
+				CE38174828C32A0600DC781F /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,11 +450,13 @@
 				2345B5A228C30D1C00F47EEE /* APIService.swift in Sources */,
 				2345B59628C30AED00F47EEE /* NaviType.swift in Sources */,
 				238E60AC28C2F9FE0055CD43 /* UITextField+.swift in Sources */,
+				CE38174428C3238300DC781F /* SplashViewController.swift in Sources */,
 				2345B5A028C30C3C00F47EEE /* APIError.swift in Sources */,
 				238E60B228C308E00055CD43 /* UIView+.swift in Sources */,
 				2345B5AD28C30FA900F47EEE /* NavigationBar.swift in Sources */,
 				2345B59328C30ABF00F47EEE /* BaseNavigationController.swift in Sources */,
 				2345B5AF28C3103600F47EEE /* QuestionVC.swift in Sources */,
+				CE38174728C32A0600DC781F /* LoginViewController.swift in Sources */,
 				238E60AE28C2FA140055CD43 /* UITextView+.swift in Sources */,
 				238E60A428C2F97E0055CD43 /* Input.swift in Sources */,
 				238E60AA28C2F9E40055CD43 /* UILabel+.swift in Sources */,
@@ -416,6 +467,7 @@
 				238E60A828C2F9A20055CD43 /* Loadable.swift in Sources */,
 				2345B5A628C30D4400F47EEE /* UrlResource.swift in Sources */,
 				2345B5A428C30D2E00F47EEE /* APISession.swift in Sources */,
+				CE38174B28C330FD00DC781F /* SignUpViewController.swift in Sources */,
 				2345B5A928C30E5000F47EEE /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -423,12 +475,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CE38170328C2C95700DC781F /* LaunchScreen.storyboard */ = {
+		CE38170328C2C95700DC781F /* Splash.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				CE38170428C2C95700DC781F /* Base */,
 			);
-			name = LaunchScreen.storyboard;
+			name = Splash.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -561,7 +613,7 @@
 				INFOPLIST_FILE = LifeLibrary/Support/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "인생서재";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = Splash;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -591,7 +643,7 @@
 				INFOPLIST_FILE = LifeLibrary/Support/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "인생서재";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = Splash;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
