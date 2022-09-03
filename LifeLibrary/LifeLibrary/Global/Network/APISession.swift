@@ -137,8 +137,9 @@ struct APISession: APIService {
     func deleteRequest<T: Decodable>(with urlResource: UrlResource<T>) -> Observable<Result<T, APIError>> {
         
         return Observable<Result<T, APIError>>.create { observer in
-            let header: HTTPHeaders = [
+            var headers: HTTPHeaders = [
                 "Content-Type": "application/json"
+            ]
             
             if let accessToken = UserDefaults.standard.string(forKey: "access_token"), !accessToken.isEmpty {
                 headers["Authorization"] = "Bearer " + accessToken
@@ -146,11 +147,10 @@ struct APISession: APIService {
             
             let task = AF.request(urlResource.resultURL,
                                   method: .delete,
-                                  headers: header)
+                                  headers: headers)
                 .validate(statusCode: 200...399)
                 .responseDecodable(of: T.self) { response in
                     switch response.result {
-                        print("Unknown HTTP Response Error!!!: \(error.localizedDescription)")
                     case .failure(let error):
                         observer.onNext(urlResource.judgeError(statusCode: response.response?.statusCode ?? -1))
                     case .success(let decodedData):
