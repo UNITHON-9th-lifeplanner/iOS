@@ -41,7 +41,7 @@ extension UIView {
     
     /// view에 shadow를 추가하는 함수
     func addDayShadow(opacity: Float = 0.8) {
-        layer.shadowColor = UIColor.main.cgColor
+        layer.shadowColor = UIColor.orange100.cgColor
         layer.shadowOpacity = opacity
         layer.shadowOffset = .zero
         layer.shadowRadius = 3

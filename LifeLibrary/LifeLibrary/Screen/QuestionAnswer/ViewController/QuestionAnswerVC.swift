@@ -46,12 +46,12 @@ class QuestionAnswerVC: BaseViewController {
             $0.appearance.titleDefaultColor = .label
             
             $0.appearance.titleTodayColor = .white
-            $0.appearance.todayColor = .main
+            $0.appearance.todayColor = .orange100
             
             $0.appearance.selectionColor = .white
-            $0.appearance.titleSelectionColor = .main
+            $0.appearance.titleSelectionColor = .orange100
             
-            $0.appearance.borderSelectionColor = .main
+            $0.appearance.borderSelectionColor = .orange100
         }
     
     private let viewModel = QuestionAnswerVM()
@@ -185,11 +185,11 @@ extension QuestionAnswerVC {
                 // 선택 일자 색 구별
                 self.calendar.appearance.selectionColor
                 = self.viewModel.isToday(day)
-                ? .main : .white
+                ? .orange100 : .white
                 
                 self.calendar.appearance.titleSelectionColor
                 = self.viewModel.isToday(day)
-                ? .white : .main
+                ? .white : .orange100
                 
                 cell.addDayShadow()
             })
