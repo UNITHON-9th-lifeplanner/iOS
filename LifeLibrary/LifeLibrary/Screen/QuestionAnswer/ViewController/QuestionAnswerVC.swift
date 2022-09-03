@@ -54,6 +54,18 @@ class QuestionAnswerVC: BaseViewController {
             $0.appearance.borderSelectionColor = .orange100
         }
     
+    private let questionAnswerView = QuestionAnswerView()
+        .then {
+            $0.addCardShadow()
+        }
+    
+    private let showAnswerListBtn = UIButton()
+        .then {
+            $0.setTitle("다른 유저들의 답변 둘러보기 >>", for: .normal)
+            $0.titleLabel?.font = .body3
+            $0.setTitleColor(.gray30, for: .normal)
+        }
+    
     private let viewModel = QuestionAnswerVM()
     private let bag = DisposeBag()
     
@@ -104,7 +116,10 @@ extension QuestionAnswerVC {
         view.addSubviews([calendarTitle,
                           prevMonthBtn,
                           nextMonthBtn,
-                          calendar])
+                          calendar,
+                          questionAnswerView,
+                          showAnswerListBtn])
+        
         configureCalendarTitle(date: .now)
         calendar.delegate = self
     }
@@ -142,6 +157,18 @@ extension QuestionAnswerVC {
             $0.leading.equalToSuperview().offset(20)
             $0.trailing.equalToSuperview().offset(-20)
             $0.height.equalTo(300)
+        }
+        
+        questionAnswerView.snp.makeConstraints {
+            $0.top.equalTo(calendar.snp.bottom).offset(28)
+            $0.leading.equalToSuperview().offset(20)
+            $0.trailing.equalToSuperview().offset(-20)
+            $0.bottom.equalTo(view.keyboardLayoutGuide.snp.top).offset(-72)
+        }
+        
+        showAnswerListBtn.snp.makeConstraints {
+            $0.top.equalTo(questionAnswerView.snp.bottom).offset(13)
+            $0.trailing.equalToSuperview().offset(-20)
         }
     }
 }

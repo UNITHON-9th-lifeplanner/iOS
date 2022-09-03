@@ -12,6 +12,7 @@ import Then
 class QuestionView: BaseView {
     private let questionLabel = UILabel()
         .then {
+            $0.text = "오늘의 질문"
             $0.font = .body2
             $0.textColor = .orange100
             $0.setLineBreakMode()
@@ -21,10 +22,12 @@ class QuestionView: BaseView {
     
     override func configureView() {
         super.configureView()
+        configureContentView()
     }
     
     override func layoutView() {
         super.layoutView()
+        configureLayout()
     }
     
 }
@@ -32,7 +35,8 @@ class QuestionView: BaseView {
 // MARK: - Configure
 
 extension QuestionView {
-    private func addLabel() {
+    private func configureContentView() {
+        backgroundColor = .systemBackground
         addSubviews([questionLabel,
                      editBtn])
     }
@@ -47,11 +51,6 @@ extension QuestionView {
 
 extension QuestionView {
     private func configureLayout() {
-        self.snp.makeConstraints {
-            $0.height.equalTo(72)
-            $0.leading.trailing.equalToSuperview()
-        }
-        
         questionLabel.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(15)
             $0.trailing.equalToSuperview().offset(65)
