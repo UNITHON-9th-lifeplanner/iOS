@@ -15,6 +15,7 @@ final class UserViewModel: BaseViewModel {
     var bag = DisposeBag()
     var input = Input()
     var output = Output()
+    var keywords: [String] = []
     
     // MARK: - Input
     
@@ -38,9 +39,9 @@ final class UserViewModel: BaseViewModel {
 
 // MARK: - Networking
 extension UserViewModel {
-    func postLoginAction(account_id: String, password: String) {
+    func postLoginAction(account_id: String, password: String, completion: (() -> Void)? = nil) {
         let path = "login"
-        let resource = UrlResource<[String: String]>(path: path)
+        let resource = UrlResource<LoginModel>(path: path)
         let param: [String: Any] = [
             "account_id": account_id,
             "password": password
@@ -59,9 +60,13 @@ extension UserViewModel {
                         default :
                             print(error)
                         }
-                    case .success(let accessToken):
-                        print(accessToken)
-                        UserDefaults.standard.set(accessToken["access_token"], forKey: "access_token")
+                    case .success(let data):
+                        print(data)
+                        UserInfo.shared.age = data.age
+                        UserInfo.shared.accessToken = data.accessToken
+                        UserDefaults.standard.set(data.age, forKey: "age")
+                        UserDefaults.standard.set(data.accessToken, forKey: "access_token")
+                        completion?()
                     }
                 }, onError: { error in
                     print(error)
@@ -70,9 +75,9 @@ extension UserViewModel {
             .disposed(by: bag)
     }
     
-    func postSignUpAction(account_id: String, password: String, name: String, birthday: String) {
+    func postSignUpAction(account_id: String, password: String, name: String, birthday: String, completion: (() -> Void)? = nil) {
         let path = "users"
-        let resource = UrlResource<[String: String]>(path: path)
+        let resource = UrlResource<LoginModel>(path: path)
         let param: [String: Any] = [
             "account_id": account_id,
             "password": password,
@@ -86,9 +91,13 @@ extension UserViewModel {
                     switch result {
                     case .failure(let error):
                         print(error)
-                    case .success(let accessToken):
-                        print(accessToken)
-                        UserDefaults.standard.set(accessToken["access_token"], forKey: "access_token")
+                    case .success(let data):
+                        print(data.accessToken)
+                        UserInfo.shared.age = data.age
+                        UserInfo.shared.accessToken = data.accessToken
+                        UserDefaults.standard.set(data.age, forKey: "age")
+                        UserDefaults.standard.set(data.accessToken, forKey: "access_token")
+                        completion?()
                     }
                 }, onError: { error in
                     print(error)
@@ -120,6 +129,31 @@ extension UserViewModel {
             )
             .disposed(by: bag)
     }
+    
+    func putUserInfo(password: String, name: String, birthday: String) {
+        let path = "users"
+        let resource = UrlResource<Bool>(path: path)
+        let param: [String: Any] = [
+            "password": password,
+            "name": name,
+            "birthday": birthday
+        ]
+        
+        apiSession.putRequest(with: resource, param: param)
+            .subscribe(
+                onNext: { result in
+                    switch result {
+                    case .failure(let error):
+                        print(error)
+                    case .success(let check):
+                        print(check)
+                    }
+                }, onError: { error in
+                    print(error)
+                }
+            )
+            .disposed(by: bag)
+    }
 }
 
 // MARK: - Input
@@ -132,4 +166,10 @@ extension UserViewModel: Input {
 
 extension UserViewModel: Output {
     func bindOutput() {}
+}
+
+extension UserViewModel {
+    func dateTransForm(_ date: Date?) -> String? {
+        return date?.string(withFormat: "yyyy-MM-dd")
+    }
 }
