@@ -46,4 +46,11 @@ extension UIView {
         layer.shadowOffset = .zero
         layer.shadowRadius = 3
     }
+    
+    func addCardShadow(opacity: Float = 0.8) {
+        layer.shadowColor = UIColor.orange30.cgColor
+        layer.shadowOpacity = opacity
+        layer.shadowOffset = .zero
+        layer.shadowRadius = 3
+    }
 }
