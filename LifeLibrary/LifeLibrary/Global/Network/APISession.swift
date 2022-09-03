@@ -18,6 +18,8 @@ struct APISession: APIService {
                 "Authorization": "Bearer " + (UserInfo.shared.accessToken ?? "")
             ]
             
+            print(headers)
+            
             let task = AF.request(urlResource.resultURL,
                                   encoding: URLEncoding.default,
                                   headers: headers)

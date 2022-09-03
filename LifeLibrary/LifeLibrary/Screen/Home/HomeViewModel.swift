@@ -17,6 +17,7 @@ final class HomeViewModel: BaseViewModel {
     var input = Input()
     var output = Output()
     var keywords: [String] = []
+    var popularKeywords: PopularKeyword?
     
     // MARK: - Input
     
@@ -41,7 +42,7 @@ final class HomeViewModel: BaseViewModel {
 // MARK: - Networking
 extension HomeViewModel {
     func getMyPlan(age_Group: String, completion: ((String) -> Void)? = nil) {
-        let path = "life-goals/popular?ageGroup=\(age_Group)"
+        let path = "life-goals/me?ageGroup=\(age_Group)"
         print("값 확인 \(path)")
         let resource = UrlResource<LifePlanner>(path: path)
         
@@ -61,7 +62,31 @@ extension HomeViewModel {
                 }
             )
             .disposed(by: bag)
-    }}
+    }
+    
+    func getPopularKeyword(age_Group: String, completion: ((PopularKeyword) -> Void)? = nil) {
+        
+        let path = "life-goals/popular?ageGroup=\(age_Group)"
+        print("값 확인 \(path)")
+        let resource = UrlResource<PopularKeyword>(path: path)
+        
+        apiSession.getRequest(with: resource)
+            .subscribe(
+                onNext: { result in
+                    switch result {
+                    case .failure(let error):
+                        print(error)
+                    case .success(let data):
+                        print(data)
+                        completion?(data)
+                    }
+                }, onError: { error in
+                    print(error)
+                }
+            )
+            .disposed(by: bag)
+    }
+}
 
 // MARK: - Input
 
@@ -73,4 +98,16 @@ extension HomeViewModel: Input {
 
 extension HomeViewModel: Output {
     func bindOutput() {}
+}
+
+class PopularKeyword: Codable {
+    var pastPopularlist: [String]
+    var currentPopularlist: [String]
+    var futurePopularlist: [String]
+    
+    enum CodingKeys: String, CodingKey {
+        case pastPopularlist = "past_popular_list"
+        case currentPopularlist = "current_popular_list"
+        case futurePopularlist = "future_popular_list"
+    }
 }

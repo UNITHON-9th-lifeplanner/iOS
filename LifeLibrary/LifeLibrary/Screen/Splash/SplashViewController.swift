@@ -37,7 +37,7 @@ class SplashViewController: BaseViewController {
                 accessToken.isEmpty ? self?.presentOnboardingView() : self?.presentHomeView()
             }, onCompleted: { [weak self] in
                 // 최대노출시간을 초과한 후에도 현재 화면이 노출 중이면 다음 화면으로 강제 이동
-                guard self?.isVisible == true else { return }
+                guard self?.isVisible == true, let accessToken = UserDefaults.standard.string(forKey: "access_token"), accessToken.isEmpty else { return }
                 
                 self?.presentOnboardingView()
             }).disposed(by: disposeBag)
