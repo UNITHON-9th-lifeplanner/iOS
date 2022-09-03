@@ -77,6 +77,7 @@ class QuestionAnswerVC: BaseViewController {
         }
     
     private var answerDates: [String]?
+    private var questionID: Int?
     
     private let viewModel = QuestionAnswerVM()
     private let bag = DisposeBag()
@@ -225,10 +226,20 @@ extension QuestionAnswerVC {
         prevMonthBtn.rx.tap
             .asDriver()
             .drive(onNext: { [weak self] _ in
-                guard let self = self  else { return }
+                guard let self = self else { return }
                 self.viewModel.input.moveMonth.accept(-1)
                 self.calendar.select(self.viewModel.input.selectedDay.value)
                 self.calendarPrepareForReuse()
+            })
+            .disposed(by: bag)
+        
+        showAnswerListBtn.rx.tap
+            .asDriver()
+            .drive(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                let othersAnswersVC = OthersAnswersVC()
+                othersAnswersVC.questionID = self.questionID
+                self.navigationController?.pushViewController(othersAnswersVC)
             })
             .disposed(by: bag)
     }
@@ -263,6 +274,7 @@ extension QuestionAnswerVC {
                       let date = data.answeredAt.toDate()
                 else { return }
                 
+                self.questionID = data.questionID
                 var btnType: QuestionBtnType = .none
                 var placeholder = ""
                 
