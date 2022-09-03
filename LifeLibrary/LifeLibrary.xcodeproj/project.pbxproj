@@ -16,6 +16,7 @@
 		CE38170E28C2CACB00DC781F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE38170D28C2CACB00DC781F /* Alamofire */; };
 		CE38171128C2CADF00DC781F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = CE38171028C2CADF00DC781F /* SwiftyJSON */; };
 		CE38171428C2CB2C00DC781F /* SwifterSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE38171328C2CB2C00DC781F /* SwifterSwift */; };
+		CE38172728C2D69100DC781F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38172628C2D69100DC781F /* UserModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		CE38170428C2C95700DC781F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE38170628C2C95700DC781F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE38171628C2CBD600DC781F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		CE38172628C2D69100DC781F /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		EF07E83A6F4CB97481671722 /* Pods_LifeLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LifeLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC96BD24E2453D752A5CCE2 /* Pods-LifeLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LifeLibrary.debug.xcconfig"; path = "Target Support Files/Pods-LifeLibrary/Pods-LifeLibrary.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,6 +79,12 @@
 		CE3816F728C2C95400DC781F /* LifeLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				CE38172928C2D70E00DC781F /* LifePlan */,
+				CE38172828C2D6E900DC781F /* QnA */,
+				CE38171A28C2D0E100DC781F /* User */,
+				CE38171928C2D0DC00DC781F /* Network */,
+				CE38171828C2D0D800DC781F /* Base */,
+				CE38171728C2D0D100DC781F /* Common */,
 				CE3816F828C2C95400DC781F /* AppDelegate.swift */,
 				CE3816FC28C2C95400DC781F /* MainViewController.swift */,
 				CE3816FE28C2C95400DC781F /* Main.storyboard */,
@@ -86,6 +94,73 @@
 				CE38171628C2CBD600DC781F /* .swiftlint.yml */,
 			);
 			path = LifeLibrary;
+			sourceTree = "<group>";
+		};
+		CE38171728C2D0D100DC781F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				CE38171B28C2D3F000DC781F /* Toast */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		CE38171828C2D0D800DC781F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		CE38171928C2D0DC00DC781F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		CE38171A28C2D0E100DC781F /* User */ = {
+			isa = PBXGroup;
+			children = (
+				CE38172528C2D68400DC781F /* SignUp */,
+				CE38172428C2D67B00DC781F /* Login */,
+				CE38172628C2D69100DC781F /* UserModel.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		CE38171B28C2D3F000DC781F /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
+		CE38172428C2D67B00DC781F /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		CE38172528C2D68400DC781F /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		CE38172828C2D6E900DC781F /* QnA */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = QnA;
+			sourceTree = "<group>";
+		};
+		CE38172928C2D70E00DC781F /* LifePlan */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LifePlan;
 			sourceTree = "<group>";
 		};
 		D22530AF4BA5E8980FADDF27 /* Frameworks */ = {
@@ -240,6 +315,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE3816FD28C2C95400DC781F /* MainViewController.swift in Sources */,
+				CE38172728C2D69100DC781F /* UserModel.swift in Sources */,
 				CE3816F928C2C95400DC781F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
