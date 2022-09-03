@@ -53,10 +53,9 @@ extension UIView {
         layer.shadowOffset = .zero
         layer.shadowRadius = 3
     }
-    
     /// card에 shadow를 추가하는 함수
     func addCardShadow(opacity: Float = 0.8) {
-        layer.shadowColor = UIColor.orange100.cgColor
+        layer.shadowColor = UIColor.orange30.cgColor
         layer.shadowOpacity = opacity
         layer.shadowOffset = .zero
         layer.shadowRadius = 3
