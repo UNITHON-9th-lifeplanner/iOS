@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct urlResource<T: Decodable> {
+struct UrlResource<T: Decodable> {
     let baseURL = URL(string: "http://10.10.98.83:8080/")
     let path: String
     var resultURL: URL {

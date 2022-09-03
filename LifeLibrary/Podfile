@@ -1,17 +1,16 @@
 platform :ios, '13.0'
-inhibit_all_warnings!
 use_frameworks!
 
 target 'LifeLibrary' do
-    pod 'SwiftLint'
-
-  # Pods for Study_Room
-    pod 'SnapKit'
-    pod 'Then'
-    pod 'RxGesture'
-    pod 'FSCalendar'
-
+  pod 'RxSwift', '6.5.0'
+  pod 'RxCocoa', '6.5.0'
+  pod 'SwiftLint'
+  pod 'SnapKit'
+  pod 'Then'
+  pod 'RxGesture'
+  pod 'FSCalendar'
 end
+
 inhibit_all_warnings! # cocoapods의 swiftlint 경고 메시지 해제
 post_install do |installer|
   installer.pods_project.targets.each do |target|

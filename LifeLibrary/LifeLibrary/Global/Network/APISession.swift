@@ -10,7 +10,7 @@ import Alamofire
 import RxSwift
 
 struct APISession: APIService {
-    func getRequest<T>(with urlResource: urlResource<T>) -> Observable<Result<T, APIError>> where T: Decodable {
+    func getRequest<T>(with urlResource: UrlResource<T>) -> Observable<Result<T, APIError>> where T: Decodable {
         
         Observable<Result<T, APIError>>.create { observer in
             let headers: HTTPHeaders = [
@@ -37,7 +37,7 @@ struct APISession: APIService {
         }
     }
     
-    func postRequest<T: Decodable>(with urlResource: urlResource<T>, param: Parameters?) -> Observable<Result<T, APIError>> {
+    func postRequest<T: Decodable>(with urlResource: UrlResource<T>, param: Parameters?) -> Observable<Result<T, APIError>> {
         
         Observable<Result<T, APIError>>.create { observer in
             let headers: HTTPHeaders = [
@@ -66,7 +66,7 @@ struct APISession: APIService {
         }
     }
     
-    func postRequestWithImage<T: Decodable>(with urlResource: urlResource<T>, param: Parameters, image: UIImage, method: HTTPMethod) -> Observable<Result<T, APIError>> {
+    func postRequestWithImage<T: Decodable>(with urlResource: UrlResource<T>, param: Parameters, image: UIImage, method: HTTPMethod) -> Observable<Result<T, APIError>> {
         Observable<Result<T, APIError>>.create { observer in
             let headers: HTTPHeaders = [
                 "Content-Type": "multipart/form-data"
