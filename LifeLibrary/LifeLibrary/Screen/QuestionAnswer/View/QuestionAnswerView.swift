@@ -11,12 +11,12 @@ import Then
 import UITextView_Placeholder
 
 class QuestionAnswerView: BaseView {
-    private let questionView = QuestionView()
+    let questionView = QuestionView()
         .then {
             $0.roundTopCorners(radius: 15)
         }
     
-    private let answerTextView = UITextView()
+    let answerTextView = UITextView()
         .then {
             $0.backgroundColor = .orange100
             $0.font = .title3
@@ -24,6 +24,7 @@ class QuestionAnswerView: BaseView {
             $0.placeholderColor = .orange30
             $0.setPadding()
             $0.roundBottomCorners(radius: 15)
+            $0.isEditable = false
         }
     
     override func configureView() {

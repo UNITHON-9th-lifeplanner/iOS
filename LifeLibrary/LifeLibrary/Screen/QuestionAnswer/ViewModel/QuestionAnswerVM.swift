@@ -127,4 +127,40 @@ extension QuestionAnswerVM {
             })
             .disposed(by: bag)
     }
+    
+    func postAnswer(questionID: Int, answer: String) {
+        let path = "questions/\(questionID)/answers"
+        let resource = UrlResource<Bool>(path: path)
+        
+        apiSession.postRequest(with: resource, param: ["content": answer])
+            .withUnretained(self)
+            .subscribe(onNext: { owner, result in
+                dump(result)
+                switch result {
+                case .failure(let error):
+                    owner.apiError.onNext(error)
+                case .success(let data):
+                    dump(data)
+                }
+            })
+            .disposed(by: bag)
+    }
+    
+    func putAnswer(answerID: Int, answer: String) {
+        let path = "questions/answers/\(answerID)"
+        let resource = UrlResource<Bool>(path: path)
+        
+        apiSession.putRequest(with: resource, param: ["content": answer])
+            .withUnretained(self)
+            .subscribe(onNext: { owner, result in
+                dump(result)
+                switch result {
+                case .failure(let error):
+                    owner.apiError.onNext(error)
+                case .success(let data):
+                    dump(data)
+                }
+            })
+            .disposed(by: bag)
+    }
 }

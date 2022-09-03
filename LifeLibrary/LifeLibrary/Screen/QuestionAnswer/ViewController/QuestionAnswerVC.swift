@@ -78,6 +78,7 @@ class QuestionAnswerVC: BaseViewController {
     
     private var answerDates: [String]?
     private var questionID: Int?
+    private var answerID: Int?
     
     private let viewModel = QuestionAnswerVM()
     private let bag = DisposeBag()
@@ -113,6 +114,7 @@ class QuestionAnswerVC: BaseViewController {
         bindDaySelect()
         bindCalendar()
         bindKeyboardScroll()
+        bindKeyboardHide()
     }
     
 }
@@ -152,6 +154,13 @@ extension QuestionAnswerVC {
         calendar.collectionView.visibleCells.forEach {
             $0.layer.shadowOpacity = 0
         }
+    }
+    
+    private func setEditBtnImage() {
+        questionAnswerView.questionView.editBtn.setImage(UIImage(named: "edit"),
+                                                         for: .normal)
+        questionAnswerView.questionView.editBtn.setImage(UIImage(named: "edit_Selected"),
+                                                         for: .highlighted)
     }
 }
 
@@ -242,6 +251,29 @@ extension QuestionAnswerVC {
                 self.navigationController?.pushViewController(othersAnswersVC)
             })
             .disposed(by: bag)
+        
+        questionAnswerView.questionView.editBtn.rx.tap
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self,
+                let questionID = self.questionID
+                else { return }
+                switch self.questionAnswerView.questionView.editBtn.imageView?.image {
+                case UIImage(named: "edit_Selected"):
+                    self.questionAnswerView.answerTextView.isEditable = true
+                    self.questionAnswerView.answerTextView.becomeFirstResponder()
+                    self.questionAnswerView.questionView.editBtn.setImage(UIImage(named: "confirm"),
+                                                                          for: .normal)
+                    self.questionAnswerView.questionView.editBtn.setImage(UIImage(named: "confirm_Selected"),
+                                                                          for: .highlighted)
+                case UIImage(named: "delete_Selected"):
+                    print("delete")
+                case UIImage(named: "confirm_Selected"):
+                    print("DA")
+                default:
+                    print("??")
+                }
+            })
+            .disposed(by: bag)
     }
 }
 
@@ -275,6 +307,7 @@ extension QuestionAnswerVC {
                 else { return }
                 
                 self.questionID = data.questionID
+                self.answerID = data.answerID
                 var btnType: QuestionBtnType = .none
                 var placeholder = ""
                 
@@ -321,6 +354,23 @@ extension QuestionAnswerVC {
             .subscribe(onNext: { [weak self] _ in
                 guard let self = self else { return }
                 self.baseScrollView.scrollToBottom(animated: true)
+            })
+            .disposed(by: bag)
+    }
+    
+    private func bindKeyboardHide() {
+        keyboardWillHide
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self, let questionID = self.questionID else { return }
+                self.setEditBtnImage()
+                self.questionAnswerView.answerTextView.isEditable = false
+                if self.answerID == nil {
+                    self.viewModel.postAnswer(questionID: questionID, answer: self.questionAnswerView.answerTextView.text)
+                    self.view.reloadInputViews()
+                } else {
+                    print(self.answerID, "!!")
+                    self.viewModel.putAnswer(answerID: self.answerID!, answer: self.questionAnswerView.answerTextView.text)
+                }
             })
             .disposed(by: bag)
     }

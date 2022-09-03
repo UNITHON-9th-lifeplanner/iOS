@@ -42,7 +42,8 @@ struct APISession: APIService {
         
         Observable<Result<T, APIError>>.create { observer in
             let headers: HTTPHeaders = [
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjYyMjA3MTA2LCJleHAiOjE2NjI4MTE5MDZ9._I_OpQ3JJ21h-GW0eH_5whgkhRZVldjcZ1riZmG-898"
             ]
             
             let task = AF.request(urlResource.resultURL,
@@ -83,6 +84,37 @@ struct APISession: APIService {
             }, to: urlResource.resultURL, method: method, headers: headers)
                 .validate(statusCode: 200...399)
                 .responseDecodable(of: T.self) { response in
+                    switch response.result {
+                    case .failure:
+                        observer.onNext(urlResource.judgeError(statusCode: response.response?.statusCode ?? -1))
+                        
+                    case .success(let data):
+                        observer.onNext(.success(data))
+                    }
+                }
+            
+            return Disposables.create {
+                task.cancel()
+            }
+        }
+    }
+    
+    func putRequest<T: Decodable>(with urlResource: UrlResource<T>, param: Parameters) -> Observable<Result<T, APIError>> {
+        
+        Observable<Result<T, APIError>>.create { observer in
+            let headers: HTTPHeaders = [
+                "Content-Type": "application/json",
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjYyMjA3MTA2LCJleHAiOjE2NjI4MTE5MDZ9._I_OpQ3JJ21h-GW0eH_5whgkhRZVldjcZ1riZmG-898"
+            ]
+            
+            let task = AF.request(urlResource.resultURL,
+                                  method: .put,
+                                  parameters: param,
+                                  encoding: JSONEncoding.default,
+                                  headers: headers)
+                .validate(statusCode: 200...399)
+                .responseDecodable(of: T.self) { response in
+                    dump(response)
                     switch response.result {
                     case .failure:
                         observer.onNext(urlResource.judgeError(statusCode: response.response?.statusCode ?? -1))
