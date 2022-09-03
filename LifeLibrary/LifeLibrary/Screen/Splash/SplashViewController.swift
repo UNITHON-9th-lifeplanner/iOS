@@ -11,7 +11,7 @@ import RxRelay
 import UIKit
 import SwifterSwift
 
-class SplashViewController: UIViewController {
+class SplashViewController: BaseViewController {
     let loginAccessTokenRx = BehaviorRelay<String>(value: "")
     private let disposeBag = DisposeBag()
     
@@ -50,7 +50,7 @@ extension SplashViewController {
     }
     
     func presentOnboardingView() {
-        let vc = OnboardingViewController()
+        let vc = OnboardingNavigationVC()
         
         vc.modalPresentationStyle = .overFullScreen
         

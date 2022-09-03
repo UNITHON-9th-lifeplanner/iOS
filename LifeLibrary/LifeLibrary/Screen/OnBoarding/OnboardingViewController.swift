@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OnboardingViewController: UIViewController {
+class OnboardingViewController: BaseViewController {
 
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signupButton: UIButton!
@@ -34,7 +34,7 @@ extension OnboardingViewController {
         
         vc.modalPresentationStyle = .overFullScreen
         
-        self.present(vc, animated: true, completion: nil)
+        navigationController?.pushViewController(vc)
     }
     
     func presentSignupView() {
