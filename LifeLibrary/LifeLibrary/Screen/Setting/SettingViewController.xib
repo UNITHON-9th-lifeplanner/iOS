@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingViewController" customModule="LifeLibrary" customModuleProvider="target">
+            <connections>
+                <outlet property="birthLabel" destination="bk3-K1-hit" id="kPf-2s-AhL"/>
+                <outlet property="completeButton" destination="sNi-v4-SQ9" id="H2q-8y-ItV"/>
+                <outlet property="datePicker" destination="cNf-o0-xeJ" id="QyP-tu-FTN"/>
+                <outlet property="logoutButton" destination="Fdh-1l-Ido" id="eT8-rm-SyE"/>
+                <outlet property="nameLabel" destination="ooO-0a-Ifo" id="SfB-WM-lDg"/>
+                <outlet property="nameTextField" destination="GBJ-DP-127" id="fFO-kP-ms0"/>
+                <outlet property="nameView" destination="WSD-er-L78" id="BU9-B0-Ama"/>
+                <outlet property="passwordConfirmButton" destination="8uj-KR-Idt" id="jle-zZ-17c"/>
+                <outlet property="passwordConfirmTextField" destination="BNb-4W-Qgs" id="aE8-mH-U16"/>
+                <outlet property="passwordLabel" destination="mIO-cK-lPx" id="J56-h4-LnT"/>
+                <outlet property="passwordTextField" destination="9nh-io-25O" id="uPO-WV-7M1"/>
+                <outlet property="passwordView1" destination="GMW-CY-HXT" id="3q9-b8-wBa"/>
+                <outlet property="passwordView2" destination="cfw-4b-64H" id="R4f-iV-2m6"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WSD-er-L78">
+                    <rect key="frame" x="20" y="361" width="374" height="42.5"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GBJ-DP-127">
+                            <rect key="frame" x="30" y="12" width="314" height="18.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="GBJ-DP-127" firstAttribute="top" secondItem="WSD-er-L78" secondAttribute="top" constant="12" id="24j-J5-JfE"/>
+                        <constraint firstItem="GBJ-DP-127" firstAttribute="leading" secondItem="WSD-er-L78" secondAttribute="leading" constant="30" id="33P-YM-3d5"/>
+                        <constraint firstAttribute="trailing" secondItem="GBJ-DP-127" secondAttribute="trailing" constant="30" id="BcI-hm-TcE"/>
+                        <constraint firstAttribute="bottom" secondItem="GBJ-DP-127" secondAttribute="bottom" constant="12" id="mdN-wz-gBx"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="생년월일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bk3-K1-hit">
+                    <rect key="frame" x="25" y="423.5" width="59" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ooO-0a-Ifo">
+                    <rect key="frame" x="25" y="330" width="30" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GMW-CY-HXT" userLabel="PasswordView1">
+                    <rect key="frame" x="20" y="140" width="374" height="48"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9nh-io-25O">
+                            <rect key="frame" x="30" y="12" width="314" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="9nh-io-25O" firstAttribute="top" secondItem="GMW-CY-HXT" secondAttribute="top" constant="12" id="39N-mx-BZ7"/>
+                        <constraint firstAttribute="trailing" secondItem="9nh-io-25O" secondAttribute="trailing" constant="30" id="jcw-qg-NrQ"/>
+                        <constraint firstItem="9nh-io-25O" firstAttribute="leading" secondItem="GMW-CY-HXT" secondAttribute="leading" constant="30" id="nxS-pE-dvB"/>
+                        <constraint firstAttribute="height" constant="48" id="smQ-x9-3F8"/>
+                        <constraint firstAttribute="bottom" secondItem="9nh-io-25O" secondAttribute="bottom" constant="12" id="z1u-N9-ca0"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cfw-4b-64H" userLabel="PasswordView2">
+                    <rect key="frame" x="20" y="198" width="374" height="48"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BNb-4W-Qgs">
+                            <rect key="frame" x="30" y="12" width="314" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="BNb-4W-Qgs" firstAttribute="leading" secondItem="cfw-4b-64H" secondAttribute="leading" constant="30" id="5Su-vI-53w"/>
+                        <constraint firstAttribute="height" constant="48" id="JAA-BJ-viz"/>
+                        <constraint firstAttribute="bottom" secondItem="BNb-4W-Qgs" secondAttribute="bottom" constant="12" id="TeI-zN-26M"/>
+                        <constraint firstItem="BNb-4W-Qgs" firstAttribute="top" secondItem="cfw-4b-64H" secondAttribute="top" constant="12" id="vkp-M0-13a"/>
+                        <constraint firstAttribute="trailing" secondItem="BNb-4W-Qgs" secondAttribute="trailing" constant="30" id="yXi-Sy-vcg"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uj-KR-Idt">
+                    <rect key="frame" x="20" y="256" width="374" height="54"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="54" id="3LL-ha-oku"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="비밀번호 확인"/>
+                    <connections>
+                        <action selector="onTouchPasswordConfirmButton:" destination="-1" eventType="touchUpInside" id="i7f-4Y-DAX"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNi-v4-SQ9">
+                    <rect key="frame" x="20" y="653.5" width="374" height="54"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="54" id="he5-mr-3DK"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="완료"/>
+                    <connections>
+                        <action selector="onTouchCompletButton:" destination="-1" eventType="touchUpInside" id="zic-nV-WsE"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIO-cK-lPx">
+                    <rect key="frame" x="25" y="109" width="59" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="cNf-o0-xeJ">
+                    <rect key="frame" x="20" y="454.5" width="374" height="110"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="110" id="c0n-RT-6DC"/>
+                    </constraints>
+                    <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
+                        <!--1970-01-01 11:00:00 +0000-->
+                    </date>
+                    <date key="maximumDate" timeIntervalSinceReferenceDate="694177200">
+                        <!--2022-12-31 11:00:00 +0000-->
+                    </date>
+                    <locale key="locale" localeIdentifier="ko"/>
+                </datePicker>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fdh-1l-Ido">
+                    <rect key="frame" x="35" y="723.5" width="344" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="Qzi-wY-5yl"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="로그아웃"/>
+                    <connections>
+                        <action selector="onTouchLogoutButton:" destination="-1" eventType="touchUpInside" id="8qR-sY-llE"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="sNi-v4-SQ9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="2qo-jp-EAL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Fdh-1l-Ido" secondAttribute="trailing" constant="35" id="4sY-uP-oKF"/>
+                <constraint firstItem="cNf-o0-xeJ" firstAttribute="top" secondItem="bk3-K1-hit" secondAttribute="bottom" constant="10" id="8Zl-vH-6cn"/>
+                <constraint firstItem="8uj-KR-Idt" firstAttribute="top" secondItem="cfw-4b-64H" secondAttribute="bottom" constant="10" id="A0Z-4Q-jHw"/>
+                <constraint firstItem="cfw-4b-64H" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="AKd-Iw-rXC"/>
+                <constraint firstItem="Fdh-1l-Ido" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="35" id="CAM-Qm-gQf"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cfw-4b-64H" secondAttribute="trailing" constant="20" id="ItG-PO-bwd"/>
+                <constraint firstItem="WSD-er-L78" firstAttribute="top" secondItem="ooO-0a-Ifo" secondAttribute="bottom" constant="10" id="Kgf-UZ-azX"/>
+                <constraint firstItem="ooO-0a-Ifo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="O93-KU-GtJ"/>
+                <constraint firstItem="cfw-4b-64H" firstAttribute="top" secondItem="GMW-CY-HXT" secondAttribute="bottom" constant="10" id="TcO-v2-ZRR"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cNf-o0-xeJ" secondAttribute="trailing" constant="20" id="V2l-U5-E2B"/>
+                <constraint firstItem="mIO-cK-lPx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="109" id="YVE-NY-M4Q"/>
+                <constraint firstItem="cNf-o0-xeJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="YYX-Fy-ze8"/>
+                <constraint firstItem="bk3-K1-hit" firstAttribute="top" secondItem="WSD-er-L78" secondAttribute="bottom" constant="20" id="YvE-Q9-CuU"/>
+                <constraint firstItem="WSD-er-L78" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Z9T-3L-yC8"/>
+                <constraint firstItem="8uj-KR-Idt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Zjg-gG-iBC"/>
+                <constraint firstItem="Fdh-1l-Ido" firstAttribute="top" secondItem="sNi-v4-SQ9" secondAttribute="bottom" constant="16" id="bqD-y1-7LQ"/>
+                <constraint firstItem="ooO-0a-Ifo" firstAttribute="top" secondItem="8uj-KR-Idt" secondAttribute="bottom" constant="20" id="c5m-Pc-XTz"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8uj-KR-Idt" secondAttribute="trailing" constant="20" id="cbP-Do-qzf"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GMW-CY-HXT" secondAttribute="trailing" constant="20" id="fly-eU-W5w"/>
+                <constraint firstItem="sNi-v4-SQ9" firstAttribute="top" secondItem="cNf-o0-xeJ" secondAttribute="bottom" constant="89" id="fs9-wy-jRn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WSD-er-L78" secondAttribute="trailing" constant="20" id="pEf-AQ-Tma"/>
+                <constraint firstItem="GMW-CY-HXT" firstAttribute="top" secondItem="mIO-cK-lPx" secondAttribute="bottom" constant="10" id="s1u-tx-VJ4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sNi-v4-SQ9" secondAttribute="trailing" constant="20" id="uQ6-Nl-25Y"/>
+                <constraint firstItem="bk3-K1-hit" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="wkD-Vy-lOL"/>
+                <constraint firstItem="GMW-CY-HXT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="zd0-ZB-pVD"/>
+                <constraint firstItem="mIO-cK-lPx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="zme-gx-Rbz"/>
+            </constraints>
+            <point key="canvasLocation" x="139" y="110"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

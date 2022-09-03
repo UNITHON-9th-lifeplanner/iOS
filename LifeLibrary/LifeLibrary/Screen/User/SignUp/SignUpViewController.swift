@@ -163,9 +163,11 @@ extension SignUpViewController {
         guard let account_id = idTextField.text,
               let password = passwordTextField.text,
               let name = nameTextField.text,
-              let birthday = dateTransForm(datePicker.date) else { print("잘못 입력된 값이 존재합니다."); return }
+              let birthday = viewModel.dateTransForm(datePicker.date) else { print("잘못 입력된 값이 존재합니다."); return }
         if validId == true {
-            viewModel.postSignUpAction(account_id: account_id, password: password, name: name, birthday: birthday)
+            viewModel.postSignUpAction(account_id: account_id, password: password, name: name, birthday: birthday, completion: { [weak self] in
+                self?.presentHomeView()
+            })
         } else {
             print("옳바른 아이디가 아닙니다.")
         }
@@ -182,7 +184,11 @@ extension SignUpViewController {
 
 /// Func
 extension SignUpViewController {
-    func dateTransForm(_ date: Date?) -> String? {
-        return date?.string(withFormat: "yyyy-MM-dd")
+    func presentHomeView() {
+        let vc = HomeViewController()
+        
+        vc.modalPresentationStyle = .overFullScreen
+        
+        self.present(vc, animated: true)
     }
 }

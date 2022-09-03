@@ -15,7 +15,7 @@ struct APISession: APIService {
         Observable<Result<T, APIError>>.create { observer in
             let headers: HTTPHeaders = [
                 "Content-Type": "application/json",
-                "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjYyMjA3MTA2LCJleHAiOjE2NjI4MTE5MDZ9._I_OpQ3JJ21h-GW0eH_5whgkhRZVldjcZ1riZmG-898"
+                "Authorization": "Bearer " + (UserInfo.shared.accessToken ?? "")
             ]
             
             let task = AF.request(urlResource.resultURL,
@@ -41,10 +41,13 @@ struct APISession: APIService {
     func postRequest<T: Decodable>(with urlResource: UrlResource<T>, param: Parameters?) -> Observable<Result<T, APIError>> {
         
         Observable<Result<T, APIError>>.create { observer in
-            let headers: HTTPHeaders = [
-                "Content-Type": "application/json",
-                "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjYyMjA3MTA2LCJleHAiOjE2NjI4MTE5MDZ9._I_OpQ3JJ21h-GW0eH_5whgkhRZVldjcZ1riZmG-898"
+            var headers: HTTPHeaders = [
+                "Content-Type": "application/json"
             ]
+            
+            if let accessToken = UserDefaults.standard.string(forKey: "access_token"), !accessToken.isEmpty {
+                headers["Authorization"] = "Bearer " + accessToken
+            }
             
             let task = AF.request(urlResource.resultURL,
                                   method: .post,
@@ -99,13 +102,15 @@ struct APISession: APIService {
         }
     }
     
-    func putRequest<T: Decodable>(with urlResource: UrlResource<T>, param: Parameters) -> Observable<Result<T, APIError>> {
-        
+    func putRequest<T>(with urlResource: UrlResource<T>, param: Parameters?) -> Observable<Result<T, APIError>> where T: Decodable {
         Observable<Result<T, APIError>>.create { observer in
-            let headers: HTTPHeaders = [
-                "Content-Type": "application/json",
-                "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjYyMjA3MTA2LCJleHAiOjE2NjI4MTE5MDZ9._I_OpQ3JJ21h-GW0eH_5whgkhRZVldjcZ1riZmG-898"
+            var headers: HTTPHeaders = [
+                "Content-Type": "application/json"
             ]
+            
+            if let accessToken = UserDefaults.standard.string(forKey: "access_token"), !accessToken.isEmpty {
+                headers["Authorization"] = "Bearer " + accessToken
+            }
             
             let task = AF.request(urlResource.resultURL,
                                   method: .put,
@@ -114,7 +119,6 @@ struct APISession: APIService {
                                   headers: headers)
                 .validate(statusCode: 200...399)
                 .responseDecodable(of: T.self) { response in
-                    dump(response)
                     switch response.result {
                     case .failure:
                         observer.onNext(urlResource.judgeError(statusCode: response.response?.statusCode ?? -1))
@@ -134,8 +138,11 @@ struct APISession: APIService {
         
         return Observable<Result<T, APIError>>.create { observer in
             let header: HTTPHeaders = [
-                "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjYyMjA3MTA2LCJleHAiOjE2NjI4MTE5MDZ9._I_OpQ3JJ21h-GW0eH_5whgkhRZVldjcZ1riZmG-898"
-            ]
+                "Content-Type": "application/json"
+            
+            if let accessToken = UserDefaults.standard.string(forKey: "access_token"), !accessToken.isEmpty {
+                headers["Authorization"] = "Bearer " + accessToken
+            }
             
             let task = AF.request(urlResource.resultURL,
                                   method: .delete,
@@ -143,18 +150,18 @@ struct APISession: APIService {
                 .validate(statusCode: 200...399)
                 .responseDecodable(of: T.self) { response in
                     switch response.result {
-                    case .failure(let error):
                         print("Unknown HTTP Response Error!!!: \(error.localizedDescription)")
+                    case .failure(let error):
                         observer.onNext(urlResource.judgeError(statusCode: response.response?.statusCode ?? -1))
-                        
                     case .success(let decodedData):
+                        
                         observer.onNext(.success(decodedData))
                     }
                 }
             
             return Disposables.create {
-                task.cancel()
             }
+                task.cancel()
         }
     }
 }

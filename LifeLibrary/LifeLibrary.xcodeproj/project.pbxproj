@@ -58,7 +58,16 @@
 		CE38174C28C330FD00DC781F /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE38174A28C330FD00DC781F /* SignUpViewController.xib */; };
 		CE38175328C3381900DC781F /* OnboardingNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38175228C3381900DC781F /* OnboardingNavigationVC.swift */; };
 		CE38175628C33CCA00DC781F /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38175528C33CCA00DC781F /* UserViewModel.swift */; };
-		CE38175828C33CD300DC781F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38175728C33CD300DC781F /* UserModel.swift */; };
+		CE38175828C33CD300DC781F /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38175728C33CD300DC781F /* UserInfo.swift */; };
+		CECAE66628C398AA00681BAB /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECAE66428C398AA00681BAB /* HomeViewController.swift */; };
+		CECAE66728C398AA00681BAB /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECAE66528C398AA00681BAB /* HomeViewController.xib */; };
+		CECAE66928C3ABE100681BAB /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECAE66828C3ABE100681BAB /* HomeViewModel.swift */; };
+		CECAE66D28C3BDE800681BAB /* KeywordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECAE66B28C3BDE800681BAB /* KeywordViewController.swift */; };
+		CECAE66E28C3BDE800681BAB /* KeywordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECAE66C28C3BDE800681BAB /* KeywordViewController.xib */; };
+		CECAE67228C3CCB100681BAB /* LifePlanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECAE67128C3CCB100681BAB /* LifePlanner.swift */; };
+		CECAE67428C3D11900681BAB /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECAE67328C3D11900681BAB /* LoginModel.swift */; };
+		CECAE67828C3DF8F00681BAB /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECAE67628C3DF8F00681BAB /* SettingViewController.swift */; };
+		CECAE67928C3DF8F00681BAB /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CECAE67728C3DF8F00681BAB /* SettingViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -113,7 +122,16 @@
 		CE38174A28C330FD00DC781F /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
 		CE38175228C3381900DC781F /* OnboardingNavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingNavigationVC.swift; sourceTree = "<group>"; };
 		CE38175528C33CCA00DC781F /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
-		CE38175728C33CD300DC781F /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		CE38175728C33CD300DC781F /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		CECAE66428C398AA00681BAB /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CECAE66528C398AA00681BAB /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		CECAE66828C3ABE100681BAB /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		CECAE66B28C3BDE800681BAB /* KeywordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordViewController.swift; sourceTree = "<group>"; };
+		CECAE66C28C3BDE800681BAB /* KeywordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = KeywordViewController.xib; sourceTree = "<group>"; };
+		CECAE67128C3CCB100681BAB /* LifePlanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifePlanner.swift; sourceTree = "<group>"; };
+		CECAE67328C3D11900681BAB /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		CECAE67628C3DF8F00681BAB /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		CECAE67728C3DF8F00681BAB /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		EF07E83A6F4CB97481671722 /* Pods_LifeLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LifeLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC96BD24E2453D752A5CCE2 /* Pods-LifeLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LifeLibrary.debug.xcconfig"; path = "Target Support Files/Pods-LifeLibrary/Pods-LifeLibrary.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -201,6 +219,9 @@
 		2345B5B628C31E3100F47EEE /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				CECAE67528C3DF7F00681BAB /* Setting */,
+				CECAE66A28C3BDD700681BAB /* Keyword */,
+				CECAE66328C3988000681BAB /* Home */,
 				CE38174D28C333A900DC781F /* OnBoarding */,
 				CE38174228C3235A00DC781F /* Splash */,
 				CE38173F28C3234800DC781F /* User */,
@@ -361,7 +382,7 @@
 			children = (
 				CE38175428C33CBF00DC781F /* ViewModel */,
 				CE38174128C3235500DC781F /* SignUp */,
-				CE38175728C33CD300DC781F /* UserModel.swift */,
+				CE38175728C33CD300DC781F /* UserInfo.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -397,8 +418,38 @@
 			isa = PBXGroup;
 			children = (
 				CE38175528C33CCA00DC781F /* UserViewModel.swift */,
+				CECAE67328C3D11900681BAB /* LoginModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CECAE66328C3988000681BAB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CECAE66428C398AA00681BAB /* HomeViewController.swift */,
+				CECAE66528C398AA00681BAB /* HomeViewController.xib */,
+				CECAE66828C3ABE100681BAB /* HomeViewModel.swift */,
+				CECAE67128C3CCB100681BAB /* LifePlanner.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CECAE66A28C3BDD700681BAB /* Keyword */ = {
+			isa = PBXGroup;
+			children = (
+				CECAE66B28C3BDE800681BAB /* KeywordViewController.swift */,
+				CECAE66C28C3BDE800681BAB /* KeywordViewController.xib */,
+			);
+			path = Keyword;
+			sourceTree = "<group>";
+		};
+		CECAE67528C3DF7F00681BAB /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				CECAE67628C3DF8F00681BAB /* SettingViewController.swift */,
+				CECAE67728C3DF8F00681BAB /* SettingViewController.xib */,
+			);
+			path = Setting;
 			sourceTree = "<group>";
 		};
 		D22530AF4BA5E8980FADDF27 /* Frameworks */ = {
@@ -481,12 +532,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2345B5C828C3477300F47EEE /* Pretendard-Bold.otf in Resources */,
+				CECAE67928C3DF8F00681BAB /* SettingViewController.xib in Resources */,
+				CECAE66E28C3BDE800681BAB /* KeywordViewController.xib in Resources */,
 				2345B5C728C3477300F47EEE /* Pretendard-Regular.otf in Resources */,
 				2345B5C928C3477300F47EEE /* Pretendard-Light.otf in Resources */,
 				CE38170528C2C95700DC781F /* Splash.storyboard in Resources */,
 				CE38170228C2C95700DC781F /* Assets.xcassets in Resources */,
 				CE38174C28C330FD00DC781F /* SignUpViewController.xib in Resources */,
 				CE38174828C32A0600DC781F /* OnboardingViewController.xib in Resources */,
+				CECAE66728C398AA00681BAB /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -557,8 +611,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				2305E92A28C369CA00534120 /* QuestionView.swift in Sources */,
+				CECAE67428C3D11900681BAB /* LoginModel.swift in Sources */,
 				238E60A628C2F98D0055CD43 /* Output.swift in Sources */,
+				CECAE66D28C3BDE800681BAB /* KeywordViewController.swift in Sources */,
 				CE38175628C33CCA00DC781F /* UserViewModel.swift in Sources */,
+				CECAE67828C3DF8F00681BAB /* SettingViewController.swift in Sources */,
+				CECAE66628C398AA00681BAB /* HomeViewController.swift in Sources */,
+				CECAE67228C3CCB100681BAB /* LifePlanner.swift in Sources */,
 				238E60B828C309A10055CD43 /* BaseView.swift in Sources */,
 				238E60B628C3095A0055CD43 /* UIColor+.swift in Sources */,
 				2345B58F28C30A5C00F47EEE /* BaseViewController.swift in Sources */,
@@ -593,9 +652,10 @@
 				23A0484828C3784800ABC599 /* QuestionResponseModel.swift in Sources */,
 				2345B5A628C30D4400F47EEE /* UrlResource.swift in Sources */,
 				2330E4D228C39B1900981D25 /* OthersAnswersVC.swift in Sources */,
+				CECAE66928C3ABE100681BAB /* HomeViewModel.swift in Sources */,
 				2345B5A428C30D2E00F47EEE /* APISession.swift in Sources */,
 				CE38174B28C330FD00DC781F /* SignUpViewController.swift in Sources */,
-				CE38175828C33CD300DC781F /* UserModel.swift in Sources */,
+				CE38175828C33CD300DC781F /* UserInfo.swift in Sources */,
 				2345B5A928C30E5000F47EEE /* LoadingView.swift in Sources */,
 				2330E4D528C39F6E00981D25 /* OthersAnswersTVC.swift in Sources */,
 			);
