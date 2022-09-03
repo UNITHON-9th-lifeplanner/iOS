@@ -79,3 +79,28 @@ extension QuestionAnswerVM: Input {
 extension QuestionAnswerVM: Output {
     func bindOutput() {}
 }
+
+// MARK: - Networking
+
+extension QuestionAnswerVM {
+    func getQuestion(date: Date) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        let path = "questions?date=\(dateFormatter.string(from: date))"
+        let resource = UrlResource<QuestionResponseModel>(path: path)
+        
+        apiSession.getRequest(with: resource)
+            .withUnretained(self)
+            .subscribe(onNext: { owner, result in
+                dump(result)
+                switch result {
+                case .failure(let error):
+                    owner.apiError.onNext(error)
+                case .success(let data):
+                    dump(data)
+                }
+            })
+            .disposed(by: bag)
+    }
+}

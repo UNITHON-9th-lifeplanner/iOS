@@ -37,6 +37,7 @@
 		238E60B428C3091F0055CD43 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238E60B328C3091F0055CD43 /* UIViewController+.swift */; };
 		238E60B628C3095A0055CD43 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238E60B528C3095A0055CD43 /* UIColor+.swift */; };
 		238E60B828C309A10055CD43 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238E60B728C309A10055CD43 /* BaseView.swift */; };
+		23A0484828C3784800ABC599 /* QuestionResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A0484728C3784800ABC599 /* QuestionResponseModel.swift */; };
 		CE3816F928C2C95400DC781F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3816F828C2C95400DC781F /* AppDelegate.swift */; };
 		CE38170228C2C95700DC781F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE38170128C2C95700DC781F /* Assets.xcassets */; };
 		CE38170528C2C95700DC781F /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE38170328C2C95700DC781F /* Splash.storyboard */; };
@@ -85,6 +86,7 @@
 		238E60B328C3091F0055CD43 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 		238E60B528C3095A0055CD43 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		238E60B728C309A10055CD43 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseView.swift; path = LifeLibrary/Global/Base/BaseView.swift; sourceTree = SOURCE_ROOT; };
+		23A0484728C3784800ABC599 /* QuestionResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionResponseModel.swift; sourceTree = "<group>"; };
 		9C641F0D60398498A4398D7A /* Pods-LifeLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LifeLibrary.release.xcconfig"; path = "Target Support Files/Pods-LifeLibrary/Pods-LifeLibrary.release.xcconfig"; sourceTree = "<group>"; };
 		CE3816F528C2C95400DC781F /* LifeLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE3816F828C2C95400DC781F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -164,7 +166,6 @@
 		2345B5B628C31E3100F47EEE /* Screen */ = {
 			isa = PBXGroup;
 			children = (
-				CECAE66228C34F9D00681BAB /* LifePlanner */,
 				CE38174D28C333A900DC781F /* OnBoarding */,
 				CE38174228C3235A00DC781F /* Splash */,
 				CE38173F28C3234800DC781F /* User */,
@@ -177,6 +178,7 @@
 		2345B5B728C31E3500F47EEE /* QuestionAnswer */ = {
 			isa = PBXGroup;
 			children = (
+				23A0484628C3783800ABC599 /* Model */,
 				2305E92828C369B200534120 /* View */,
 				2345B5BC28C31E6900F47EEE /* ViewModel */,
 				2345B5BA28C31E5D00F47EEE /* ViewController */,
@@ -266,6 +268,14 @@
 				238E60A728C2F9A20055CD43 /* Loadable.swift */,
 			);
 			path = Foundation;
+			sourceTree = "<group>";
+		};
+		23A0484628C3783800ABC599 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				23A0484728C3784800ABC599 /* QuestionResponseModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		498BA536F6293FCCA3FA4AF4 /* Pods */ = {
@@ -358,13 +368,6 @@
 				CE38175528C33CCA00DC781F /* UserViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		CECAE66228C34F9D00681BAB /* LifePlanner */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = LifePlanner;
 			sourceTree = "<group>";
 		};
 		D22530AF4BA5E8980FADDF27 /* Frameworks */ = {
@@ -552,6 +555,7 @@
 				2345B59E28C30BE200F47EEE /* QuestionAnswerVM.swift in Sources */,
 				238E60A828C2F9A20055CD43 /* Loadable.swift in Sources */,
 				CE38175328C3381900DC781F /* OnboardingNavigationVC.swift in Sources */,
+				23A0484828C3784800ABC599 /* QuestionResponseModel.swift in Sources */,
 				2345B5A628C30D4400F47EEE /* UrlResource.swift in Sources */,
 				2345B5A428C30D2E00F47EEE /* APISession.swift in Sources */,
 				CE38174B28C330FD00DC781F /* SignUpViewController.swift in Sources */,

@@ -73,6 +73,11 @@ class QuestionAnswerVC: BaseViewController {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.getQuestion(date: .now)
+    }
+    
     override func configureView() {
         super.configureView()
         configureNaviBar()
