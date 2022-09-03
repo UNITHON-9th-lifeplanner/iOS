@@ -219,6 +219,9 @@ extension HomeViewController {
     }
     
     func changeKeyword() {
+        if viewModel.keywords.isEmpty {
+            return
+        }
         keyword1.text = "# " + (viewModel.keywords[0] )
         keyword2.text = "# " + (viewModel.keywords[1] )
         keyword3.text = "# " + (viewModel.keywords[2] )

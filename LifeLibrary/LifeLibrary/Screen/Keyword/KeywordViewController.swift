@@ -90,7 +90,6 @@ class KeywordViewController: BaseViewController {
     @IBOutlet weak var keyword4: UITextField!
     @IBOutlet weak var keyword5: UITextField!
     
-    
     @IBOutlet weak var popularKeywordView: UIView! {
         didSet {
             popularKeywordView.layer.cornerRadius = 15.0
@@ -170,7 +169,7 @@ class KeywordViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         chacngeKeyword()
-        var result = selectAge?.components(separatedBy: "대")
+        let result = selectAge?.components(separatedBy: "대")
         viewModel.getPopularKeyword(age_Group: result?[0] ?? "", completion: { [weak self] keywords in
             self?.popularKeywords = keywords
         })
@@ -187,10 +186,14 @@ extension KeywordViewController {
     }
     
     func changePopularKeyword() {
-        popularKeyword1.text = "# " + (popularKeywords?.currentPopularKeywords[0] ?? "" )
-        popularKeyword2.text = "# " + (popularKeywords?.currentPopularKeywords[1] ?? "" )
-        popularKeyword3.text = "# " + (popularKeywords?.currentPopularKeywords[2] ?? "" )
-        popularKeyword4.text = "# " + (popularKeywords?.currentPopularKeywords[3] ?? "" )
-        popularKeyword5.text = "# " + (popularKeywords?.currentPopularKeywords[4] ?? "" )
+        popularKeyword1.text = "1   # " + (popularKeywords?.currentPopularKeywords[0] ?? "" )
+        if popularKeywords?.currentPopularKeywords.count ?? 0 < 2 { return }
+        popularKeyword2.text = "2   # " + (popularKeywords?.currentPopularKeywords[1] ?? "" )
+        if popularKeywords?.currentPopularKeywords.count ?? 0 < 3 { return }
+        popularKeyword3.text = "3   # " + (popularKeywords?.currentPopularKeywords[2] ?? "" )
+        if popularKeywords?.currentPopularKeywords.count ?? 0 < 4 { return }
+        popularKeyword4.text = "4   # " + (popularKeywords?.currentPopularKeywords[3] ?? "" )
+        if popularKeywords?.currentPopularKeywords.count ?? 0 < 5 { return }
+        popularKeyword5.text = "5   # " + (popularKeywords?.currentPopularKeywords[4] ?? "" )
     }
 }

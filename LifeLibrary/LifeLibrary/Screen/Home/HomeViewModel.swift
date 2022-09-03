@@ -78,7 +78,6 @@ extension HomeViewModel {
                         print(error)
                     case .success(let data):
                         print(data)
-                        self.popularKeywords = data
                         completion?(data)
                     }
                 }, onError: { error in
