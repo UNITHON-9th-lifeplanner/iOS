@@ -52,6 +52,10 @@ class QuestionAnswerVC: BaseViewController {
             $0.appearance.titleSelectionColor = .orange100
             
             $0.appearance.borderSelectionColor = .orange100
+            $0.appearance.eventDefaultColor = .orange100
+            $0.appearance.eventSelectionColor = .orange100
+            
+            $0.scrollEnabled = false
         }
     
     private let questionAnswerView = QuestionAnswerView()
@@ -66,6 +70,8 @@ class QuestionAnswerVC: BaseViewController {
             $0.setTitleColor(.gray30, for: .normal)
         }
     
+    private var answerDates: [String]?
+    
     private let viewModel = QuestionAnswerVM()
     private let bag = DisposeBag()
     
@@ -75,7 +81,7 @@ class QuestionAnswerVC: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel.getQuestion(date: .now)
+        viewModel.getAnswerDates(date: .now)
     }
     
     override func configureView() {
@@ -97,6 +103,7 @@ class QuestionAnswerVC: BaseViewController {
     override func bindOutput() {
         super.bindOutput()
         bindDaySelect()
+        bindCalendar()
     }
     
 }
@@ -127,6 +134,7 @@ extension QuestionAnswerVC {
         
         configureCalendarTitle(date: .now)
         calendar.delegate = self
+        calendar.dataSource = self
     }
     
     private func calendarPrepareForReuse() {
@@ -227,6 +235,17 @@ extension QuestionAnswerVC {
             })
             .disposed(by: bag)
     }
+    
+    private func bindCalendar() {
+        viewModel.output.answerDates
+            .asDriver()
+            .drive(onNext: {[weak self] dates in
+                guard let self = self else { return }
+                self.answerDates = dates
+                self.calendar.reloadData()
+            })
+            .disposed(by: bag)
+    }
 }
 
 // MARK: - FSCalendarDelegate
@@ -239,5 +258,14 @@ extension QuestionAnswerVC: FSCalendarDelegate {
     func calendar(_ calendar: FSCalendar, didDeselect date: Date, at monthPosition: FSCalendarMonthPosition) {
         guard let cell = calendar.cell(for: date, at: .current) else { return }
         cell.layer.shadowOpacity = 0
+    }
+}
+
+extension QuestionAnswerVC: FSCalendarDataSource {
+    func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
+        guard let dates = answerDates,
+              let date = date.toString()
+        else { return 0 }
+        return dates.contains(date) ? 1 : 0
     }
 }

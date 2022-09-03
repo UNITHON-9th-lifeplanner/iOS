@@ -25,7 +25,9 @@ final class QuestionAnswerVM: BaseViewModel {
     
     // MARK: - Output
     
-    struct Output {}
+    struct Output {
+        var answerDates = BehaviorRelay<[String]>(value: [])
+    }
     
     // MARK: - Init
     
@@ -83,22 +85,21 @@ extension QuestionAnswerVM: Output {
 // MARK: - Networking
 
 extension QuestionAnswerVM {
-    func getQuestion(date: Date) {
+    func getAnswerDates(date: Date) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         
-        let path = "questions?date=\(dateFormatter.string(from: date))"
-        let resource = UrlResource<QuestionResponseModel>(path: path)
+        let path = "questions/answers/dates?date=\(dateFormatter.string(from: date))"
+        let resource = UrlResource<[String]>(path: path)
         
         apiSession.getRequest(with: resource)
             .withUnretained(self)
             .subscribe(onNext: { owner, result in
-                dump(result)
                 switch result {
                 case .failure(let error):
                     owner.apiError.onNext(error)
                 case .success(let data):
-                    dump(data)
+                    owner.output.answerDates.accept(data)
                 }
             })
             .disposed(by: bag)

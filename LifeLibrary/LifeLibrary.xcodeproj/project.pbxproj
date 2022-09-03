@@ -38,6 +38,8 @@
 		238E60B628C3095A0055CD43 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238E60B528C3095A0055CD43 /* UIColor+.swift */; };
 		238E60B828C309A10055CD43 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 238E60B728C309A10055CD43 /* BaseView.swift */; };
 		23A0484828C3784800ABC599 /* QuestionResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A0484728C3784800ABC599 /* QuestionResponseModel.swift */; };
+		23A0484C28C392DB00ABC599 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A0484B28C392DB00ABC599 /* String+.swift */; };
+		23A0484E28C393A700ABC599 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A0484D28C393A700ABC599 /* Date+.swift */; };
 		CE3816F928C2C95400DC781F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3816F828C2C95400DC781F /* AppDelegate.swift */; };
 		CE38170228C2C95700DC781F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE38170128C2C95700DC781F /* Assets.xcassets */; };
 		CE38170528C2C95700DC781F /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE38170328C2C95700DC781F /* Splash.storyboard */; };
@@ -87,6 +89,8 @@
 		238E60B528C3095A0055CD43 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		238E60B728C309A10055CD43 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseView.swift; path = LifeLibrary/Global/Base/BaseView.swift; sourceTree = SOURCE_ROOT; };
 		23A0484728C3784800ABC599 /* QuestionResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionResponseModel.swift; sourceTree = "<group>"; };
+		23A0484B28C392DB00ABC599 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		23A0484D28C393A700ABC599 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 		9C641F0D60398498A4398D7A /* Pods-LifeLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LifeLibrary.release.xcconfig"; path = "Target Support Files/Pods-LifeLibrary/Pods-LifeLibrary.release.xcconfig"; sourceTree = "<group>"; };
 		CE3816F528C2C95400DC781F /* LifeLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifeLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE3816F828C2C95400DC781F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -256,6 +260,8 @@
 				238E60B328C3091F0055CD43 /* UIViewController+.swift */,
 				238E60B528C3095A0055CD43 /* UIColor+.swift */,
 				2345B5CA28C348EE00F47EEE /* UIFont+.swift */,
+				23A0484B28C392DB00ABC599 /* String+.swift */,
+				23A0484D28C393A700ABC599 /* Date+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -532,6 +538,7 @@
 				238E60B828C309A10055CD43 /* BaseView.swift in Sources */,
 				238E60B628C3095A0055CD43 /* UIColor+.swift in Sources */,
 				2345B58F28C30A5C00F47EEE /* BaseViewController.swift in Sources */,
+				23A0484C28C392DB00ABC599 /* String+.swift in Sources */,
 				2345B5A228C30D1C00F47EEE /* APIService.swift in Sources */,
 				2345B59628C30AED00F47EEE /* NaviType.swift in Sources */,
 				238E60AC28C2F9FE0055CD43 /* UITextField+.swift in Sources */,
@@ -552,6 +559,7 @@
 				2345B5CB28C348EE00F47EEE /* UIFont+.swift in Sources */,
 				238E60B428C3091F0055CD43 /* UIViewController+.swift in Sources */,
 				CE3816F928C2C95400DC781F /* AppDelegate.swift in Sources */,
+				23A0484E28C393A700ABC599 /* Date+.swift in Sources */,
 				2345B59E28C30BE200F47EEE /* QuestionAnswerVM.swift in Sources */,
 				238E60A828C2F9A20055CD43 /* Loadable.swift in Sources */,
 				CE38175328C3381900DC781F /* OnboardingNavigationVC.swift in Sources */,
