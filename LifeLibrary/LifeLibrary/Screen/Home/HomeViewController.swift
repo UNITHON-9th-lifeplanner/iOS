@@ -89,12 +89,12 @@ class HomeViewController: UIViewController {
     }
     @IBOutlet weak var keywordView5: UIView! {
         didSet {
-            keywordView4.layer.cornerRadius = keywordView4.height/2
-            keywordView4.layer.borderWidth = 1
-            keywordView4.layer.borderColor = UIColor.orange30.cgColor
-            keywordView4.layer.opacity = 0.8
-            keywordView4.addCardShadow()
-            keywordView4.masksToBounds = false
+            keywordView5.layer.cornerRadius = keywordView5.height/2
+            keywordView5.layer.borderWidth = 1
+            keywordView5.layer.borderColor = UIColor.orange30.cgColor
+            keywordView5.layer.opacity = 0.8
+            keywordView5.addCardShadow()
+            keywordView5.masksToBounds = false
         }
     }
     
@@ -116,11 +116,7 @@ class HomeViewController: UIViewController {
         dragView.addGestureRecognizer(panGesture)
         viewModel.getMyPlan(age_Group: userInfo.age?.string ?? "", completion: { [weak self] content in
             self?.planTextView.text = content
-            self?.keyword1.text = "# " + (self?.viewModel.keywords[0] ?? "")
-            self?.keyword2.text = "# " + (self?.viewModel.keywords[1] ?? "")
-            self?.keyword3.text = "# " + (self?.viewModel.keywords[2] ?? "")
-            self?.keyword4.text = "# " + (self?.viewModel.keywords[3] ?? "")
-            self?.keyword5.text = "# " + (self?.viewModel.keywords[4] ?? "")
+            self?.changeKeyword()
         })
     }
 }
@@ -175,6 +171,11 @@ extension HomeViewController {
             self?.planAge.text = item
             self?.keywordTitle.text = item + " 전체 인기 키워드"
             self?.selectAge = item
+            var result = item.components(separatedBy: "대")
+            self?.viewModel.getMyPlan(age_Group: result[0], completion: { content in
+                self?.planTextView.text = content
+                self?.changeKeyword()
+            })
         }
     }
     
@@ -208,8 +209,17 @@ extension HomeViewController {
     func presentKeywordView() {
         let vc = KeywordViewController()
         
+        vc.keywords = viewModel.keywords
         vc.selectAge = selectAge
         
         self.present(vc, animated: true)
+    }
+    
+    func changeKeyword() {
+        keyword1.text = "# " + (viewModel.keywords[0] )
+        keyword2.text = "# " + (viewModel.keywords[1] )
+        keyword3.text = "# " + (viewModel.keywords[2] )
+        keyword4.text = "# " + (viewModel.keywords[3] )
+        keyword5.text = "# " + (viewModel.keywords[4] )
     }
 }

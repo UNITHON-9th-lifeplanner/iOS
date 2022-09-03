@@ -9,6 +9,9 @@ import UIKit
 
 class KeywordViewController: BaseViewController {
     var selectAge: String?
+    var keywords: [String]?
+    var popularKeywords: PopularKeyword?
+    private var viewModel: HomeViewModel = HomeViewModel()
     @IBOutlet weak var dividerView: UIView! {
         didSet {
             dividerView.backgroundColor = UIColor.gray10
@@ -19,7 +22,7 @@ class KeywordViewController: BaseViewController {
         didSet {
             keywordTitle.textColor = UIColor.black
             keywordTitle.font = UIFont.title3
-            keywordTitle.text = (selectAge ?? "") + "대 전체 인기 키워드"
+            keywordTitle.text = (selectAge ?? "") + " 전체 인기 키워드"
         }
     }
     
@@ -72,12 +75,12 @@ class KeywordViewController: BaseViewController {
     }
     @IBOutlet weak var keywordView5: UIView! {
         didSet {
-            keywordView4.layer.cornerRadius = keywordView4.height/2
-            keywordView4.layer.borderWidth = 1
-            keywordView4.layer.borderColor = UIColor.orange30.cgColor
-            keywordView4.layer.opacity = 0.8
-            keywordView4.addCardShadow()
-            keywordView4.masksToBounds = false
+            keywordView5.layer.cornerRadius = keywordView5.height/2
+            keywordView5.layer.borderWidth = 1
+            keywordView5.layer.borderColor = UIColor.orange30.cgColor
+            keywordView5.layer.opacity = 0.8
+            keywordView5.addCardShadow()
+            keywordView5.masksToBounds = false
         }
     }
     
@@ -88,8 +91,106 @@ class KeywordViewController: BaseViewController {
     @IBOutlet weak var keyword5: UITextField!
     
     
+    @IBOutlet weak var popularKeywordView: UIView! {
+        didSet {
+            popularKeywordView.layer.cornerRadius = 15.0
+            popularKeywordView.backgroundColor = UIColor.orange100
+        }
+    }
+    @IBOutlet weak var titleLabel: UILabel! {
+        didSet {
+            titleLabel.font = UIFont.title3
+            titleLabel.textColor = UIColor.white
+        }
+    }
+    
+    @IBOutlet weak var popularView1: UIView! {
+        didSet {
+            popularView1.layer.cornerRadius = popularView1.height/2
+            popularView1.backgroundColor = UIColor.white
+        }
+    }
+    @IBOutlet weak var popularView2: UIView! {
+        didSet {
+            popularView2.layer.cornerRadius = popularView2.height/2
+            popularView2.backgroundColor = UIColor.white
+        }
+    }
+    @IBOutlet weak var popularView3: UIView! {
+        didSet {
+            popularView3.layer.cornerRadius = popularView3.height/2
+            popularView3.backgroundColor = UIColor.white
+        }
+    }
+    @IBOutlet weak var popularView4: UIView! {
+        didSet {
+            popularView4.layer.cornerRadius = popularView4.height/2
+            popularView4.backgroundColor = UIColor.white
+        }
+    }
+    @IBOutlet weak var popularView5: UIView! {
+        didSet {
+            popularView5.layer.cornerRadius = popularView5.height/2
+            popularView5.backgroundColor = UIColor.white
+        }
+    }
+    
+    @IBOutlet weak var popularKeyword1: UILabel! {
+        didSet {
+            popularKeyword1.font = UIFont.title3
+            popularKeyword1.textColor = UIColor.black
+        }
+    }
+    @IBOutlet weak var popularKeyword2: UILabel! {
+        didSet {
+            popularKeyword2.font = UIFont.title3
+            popularKeyword2.textColor = UIColor.black
+        }
+    }
+    
+    @IBOutlet weak var popularKeyword3: UILabel! {
+        didSet {
+            popularKeyword3.font = UIFont.title3
+            popularKeyword3.textColor = UIColor.black
+        }
+    }
+    @IBOutlet weak var popularKeyword4: UILabel! {
+        didSet {
+            popularKeyword4.font = UIFont.title3
+            popularKeyword4.textColor = UIColor.black
+        }
+    }
+    @IBOutlet weak var popularKeyword5: UILabel! {
+        didSet {
+            popularKeyword5.font = UIFont.title3
+            popularKeyword5.textColor = UIColor.black
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        chacngeKeyword()
+        var result = selectAge?.components(separatedBy: "대")
+        viewModel.getPopularKeyword(age_Group: result?[0] ?? "", completion: { [weak self] keywords in
+            self?.popularKeywords = keywords
+        })
+    }
+}
 
+extension KeywordViewController {
+    func chacngeKeyword() {
+        keyword1.text = "# " + (keywords?[0] ?? "" )
+        keyword2.text = "# " + (keywords?[1] ?? "" )
+        keyword3.text = "# " + (keywords?[2] ?? "" )
+        keyword4.text = "# " + (keywords?[3] ?? "" )
+        keyword5.text = "# " + (keywords?[4] ?? "" )
+    }
+    
+    func changePopularKeyword() {
+        popularKeyword1.text = "# " + (popularKeywords?.currentPopularKeywords[0] ?? "" )
+        popularKeyword2.text = "# " + (popularKeywords?.currentPopularKeywords[1] ?? "" )
+        popularKeyword3.text = "# " + (popularKeywords?.currentPopularKeywords[2] ?? "" )
+        popularKeyword4.text = "# " + (popularKeywords?.currentPopularKeywords[3] ?? "" )
+        popularKeyword5.text = "# " + (popularKeywords?.currentPopularKeywords[4] ?? "" )
     }
 }

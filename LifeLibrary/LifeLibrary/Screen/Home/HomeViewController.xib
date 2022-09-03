@@ -24,7 +24,7 @@
                 <outlet property="keywordView2" destination="696-Y6-OJJ" id="jFT-gs-SVz"/>
                 <outlet property="keywordView3" destination="NvE-vX-hAV" id="u8l-9y-sUE"/>
                 <outlet property="keywordView4" destination="iNj-Aa-D08" id="Sx9-DQ-VRO"/>
-                <outlet property="keywordView5" destination="3aZ-Ed-tBS" id="aCn-5b-Om4"/>
+                <outlet property="keywordView5" destination="3aZ-Ed-tBS" id="sMB-gf-r1A"/>
                 <outlet property="mainView" destination="i5M-Pr-FkT" id="7lx-pq-SgF"/>
                 <outlet property="planAge" destination="HT7-Rm-1VX" id="qaF-tu-lQK"/>
                 <outlet property="planTextView" destination="EUw-va-hYl" id="fcW-KY-UDs"/>
@@ -255,23 +255,30 @@
                         <action selector="onTouchQuestionButton:" destination="-1" eventType="touchUpInside" id="RL6-gn-kVF"/>
                     </connections>
                 </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeImg" translatesAutoresizingMaskIntoConstraints="NO" id="2yc-dW-Maq">
+                    <rect key="frame" x="160" y="397" width="224" height="231"/>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemOrangeColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wJe-GW-l0b" secondAttribute="trailing" constant="20" id="7QH-1H-blX"/>
                 <constraint firstItem="3HW-ok-Fxf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="56" id="8ct-Rh-ZAE"/>
+                <constraint firstItem="K5M-VL-jtj" firstAttribute="top" secondItem="2yc-dW-Maq" secondAttribute="bottom" constant="35" id="8eL-eJ-cvd"/>
                 <constraint firstItem="wJe-GW-l0b" firstAttribute="leading" secondItem="HjO-10-nde" secondAttribute="trailing" constant="8" id="9I2-lG-qZz"/>
+                <constraint firstItem="2yc-dW-Maq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="160" id="Amj-WK-w3E"/>
                 <constraint firstItem="EUw-va-hYl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="D9N-YK-O20"/>
                 <constraint firstItem="K5M-VL-jtj" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="IIt-hi-swn"/>
                 <constraint firstItem="eXA-Rf-KfD" firstAttribute="top" secondItem="3HW-ok-Fxf" secondAttribute="bottom" constant="15" id="Iae-QF-iCl"/>
                 <constraint firstItem="eXA-Rf-KfD" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Ilt-Qn-yWh"/>
                 <constraint firstItem="EUw-va-hYl" firstAttribute="top" secondItem="eXA-Rf-KfD" secondAttribute="bottom" constant="32" id="LHU-CE-odl"/>
+                <constraint firstItem="2yc-dW-Maq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="397" id="Qks-11-cVR"/>
                 <constraint firstItem="wJe-GW-l0b" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="56" id="SRD-zz-5ec"/>
                 <constraint firstAttribute="bottom" secondItem="K5M-VL-jtj" secondAttribute="bottom" id="eGT-1F-4h3"/>
                 <constraint firstItem="3HW-ok-Fxf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="fII-56-3JK"/>
                 <constraint firstItem="HjO-10-nde" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="56" id="tms-jE-gf1"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="K5M-VL-jtj" secondAttribute="trailing" id="w4a-Go-Ld1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2yc-dW-Maq" secondAttribute="trailing" constant="30" id="wJz-LA-txZ"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="109.82142857142857"/>
         </view>
@@ -279,6 +286,7 @@
     <resources>
         <image name="bottomArrow" width="24" height="24"/>
         <image name="edit_white" width="40" height="40"/>
+        <image name="homeImg" width="241" height="193"/>
         <image name="queRed" width="40" height="40"/>
         <image name="setting" width="40" height="40"/>
         <systemColor name="labelColor">
