@@ -36,9 +36,6 @@
 		CE38170E28C2CACB00DC781F /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE38170D28C2CACB00DC781F /* Alamofire */; };
 		CE38171128C2CADF00DC781F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = CE38171028C2CADF00DC781F /* SwiftyJSON */; };
 		CE38171428C2CB2C00DC781F /* SwifterSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE38171328C2CB2C00DC781F /* SwifterSwift */; };
-		CE38173128C2E59A00DC781F /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = CE38173028C2E59A00DC781F /* RxCocoa */; };
-		CE38173328C2E59A00DC781F /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = CE38173228C2E59A00DC781F /* RxRelay */; };
-		CE38173528C2E59A00DC781F /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE38173428C2E59A00DC781F /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,13 +77,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE38173328C2E59A00DC781F /* RxRelay in Frameworks */,
 				CE38171128C2CADF00DC781F /* SwiftyJSON in Frameworks */,
 				CE38171428C2CB2C00DC781F /* SwifterSwift in Frameworks */,
-				CE38173128C2E59A00DC781F /* RxCocoa in Frameworks */,
 				236CE20D5257BA89D2CD728B /* Pods_LifeLibrary.framework in Frameworks */,
 				CE38170E28C2CACB00DC781F /* Alamofire in Frameworks */,
-				CE38173528C2E59A00DC781F /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,9 +275,6 @@
 				CE38170D28C2CACB00DC781F /* Alamofire */,
 				CE38171028C2CADF00DC781F /* SwiftyJSON */,
 				CE38171328C2CB2C00DC781F /* SwifterSwift */,
-				CE38173028C2E59A00DC781F /* RxCocoa */,
-				CE38173228C2E59A00DC781F /* RxRelay */,
-				CE38173428C2E59A00DC781F /* RxSwift */,
 			);
 			productName = LifeLibrary;
 			productReference = CE3816F528C2C95400DC781F /* LifeLibrary.app */;
@@ -317,7 +308,6 @@
 				CE38170C28C2CACB00DC781F /* XCRemoteSwiftPackageReference "Alamofire" */,
 				CE38170F28C2CADF00DC781F /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				CE38171228C2CB2C00DC781F /* XCRemoteSwiftPackageReference "SwifterSwift" */,
-				CE38172F28C2E59900DC781F /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = CE3816F628C2C95400DC781F /* Products */;
 			projectDirPath = "";
@@ -666,14 +656,6 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		CE38172F28C2E59900DC781F /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -691,21 +673,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CE38171228C2CB2C00DC781F /* XCRemoteSwiftPackageReference "SwifterSwift" */;
 			productName = SwifterSwift;
-		};
-		CE38173028C2E59A00DC781F /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CE38172F28C2E59900DC781F /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		CE38173228C2E59A00DC781F /* RxRelay */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CE38172F28C2E59900DC781F /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxRelay;
-		};
-		CE38173428C2E59A00DC781F /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CE38172F28C2E59900DC781F /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
