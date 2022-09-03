@@ -32,7 +32,9 @@ class SplashViewController: BaseViewController {
             .take(until: maxExposeTime)
             .subscribe(onNext: { [weak self] accessToken in
                 // 최소노출시간 대기 후 로그인여부가 확인되면 화면 진입
-                accessToken == "" ? self?.presentOnboardingView() : self?.presentHomeView()
+                UserInfo.shared.accessToken = accessToken
+                UserInfo.shared.age = UserDefaults.standard.integer(forKey: "age")
+                accessToken.isEmpty ? self?.presentOnboardingView() : self?.presentHomeView()
             }, onCompleted: { [weak self] in
                 // 최대노출시간을 초과한 후에도 현재 화면이 노출 중이면 다음 화면으로 강제 이동
                 guard self?.isVisible == true else { return }

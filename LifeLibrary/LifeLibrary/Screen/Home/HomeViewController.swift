@@ -10,6 +10,7 @@ import DropDown
 
 class HomeViewController: UIViewController {
     var userInfo = UserInfo.shared
+    private var viewModel: HomeViewModel = HomeViewModel()
     
     @IBOutlet var mainView: UIView! {
         didSet {
@@ -35,6 +36,14 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var planTextView: UITextView! {
         didSet {
             planTextView.font = UIFont.home
+            planTextView.textColor = UIColor.white
+        }
+    }
+    
+    @IBOutlet weak var keywordTitle: UILabel! {
+        didSet {
+            keywordTitle.textColor = UIColor.black
+            keywordTitle.font = UIFont.title3
         }
     }
     
@@ -47,8 +56,10 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         initUI()
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(self.drag))
-        // panGesture가 보는 view는 circleView가 된다.
         dragView.addGestureRecognizer(panGesture)
+        viewModel.getMyPlan(age_Group: userInfo.age?.string ?? "", completion: { [weak self] content in
+            self?.planTextView.text = content
+        })
     }
 }
 
@@ -70,7 +81,9 @@ extension HomeViewController {
         
         if let firstIndex = ageList.firstIndex(of: (userInfo.age?.string ?? "") + "대") {
             planAge.text = ageList[firstIndex]
+            self.keywordTitle.text = ageList[firstIndex] + " 전체 인기 키워드"
         }
+        selectAge = userInfo.age?.string ?? ""
         setDropdown()
     }
     
@@ -88,6 +101,8 @@ extension HomeViewController {
         dropDown.selectionAction = { [weak self] (index, item) in
             //선택한 Item을 TextField에 넣어준다.
             self?.planAge.text = item
+            self?.keywordTitle.text = item + " 전체 인기 키워드"
+            self?.selectAge = item
         }
     }
     

@@ -10,11 +10,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="LifeLibrary" customModuleProvider="target">
             <connections>
-                <outlet property="collectionView" destination="H1f-cJ-LxC" id="iyv-np-fSU"/>
                 <outlet property="dividerView" destination="yhP-cz-S1n" id="Cd0-WV-8mJ"/>
                 <outlet property="dragMainView" destination="K5M-VL-jtj" id="63r-OS-4yn"/>
                 <outlet property="dragView" destination="PPE-vI-1Jz" id="2EA-lm-2Cw"/>
                 <outlet property="dropView" destination="eXA-Rf-KfD" id="8SP-cZ-tfn"/>
+                <outlet property="keywordTitle" destination="QVl-6d-cDP" id="iRU-we-hHz"/>
                 <outlet property="mainView" destination="i5M-Pr-FkT" id="7lx-pq-SgF"/>
                 <outlet property="planAge" destination="HT7-Rm-1VX" id="qaF-tu-lQK"/>
                 <outlet property="planTextView" destination="EUw-va-hYl" id="fcW-KY-UDs"/>
