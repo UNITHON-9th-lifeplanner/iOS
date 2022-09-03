@@ -41,12 +41,10 @@
 		CE38171128C2CADF00DC781F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = CE38171028C2CADF00DC781F /* SwiftyJSON */; };
 		CE38171428C2CB2C00DC781F /* SwifterSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE38171328C2CB2C00DC781F /* SwifterSwift */; };
 		CE38174428C3238300DC781F /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38174328C3238300DC781F /* SplashViewController.swift */; };
-		CE38174728C32A0600DC781F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38174528C32A0600DC781F /* LoginViewController.swift */; };
-		CE38174828C32A0600DC781F /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE38174628C32A0600DC781F /* LoginViewController.xib */; };
+		CE38174728C32A0600DC781F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38174528C32A0600DC781F /* OnboardingViewController.swift */; };
+		CE38174828C32A0600DC781F /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE38174628C32A0600DC781F /* OnboardingViewController.xib */; };
 		CE38174B28C330FD00DC781F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38174928C330FD00DC781F /* SignUpViewController.swift */; };
 		CE38174C28C330FD00DC781F /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE38174A28C330FD00DC781F /* SignUpViewController.xib */; };
-		CE38175028C333C500DC781F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38174E28C333C500DC781F /* OnboardingViewController.swift */; };
-		CE38175128C333C500DC781F /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE38174F28C333C500DC781F /* OnboardingViewController.xib */; };
 		CE38175328C3381900DC781F /* OnboardingNavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38175228C3381900DC781F /* OnboardingNavigationVC.swift */; };
 		CE38175628C33CCA00DC781F /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38175528C33CCA00DC781F /* UserViewModel.swift */; };
 		CE38175828C33CD300DC781F /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38175728C33CD300DC781F /* UserModel.swift */; };
@@ -87,12 +85,10 @@
 		CE38170628C2C95700DC781F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE38171628C2CBD600DC781F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; name = .swiftlint.yml; path = ../.swiftlint.yml; sourceTree = "<group>"; };
 		CE38174328C3238300DC781F /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
-		CE38174528C32A0600DC781F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		CE38174628C32A0600DC781F /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		CE38174528C32A0600DC781F /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		CE38174628C32A0600DC781F /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
 		CE38174928C330FD00DC781F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CE38174A28C330FD00DC781F /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
-		CE38174E28C333C500DC781F /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
-		CE38174F28C333C500DC781F /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
 		CE38175228C3381900DC781F /* OnboardingNavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingNavigationVC.swift; sourceTree = "<group>"; };
 		CE38175528C33CCA00DC781F /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		CE38175728C33CD300DC781F /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
@@ -293,19 +289,9 @@
 			children = (
 				CE38175428C33CBF00DC781F /* ViewModel */,
 				CE38174128C3235500DC781F /* SignUp */,
-				CE38174028C3235000DC781F /* Login */,
 				CE38175728C33CD300DC781F /* UserModel.swift */,
 			);
 			path = User;
-			sourceTree = "<group>";
-		};
-		CE38174028C3235000DC781F /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				CE38174528C32A0600DC781F /* LoginViewController.swift */,
-				CE38174628C32A0600DC781F /* LoginViewController.xib */,
-			);
-			path = Login;
 			sourceTree = "<group>";
 		};
 		CE38174128C3235500DC781F /* SignUp */ = {
@@ -328,8 +314,8 @@
 		CE38174D28C333A900DC781F /* OnBoarding */ = {
 			isa = PBXGroup;
 			children = (
-				CE38174E28C333C500DC781F /* OnboardingViewController.swift */,
-				CE38174F28C333C500DC781F /* OnboardingViewController.xib */,
+				CE38174528C32A0600DC781F /* OnboardingViewController.swift */,
+				CE38174628C32A0600DC781F /* OnboardingViewController.xib */,
 				CE38175228C3381900DC781F /* OnboardingNavigationVC.swift */,
 			);
 			path = OnBoarding;
@@ -434,9 +420,8 @@
 				2345B5C928C3477300F47EEE /* Pretendard-Light.otf in Resources */,
 				CE38170528C2C95700DC781F /* Splash.storyboard in Resources */,
 				CE38170228C2C95700DC781F /* Assets.xcassets in Resources */,
-				CE38175128C333C500DC781F /* OnboardingViewController.xib in Resources */,
 				CE38174C28C330FD00DC781F /* SignUpViewController.xib in Resources */,
-				CE38174828C32A0600DC781F /* LoginViewController.xib in Resources */,
+				CE38174828C32A0600DC781F /* OnboardingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -520,10 +505,9 @@
 				2345B5AD28C30FA900F47EEE /* NavigationBar.swift in Sources */,
 				2345B59328C30ABF00F47EEE /* BaseNavigationController.swift in Sources */,
 				2345B5AF28C3103600F47EEE /* QuestionVC.swift in Sources */,
-				CE38174728C32A0600DC781F /* LoginViewController.swift in Sources */,
+				CE38174728C32A0600DC781F /* OnboardingViewController.swift in Sources */,
 				238E60AE28C2FA140055CD43 /* UITextView+.swift in Sources */,
 				238E60A428C2F97E0055CD43 /* Input.swift in Sources */,
-				CE38175028C333C500DC781F /* OnboardingViewController.swift in Sources */,
 				238E60AA28C2F9E40055CD43 /* UILabel+.swift in Sources */,
 				2345B59128C30A7500F47EEE /* BaseViewModel.swift in Sources */,
 				2345B5CB28C348EE00F47EEE /* UIFont+.swift in Sources */,

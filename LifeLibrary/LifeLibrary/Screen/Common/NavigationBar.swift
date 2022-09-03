@@ -67,9 +67,9 @@ extension NavigationBar {
             backBtn.setImage(naviType.backBtnImage, for: .normal)
             backBtn.addTarget(targetVC, action: #selector(targetVC.popVC), for: .touchUpInside)
         } else {
-            rightBtnLayout()
-            rightBtn.setImage(naviType.backBtnImage, for: .normal)
-            rightBtn.addTarget(targetVC, action: #selector(targetVC.dismissVC), for: .touchUpInside)
+            leftBtnLayout()
+            backBtn.setImage(naviType.backBtnImage, for: .normal)
+            backBtn.addTarget(targetVC, action: #selector(targetVC.dismissVC), for: .touchUpInside)
         }
     }
     
