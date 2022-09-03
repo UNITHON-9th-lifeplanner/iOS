@@ -16,6 +16,10 @@ import FSCalendar
 class QuestionAnswerVC: BaseViewController {
     private let naviBar = NavigationBar()
     
+    private let baseScrollView = UIScrollView()
+    
+    private let contentView = UIView()
+    
     private let calendarTitle = UILabel()
         .then {
             $0.font = .title2
@@ -106,6 +110,7 @@ class QuestionAnswerVC: BaseViewController {
         super.bindOutput()
         bindDaySelect()
         bindCalendar()
+        bindKeyboardScroll()
     }
     
 }
@@ -127,12 +132,14 @@ extension QuestionAnswerVC {
     }
     
     private func configureContentView() {
-        view.addSubviews([calendarTitle,
-                          prevMonthBtn,
-                          nextMonthBtn,
-                          calendar,
-                          questionAnswerView,
-                          showAnswerListBtn])
+        view.addSubview(baseScrollView)
+        baseScrollView.addSubview(contentView)
+        contentView.addSubviews([calendarTitle,
+                                 prevMonthBtn,
+                                 nextMonthBtn,
+                                 calendar,
+                                 questionAnswerView,
+                                 showAnswerListBtn])
         
         configureCalendarTitle(date: .now)
         calendar.delegate = self
@@ -150,8 +157,19 @@ extension QuestionAnswerVC {
 
 extension QuestionAnswerVC {
     private func configureLayout() {
-        calendarTitle.snp.makeConstraints {
+        baseScrollView.snp.makeConstraints {
             $0.top.equalTo(naviBar.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(view.keyboardLayoutGuide.snp.top)
+        }
+        
+        contentView.snp.makeConstraints {
+            $0.top.bottom.width.centerX.equalToSuperview()
+            $0.height.equalToSuperview().priority(.low)
+        }
+        
+        calendarTitle.snp.makeConstraints {
+            $0.top.equalToSuperview()
             $0.centerX.equalToSuperview()
         }
         
@@ -178,12 +196,13 @@ extension QuestionAnswerVC {
             $0.top.equalTo(calendar.snp.bottom).offset(28)
             $0.leading.equalToSuperview().offset(20)
             $0.trailing.equalToSuperview().offset(-20)
-            $0.bottom.equalTo(view.keyboardLayoutGuide.snp.top).offset(-72)
+            $0.height.equalTo(228)
         }
         
         showAnswerListBtn.snp.makeConstraints {
             $0.top.equalTo(questionAnswerView.snp.bottom).offset(13)
             $0.trailing.equalToSuperview().offset(-20)
+            $0.bottom.equalToSuperview().offset(-20)
         }
     }
 }
@@ -245,6 +264,15 @@ extension QuestionAnswerVC {
                 guard let self = self else { return }
                 self.answerDates = dates
                 self.calendar.reloadData()
+            })
+            .disposed(by: bag)
+    }
+    
+    private func bindKeyboardScroll() {
+        keyboardWillShow
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                self.baseScrollView.scrollToBottom(animated: true)
             })
             .disposed(by: bag)
     }
