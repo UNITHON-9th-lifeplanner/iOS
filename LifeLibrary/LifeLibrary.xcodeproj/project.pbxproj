@@ -10,6 +10,7 @@
 		2305E92A28C369CA00534120 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2305E92928C369CA00534120 /* QuestionView.swift */; };
 		2305E92C28C36ACF00534120 /* QuestionBtnType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2305E92B28C36ACF00534120 /* QuestionBtnType.swift */; };
 		2305E92E28C36D9700534120 /* QuestionAnswerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2305E92D28C36D9700534120 /* QuestionAnswerView.swift */; };
+		2330E4D228C39B1900981D25 /* OthersAnswersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2330E4D128C39B1900981D25 /* OthersAnswersVC.swift */; };
 		2345B58F28C30A5C00F47EEE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B58E28C30A5C00F47EEE /* BaseViewController.swift */; };
 		2345B59128C30A7500F47EEE /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B59028C30A7500F47EEE /* BaseViewModel.swift */; };
 		2345B59328C30ABF00F47EEE /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2345B59228C30ABF00F47EEE /* BaseNavigationController.swift */; };
@@ -60,6 +61,7 @@
 		2305E92928C369CA00534120 /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		2305E92B28C36ACF00534120 /* QuestionBtnType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionBtnType.swift; sourceTree = "<group>"; };
 		2305E92D28C36D9700534120 /* QuestionAnswerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAnswerView.swift; sourceTree = "<group>"; };
+		2330E4D128C39B1900981D25 /* OthersAnswersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersAnswersVC.swift; sourceTree = "<group>"; };
 		2345B58E28C30A5C00F47EEE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = LifeLibrary/Global/Base/BaseViewController.swift; sourceTree = SOURCE_ROOT; };
 		2345B59028C30A7500F47EEE /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseViewModel.swift; path = LifeLibrary/Global/Base/BaseViewModel.swift; sourceTree = SOURCE_ROOT; };
 		2345B59228C30ABF00F47EEE /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BaseNavigationController.swift; path = LifeLibrary/Global/Base/BaseNavigationController.swift; sourceTree = SOURCE_ROOT; };
@@ -199,6 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				2345B5AE28C3103600F47EEE /* QuestionAnswerVC.swift */,
+				2330E4D128C39B1900981D25 /* OthersAnswersVC.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -535,7 +538,7 @@
 				2345B5AD28C30FA900F47EEE /* NavigationBar.swift in Sources */,
 				2345B59328C30ABF00F47EEE /* BaseNavigationController.swift in Sources */,
 				CE38174728C32A0600DC781F /* OnboardingViewController.swift in Sources */,
-				CE38174728C32A0600DC781F /* LoginViewController.swift in Sources */,
+				CE38174728C32A0600DC781F /* OnboardingViewController.swift in Sources */,
 				2345B5AF28C3103600F47EEE /* QuestionAnswerVC.swift in Sources */,
 				238E60AE28C2FA140055CD43 /* UITextView+.swift in Sources */,
 				238E60A428C2F97E0055CD43 /* Input.swift in Sources */,
@@ -550,6 +553,7 @@
 				CE38175328C3381900DC781F /* OnboardingNavigationVC.swift in Sources */,
 				23A0484828C3784800ABC599 /* QuestionResponseModel.swift in Sources */,
 				2345B5A628C30D4400F47EEE /* UrlResource.swift in Sources */,
+				2330E4D228C39B1900981D25 /* OthersAnswersVC.swift in Sources */,
 				2345B5A428C30D2E00F47EEE /* APISession.swift in Sources */,
 				CE38174B28C330FD00DC781F /* SignUpViewController.swift in Sources */,
 				CE38175828C33CD300DC781F /* UserModel.swift in Sources */,
