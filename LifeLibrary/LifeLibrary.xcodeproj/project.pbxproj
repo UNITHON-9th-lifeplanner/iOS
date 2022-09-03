@@ -45,6 +45,8 @@
 		CE38174828C32A0600DC781F /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE38174628C32A0600DC781F /* LoginViewController.xib */; };
 		CE38174B28C330FD00DC781F /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38174928C330FD00DC781F /* SignUpViewController.swift */; };
 		CE38174C28C330FD00DC781F /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE38174A28C330FD00DC781F /* SignUpViewController.xib */; };
+		CE38175028C333C500DC781F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE38174E28C333C500DC781F /* OnboardingViewController.swift */; };
+		CE38175128C333C500DC781F /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE38174F28C333C500DC781F /* OnboardingViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +88,8 @@
 		CE38174628C32A0600DC781F /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		CE38174928C330FD00DC781F /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		CE38174A28C330FD00DC781F /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		CE38174E28C333C500DC781F /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		CE38174F28C333C500DC781F /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
 		EF07E83A6F4CB97481671722 /* Pods_LifeLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LifeLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEC96BD24E2453D752A5CCE2 /* Pods-LifeLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LifeLibrary.debug.xcconfig"; path = "Target Support Files/Pods-LifeLibrary/Pods-LifeLibrary.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,6 +142,7 @@
 		2345B5B628C31E3100F47EEE /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				CE38174D28C333A900DC781F /* OnBoarding */,
 				CE38174228C3235A00DC781F /* Splash */,
 				CE38173F28C3234800DC781F /* User */,
 				2345B5B828C31E4100F47EEE /* Common */,
@@ -311,6 +316,15 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
+		CE38174D28C333A900DC781F /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				CE38174E28C333C500DC781F /* OnboardingViewController.swift */,
+				CE38174F28C333C500DC781F /* OnboardingViewController.xib */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
 		D22530AF4BA5E8980FADDF27 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -395,6 +409,7 @@
 				2345B5C928C3477300F47EEE /* Pretendard-Light.otf in Resources */,
 				CE38170528C2C95700DC781F /* Splash.storyboard in Resources */,
 				CE38170228C2C95700DC781F /* Assets.xcassets in Resources */,
+				CE38175128C333C500DC781F /* OnboardingViewController.xib in Resources */,
 				CE38174C28C330FD00DC781F /* SignUpViewController.xib in Resources */,
 				CE38174828C32A0600DC781F /* LoginViewController.xib in Resources */,
 			);
@@ -482,6 +497,7 @@
 				CE38174728C32A0600DC781F /* LoginViewController.swift in Sources */,
 				238E60AE28C2FA140055CD43 /* UITextView+.swift in Sources */,
 				238E60A428C2F97E0055CD43 /* Input.swift in Sources */,
+				CE38175028C333C500DC781F /* OnboardingViewController.swift in Sources */,
 				238E60AA28C2F9E40055CD43 /* UILabel+.swift in Sources */,
 				2345B59128C30A7500F47EEE /* BaseViewModel.swift in Sources */,
 				2345B5CB28C348EE00F47EEE /* UIFont+.swift in Sources */,
