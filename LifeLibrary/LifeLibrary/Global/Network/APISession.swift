@@ -153,7 +153,7 @@ struct APISession: APIService {
                 .validate(statusCode: 200...399)
                 .responseDecodable(of: T.self) { response in
                     switch response.result {
-                    case .failure(let error):
+                    case .failure:
                         observer.onNext(urlResource.judgeError(statusCode: response.response?.statusCode ?? -1))
                     case .success(let decodedData):
                         
