@@ -105,11 +105,21 @@ extension OnboardingViewController {
 
 extension OnboardingViewController {
     func loginAction() {
-        viewModel.postLoginAction(account_id: account_id, password: password)
+        viewModel.postLoginAction(account_id: account_id, password: password, completion: { [weak self] in
+            self?.presentHomeView()
+        })
     }
     
     func signupAction() {
         let vc = SignUpViewController()
+        
+        vc.modalPresentationStyle = .overFullScreen
+        
+        self.present(vc, animated: true)
+    }
+    
+    func presentHomeView() {
+        let vc = HomeViewController()
         
         vc.modalPresentationStyle = .overFullScreen
         

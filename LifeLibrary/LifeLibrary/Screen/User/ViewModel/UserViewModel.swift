@@ -38,7 +38,7 @@ final class UserViewModel: BaseViewModel {
 
 // MARK: - Networking
 extension UserViewModel {
-    func postLoginAction(account_id: String, password: String) {
+    func postLoginAction(account_id: String, password: String, completion: (() -> Void)? = nil) {
         let path = "login"
         let resource = UrlResource<[String: String]>(path: path)
         let param: [String: Any] = [
@@ -62,6 +62,7 @@ extension UserViewModel {
                     case .success(let accessToken):
                         print(accessToken)
                         UserDefaults.standard.set(accessToken["access_token"], forKey: "access_token")
+                        completion?()
                     }
                 }, onError: { error in
                     print(error)
@@ -70,7 +71,7 @@ extension UserViewModel {
             .disposed(by: bag)
     }
     
-    func postSignUpAction(account_id: String, password: String, name: String, birthday: String) {
+    func postSignUpAction(account_id: String, password: String, name: String, birthday: String, completion: (() -> Void)? = nil) {
         let path = "users"
         let resource = UrlResource<[String: String]>(path: path)
         let param: [String: Any] = [
@@ -89,6 +90,7 @@ extension UserViewModel {
                     case .success(let accessToken):
                         print(accessToken)
                         UserDefaults.standard.set(accessToken["access_token"], forKey: "access_token")
+                        completion?()
                     }
                 }, onError: { error in
                     print(error)
