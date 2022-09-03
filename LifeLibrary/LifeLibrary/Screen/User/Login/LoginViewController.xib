@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="LifeLibrary" customModuleProvider="target">
             <connections>
+                <outlet property="idTextField" destination="fou-5w-bO9" id="hz5-g8-Dw3"/>
+                <outlet property="passwordTextField" destination="nwP-u1-o2w" id="oZn-ja-jZX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -45,6 +47,9 @@
                     <state key="normal" title="로그인">
                         <color key="titleColor" systemColor="labelColor"/>
                     </state>
+                    <connections>
+                        <action selector="onTouchLoginButton:" destination="-1" eventType="touchUpInside" id="mfx-Vg-C4J"/>
+                    </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="아이디" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TjM-mu-jH5">
                     <rect key="frame" x="78" y="335" width="45" height="21"/>

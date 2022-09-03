@@ -148,6 +148,7 @@
 		2345B5B628C31E3100F47EEE /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				CECAE66228C34F9D00681BAB /* LifePlanner */,
 				CE38174D28C333A900DC781F /* OnBoarding */,
 				CE38174228C3235A00DC781F /* Splash */,
 				CE38173F28C3234800DC781F /* User */,
@@ -340,6 +341,13 @@
 				CE38175528C33CCA00DC781F /* UserViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		CECAE66228C34F9D00681BAB /* LifePlanner */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LifePlanner;
 			sourceTree = "<group>";
 		};
 		D22530AF4BA5E8980FADDF27 /* Frameworks */ = {
