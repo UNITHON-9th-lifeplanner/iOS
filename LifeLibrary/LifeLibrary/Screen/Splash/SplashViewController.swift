@@ -44,7 +44,7 @@ class SplashViewController: BaseViewController {
 
 extension SplashViewController {
     func checkLogin() {
-        let accessToken = UserDefaults.standard.string(forKey: "accessToken") ?? ""
+        let accessToken = UserDefaults.standard.string(forKey: "access_token") ?? ""
         
         loginAccessTokenRx.accept(accessToken)
     }

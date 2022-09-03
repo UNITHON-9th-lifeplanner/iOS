@@ -18,7 +18,10 @@ struct UrlResource<T: Decodable> {
     
     func judgeError(statusCode: Int) -> Result<T, APIError> {
         switch statusCode {
-        case 400...409: return .failure(.decode)
+        case 400, 402...403, 405...408: return .failure(.decode(status: statusCode))
+        case 401: return .failure(.unauthrized)
+        case 404: return .failure(.notfound)
+        case 409: return .failure(.conflict)
         case 500: return .failure(.http(status: statusCode))
         default: return .failure(.unknown(status: statusCode))
         }
