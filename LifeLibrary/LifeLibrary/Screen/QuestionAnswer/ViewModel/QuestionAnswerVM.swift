@@ -135,7 +135,6 @@ extension QuestionAnswerVM {
         apiSession.postRequest(with: resource, param: ["content": answer])
             .withUnretained(self)
             .subscribe(onNext: { owner, result in
-                dump(result)
                 switch result {
                 case .failure(let error):
                     owner.apiError.onNext(error)
@@ -151,6 +150,23 @@ extension QuestionAnswerVM {
         let resource = UrlResource<Bool>(path: path)
         
         apiSession.putRequest(with: resource, param: ["content": answer])
+            .withUnretained(self)
+            .subscribe(onNext: { owner, result in
+                switch result {
+                case .failure(let error):
+                    owner.apiError.onNext(error)
+                case .success(let data):
+                    dump(data)
+                }
+            })
+            .disposed(by: bag)
+    }
+    
+    func deleteAnswer(answerID: Int) {
+        let path = "questions/answers/\(answerID)"
+        let resource = UrlResource<Bool>(path: path)
+        
+        apiSession.deleteRequest(with: resource)
             .withUnretained(self)
             .subscribe(onNext: { owner, result in
                 dump(result)

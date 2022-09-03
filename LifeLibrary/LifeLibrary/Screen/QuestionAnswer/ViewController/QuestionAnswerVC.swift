@@ -254,9 +254,7 @@ extension QuestionAnswerVC {
         
         questionAnswerView.questionView.editBtn.rx.tap
             .subscribe(onNext: { [weak self] _ in
-                guard let self = self,
-                let questionID = self.questionID
-                else { return }
+                guard let self = self else { return }
                 switch self.questionAnswerView.questionView.editBtn.imageView?.image {
                 case UIImage(named: "edit_Selected"):
                     self.questionAnswerView.answerTextView.isEditable = true
@@ -266,9 +264,8 @@ extension QuestionAnswerVC {
                     self.questionAnswerView.questionView.editBtn.setImage(UIImage(named: "confirm_Selected"),
                                                                           for: .highlighted)
                 case UIImage(named: "delete_Selected"):
-                    print("delete")
-                case UIImage(named: "confirm_Selected"):
-                    print("DA")
+                    self.viewModel.deleteAnswer(answerID: self.answerID!)
+                    self.calendar.reloadData()
                 default:
                     print("??")
                 }
@@ -368,7 +365,6 @@ extension QuestionAnswerVC {
                     self.viewModel.postAnswer(questionID: questionID, answer: self.questionAnswerView.answerTextView.text)
                     self.view.reloadInputViews()
                 } else {
-                    print(self.answerID, "!!")
                     self.viewModel.putAnswer(answerID: self.answerID!, answer: self.questionAnswerView.answerTextView.text)
                 }
             })

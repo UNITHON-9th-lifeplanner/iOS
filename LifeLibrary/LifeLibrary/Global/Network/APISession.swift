@@ -129,4 +129,32 @@ struct APISession: APIService {
             }
         }
     }
+    
+    func deleteRequest<T: Decodable>(with urlResource: UrlResource<T>) -> Observable<Result<T, APIError>> {
+        
+        return Observable<Result<T, APIError>>.create { observer in
+            let header: HTTPHeaders = [
+                "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxIiwiaWF0IjoxNjYyMjA3MTA2LCJleHAiOjE2NjI4MTE5MDZ9._I_OpQ3JJ21h-GW0eH_5whgkhRZVldjcZ1riZmG-898"
+            ]
+            
+            let task = AF.request(urlResource.resultURL,
+                                  method: .delete,
+                                  headers: header)
+                .validate(statusCode: 200...399)
+                .responseDecodable(of: T.self) { response in
+                    switch response.result {
+                    case .failure(let error):
+                        print("Unknown HTTP Response Error!!!: \(error.localizedDescription)")
+                        observer.onNext(urlResource.judgeError(statusCode: response.response?.statusCode ?? -1))
+                        
+                    case .success(let decodedData):
+                        observer.onNext(.success(decodedData))
+                    }
+                }
+            
+            return Disposables.create {
+                task.cancel()
+            }
+        }
+    }
 }
