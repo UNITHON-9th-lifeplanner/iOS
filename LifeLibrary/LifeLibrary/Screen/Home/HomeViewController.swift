@@ -178,7 +178,7 @@ extension HomeViewController {
             self?.planAge.text = item
             self?.keywordTitle.text = item + " 전체 인기 키워드"
             self?.selectAge = item
-            var result = item.components(separatedBy: "대")
+            let result = item.components(separatedBy: "대")
             self?.viewModel.getMyPlan(age_Group: result[0], completion: { content in
                 self?.planTextView.text = content
                 self?.changeKeyword()
