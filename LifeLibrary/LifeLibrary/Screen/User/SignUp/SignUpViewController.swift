@@ -151,9 +151,11 @@ extension SignUpViewController {
             if result == true {
                 // TODO: 추후에 ToastView노출
                 print("아이디 사용 가능")
+                self?.popupToast("아이디 사용 가능")
             } else {
                 // TODO: 추후에 ToastView노출
                 print("아이디 사용 불가")
+                self?.popupToast("아이디 사용 불가")
             }
             self?.validId = result ?? false
         })
@@ -176,8 +178,10 @@ extension SignUpViewController {
     @IBAction func onTouchPasswordCheckButton(_ sender: Any) {
         if passwordTextField.text == passwordConfirmTextField.text {
             print("동일")
+            popupToast("동일")
         } else {
             print("다름")
+            popupToast("다름")
         }
     }
 }

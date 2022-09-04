@@ -68,4 +68,29 @@ extension UIViewController {
         guard let loadingView = view.subviews.compactMap({ $0 as? LoadingView }).first else { return }
         loadingView.removeFromSuperview()
     }
+    
+    func popupToast(_ message: String) {
+        let toastView = ToastView(frame: CGRect(x: 20, y: -46, width: UIScreen.main.bounds.size.width - 40, height: 46))
+        toastView.configureToastView(message)
+        view.addSubview(toastView)
+        
+        UIView.animate(withDuration: 0.2) {
+            toastView.snp.updateConstraints {
+                $0.top.equalToSuperview().offset(62)
+                $0.leading.equalToSuperview().offset(20)
+                $0.trailing.equalToSuperview().offset(-20)
+                $0.height.equalTo(46)
+            }
+            self.view.layoutIfNeeded()
+        } completion: { _ in
+            UIView.animate(withDuration: 0.2, delay: 1, options: .curveEaseOut, animations: {
+                toastView.snp.updateConstraints {
+                    $0.top.equalToSuperview().offset(-46)
+                }
+                self.view.layoutIfNeeded()
+            }, completion: {_ in
+                toastView.removeFromSuperview()
+            })
+        }
+    }
 }
