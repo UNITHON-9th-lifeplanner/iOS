@@ -149,13 +149,11 @@ extension SignUpViewController {
     @IBAction func onTouchValidCheckButton(_ sender: Any) {
         viewModel.postValidId(account_id: idTextField.text ?? "", completion: { [weak self] result in
             if result == true {
-                // TODO: 추후에 ToastView노출
                 print("아이디 사용 가능")
-                self?.popupToast("아이디 사용 가능")
+                self?.popupToast("해당 아이디는 사용 가능합니다.")
             } else {
-                // TODO: 추후에 ToastView노출
                 print("아이디 사용 불가")
-                self?.popupToast("아이디 사용 불가")
+                self?.popupToast("해당 아이디는 사용할 수 없습니다.")
             }
             self?.validId = result ?? false
         })
@@ -165,23 +163,21 @@ extension SignUpViewController {
         guard let account_id = idTextField.text,
               let password = passwordTextField.text,
               let name = nameTextField.text,
-              let birthday = viewModel.dateTransForm(datePicker.date) else { print("잘못 입력된 값이 존재합니다."); return }
+              let birthday = viewModel.dateTransForm(datePicker.date) else { popupToast("잘못 입력된 값이 존재합니다."); return }
         if validId == true {
             viewModel.postSignUpAction(account_id: account_id, password: password, name: name, birthday: birthday, completion: { [weak self] in
                 self?.presentHomeView()
             })
         } else {
-            print("옳바른 아이디가 아닙니다.")
+            popupToast("옳바른 아이디가 아닙니다.")
         }
     }
     
     @IBAction func onTouchPasswordCheckButton(_ sender: Any) {
         if passwordTextField.text == passwordConfirmTextField.text {
-            print("동일")
-            popupToast("동일")
+            popupToast("확인되었습니다.")
         } else {
-            print("다름")
-            popupToast("다름")
+            popupToast("잘못입력했습니다.")
         }
     }
 }

@@ -129,8 +129,10 @@ class SettingViewController: BaseViewController {
 extension SettingViewController {
     @IBAction func onTouchPasswordConfirmButton(_ sender: Any) {
         if passwordTextField.text == passwordConfirmTextField.text {
+            popupToast("확인되었습니다.")
             print("동일")
         } else {
+            popupToast("잘못 입력했습니다.")
             print("다름")
         }
     }

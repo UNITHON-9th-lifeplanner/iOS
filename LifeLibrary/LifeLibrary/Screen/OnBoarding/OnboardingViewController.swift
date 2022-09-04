@@ -106,8 +106,12 @@ extension OnboardingViewController {
 
 extension OnboardingViewController {
     func loginAction() {
-        viewModel.postLoginAction(account_id: account_id, password: password, completion: { [weak self] in
-            self?.presentHomeView()
+        viewModel.postLoginAction(account_id: account_id, password: password, completion: { [weak self] result in
+            if result == "" {
+                self?.presentHomeView()
+            } else {
+                self?.popupToast(result)
+            }
         })
     }
     

@@ -39,7 +39,7 @@ final class UserViewModel: BaseViewModel {
 
 // MARK: - Networking
 extension UserViewModel {
-    func postLoginAction(account_id: String, password: String, completion: (() -> Void)? = nil) {
+    func postLoginAction(account_id: String, password: String, completion: ((String) -> Void)? = nil) {
         let path = "login"
         let resource = UrlResource<LoginModel>(path: path)
         let param: [String: Any] = [
@@ -54,9 +54,9 @@ extension UserViewModel {
                     case .failure(let error):
                         switch error {
                         case .unauthrized:
-                            print("\(error) 비밀번호가 잘못됨")
+                            completion?("비밀번호가 잘못되었습니다.")
                         case .notfound:
-                            print("\(error) \n 아이디를 찾을 수 없음.")
+                            completion?("아이디를 찾을 수 없습니다. ")
                         default :
                             print(error)
                         }
@@ -66,7 +66,7 @@ extension UserViewModel {
                         UserInfo.shared.accessToken = data.accessToken
                         UserDefaults.standard.set(data.age, forKey: "age")
                         UserDefaults.standard.set(data.accessToken, forKey: "access_token")
-                        completion?()
+                        completion?("")
                     }
                 }, onError: { error in
                     print(error)
@@ -119,12 +119,14 @@ extension UserViewModel {
                     switch result {
                     case .failure(let error):
                         print(error)
+                        completion?(false)
                     case .success(let validCheck):
                         print(validCheck)
                         completion?(validCheck["is_exists"])
                     }
                 }, onError: { error in
                     print(error)
+                    completion?(false)
                 }
             )
             .disposed(by: bag)
