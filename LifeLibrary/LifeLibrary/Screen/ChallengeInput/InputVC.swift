@@ -31,31 +31,37 @@ class InputVC: BaseViewController {
     private let view1 = ChallengeInputVC()
         .then {
             $0.setQuestions("10대의 ‘나’를 되돌아본다면?")
+            $0.setAnswers("대덕마이스터고에 하지 않아서 후회된다.")
         }
     
     private let view2 = ChallengeInputVC()
         .then {
             $0.setQuestions("20대의 ‘나’를 되돌아본다면?")
+            $0.setAnswers("재밌는 대학생활을 보내지 못한 거 같다..")
         }
     
     private let view3 = ChallengeInputVC()
         .then {
             $0.setQuestions("30대의 ‘나’를 되돌아본다면?")
+            $0.setAnswers("유럽여행을 가야지~")
         }
     
     private let view4 = ChallengeInputVC()
         .then {
             $0.setQuestions("40대의 ‘나’를 되돌아본다면?")
+            $0.setAnswers("파이어족이 돼서 돈 걱정 없이 살고 싶당 ㅎㅎ")
         }
     
     private let view5 = ChallengeInputVC()
         .then {
             $0.setQuestions("50대의 ‘나’를 되돌아본다면?")
+            $0.setAnswers("책을 많이 읽는 성장한 어른이 되고 싶다.")
         }
     
     private let view6 = ChallengeInputVC()
         .then {
             $0.setQuestions("60대 이후 노년기의 ‘나’의 목표는?")
+            $0.setAnswers("나이가 들어서도 끊임없이 배우고 싶다.")
         }
     
     private let challengeInputStackView = UIStackView()

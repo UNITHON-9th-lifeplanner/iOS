@@ -60,6 +60,7 @@ class ChallengeInputVC: BaseViewController {
             layout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
             
             $0.collectionViewLayout = layout
+            $0.allowsMultipleSelection = true
         }
     
     private let keywordInputView = UIView()
@@ -92,7 +93,33 @@ class ChallengeInputVC: BaseViewController {
             $0.tintColor = .white
         }
     
-    var keywords = ["젊음", "사랑", "후회"]
+    var keywords = [
+        "갓생",
+        "공부",
+        "공인중개사",
+        "나이",
+        "노을",
+        "대학교",
+        "대학생활",
+        "돈",
+        "머니",
+        "배움",
+        "부동산",
+        "사랑",
+        "세계로",
+        "아시아",
+        "아프리카",
+        "안주",
+        "유럽",
+        "잠",
+        "젊음",
+        "졸업",
+        "책",
+        "컴퓨터",
+        "파이어",
+        "홍대",
+        "후회"
+    ]
     
     private var isKeyword = false
     
@@ -132,6 +159,13 @@ extension ChallengeInputVC {
     func setAnswers(_ text: String) {
         answerTextView.text = text
         textCntLabel.text = "(\(text.count)/100)"
+    }
+    
+    func setSelectKeyword(idx: [Int]) {
+        idx.forEach {
+            keywordCV.selectItem(at: [0, $0], animated: true, scrollPosition: .centeredVertically)
+        }
+        keywordCntLabel.text = "(\(idx.count)/5)"
     }
 }
 
@@ -173,9 +207,9 @@ extension ChallengeInputVC {
         
         answerTextView.snp.makeConstraints {
             $0.top.equalTo(questionLabel.snp.bottom).offset(12)
-            $0.leading.equalToSuperview().offset(20)
+            $0.leading.equalToSuperview().offset(16)
             $0.bottom.equalTo(keywordScrollView.snp.top)
-            $0.trailing.equalToSuperview().offset(-20)
+            $0.trailing.equalToSuperview().offset(-16)
         }
         
         keywordScrollView.snp.makeConstraints {
