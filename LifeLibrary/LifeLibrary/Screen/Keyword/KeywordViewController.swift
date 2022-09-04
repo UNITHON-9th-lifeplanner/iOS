@@ -196,6 +196,7 @@ extension KeywordViewController {
     }
     
     func changePopularKeyword() {
+        if popularKeywords?.currentPopularlist.count == 0 { return }
         popularKeyword1.text = "1   # " + (popularKeywords?.currentPopularlist[0] ?? "" )
         if popularKeywords?.currentPopularlist.count ?? 0 < 2 { return }
         popularKeyword2.text = "2   # " + (popularKeywords?.currentPopularlist[1] ?? "" )

@@ -106,7 +106,7 @@ extension UserViewModel {
             .disposed(by: bag)
     }
     
-    func postValidId(account_id: String, completion: ((Bool?) -> Void)? = nil) {
+    func postValidId(account_id: String, completion: ((Bool) -> Void)? = nil) {
         let path = "users/account"
         let resource = UrlResource<[String: Bool]>(path: path)
         let param: [String: Any] = [
@@ -122,7 +122,7 @@ extension UserViewModel {
                         completion?(false)
                     case .success(let validCheck):
                         print(validCheck)
-                        completion?(validCheck["is_exists"])
+                        completion?(validCheck["is_exists"] ?? true)
                     }
                 }, onError: { error in
                     print(error)

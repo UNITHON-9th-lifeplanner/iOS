@@ -155,7 +155,7 @@ extension SignUpViewController {
                 print("아이디 사용 불가")
                 self?.popupToast("해당 아이디는 사용할 수 없습니다.")
             }
-            self?.validId = result ?? false
+            self?.validId = result
         })
     }
     
